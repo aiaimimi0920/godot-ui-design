@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://chogcnt44x25t"]
+
+[ext_resource type="Script" path="res://addons/ui-design/base/BaseDesignNode.gd" id="1_wp1mw"]
+
+[sub_resource type="Theme" id="Theme_liwc3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_prqe7"]
+corner_radius_top_left = 100
+corner_radius_top_right = 100
+corner_radius_bottom_right = 100
+corner_radius_bottom_left = 100
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkdxh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+shadow_color = Color(0, 0, 0, 0.2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukqsa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+shadow_color = Color(0, 0, 0, 0.141176)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4o86x"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+shadow_color = Color(0, 0, 0, 0.121569)
+
+[node name="BaseDesignNode" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -763.0
+offset_bottom = -424.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_liwc3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_prqe7")
+script = ExtResource("1_wp1mw")
+
+[node name="MarginContainer1" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="UmbraShadow" type="Button" parent="MarginContainer1"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_gkdxh")
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="PenumbraShadow" type="Button" parent="MarginContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ukqsa")
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="AmbientShadow" type="Button" parent="MarginContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_4o86x")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

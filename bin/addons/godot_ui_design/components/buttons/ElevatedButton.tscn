@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck3svwuab8e3x"]
+
+[ext_resource type="PackedScene" uid="uid://chogcnt44x25t" path="res://addons/ui-design/base/BaseDesignNode.tscn" id="1_2n050"]
+[ext_resource type="Script" path="res://addons/ui-design/components/buttons/ElevatedButton.gd" id="2_pa4u1"]
+
+[node name="ElevatedButton" instance=ExtResource("1_2n050")]
+script = ExtResource("2_pa4u1")
+enable_container_shape = 7
+enable_container_height = 40.0
+enable_container_elevation = 1
+enable_container_shadow_color = 0
+enable_container_color = 0
+enable_container_surface_tint_layer_color = 0
+enable_label_font = 0
+enable_label_line_height = 0
+enable_label_size = 0
+enable_label_weight = 0
+enable_label_tracking = 0
+enable_label_style = 0
+enable_label_color = 0
+enable_icon_size = 18
+enable_icon_color = 0
+disabled_container_color = 0
+disabled_container_opacity = 0.12
+disabled_container_elevation = 0
+disabled_label_color = 0
+disabled_label_opacity = 0.38
+disabled_icon_color = 0
+disabled_icon_opacity = 0.38
+hovered_container_elevation = 2
+hovered_label_color = 0
+hovered_state_layer_color = 0
+hovered_state_layer_opacity = 0
+hovered_icon_color = 0
+focused_indicator_color = 0
+focused_indicator_thickness = 0
+focused_indicator_offset = 0
+focused_container_elevation = 1
+focused_label_color = 0
+focused_state_layer_color = 0
+focused_state_layer_opacity = 0
+focused_icon_color = 0
+pressed_container_elevation = 1
+pressed_label_color = 0
+pressed_state_layer_color = 0
+pressed_state_layer_opacity = 0
+pressed_icon_color = 0
+container_state = 0
