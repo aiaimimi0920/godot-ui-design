@@ -28,7 +28,7 @@ runs:
     - name: Print version
       shell: sh
       run:
-        echo v${{ steps.version.outputs.version }} > bin/addons/godot_tts/VERSION.txt
+        echo v${{ steps.version.outputs.version }} > bin/addons/godot_ui_design/VERSION.txt
     - name: Setup python and scons
       uses: ./.github/actions/deps
     - name: Lint
