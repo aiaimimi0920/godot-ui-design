@@ -2,14 +2,6 @@ name: 🏁 Windows Builds
 on:
   workflow_call:
 
-env:
-  Gflags_ROOT: "${{github.workspace}}/gflags"
-  Gflags_INCLUDE_DIR: "${{ github.workspace }}/gflags/include"
-  Gflags_LIBRARY: "${{github.workspace}}/gflags/lib/gflags.lib"
-  Glog_ROOT: "${{github.workspace}}/glog"
-  Glog_INCLUDE_DIR: "${{ github.workspace }}/glog/include"
-  Glog_LIBRARY: "${{github.workspace}}/glog/lib/glog.lib"
-
 jobs:
   build-windows:
     runs-on: ${{matrix.os}}
@@ -44,55 +36,6 @@ jobs:
 
       - name: Setup MSVC problem matcher
         uses: ammaraskar/msvc-problem-matcher@master
-
-      - name: Cache gflags
-        id: cache-gflags
-        uses: actions/cache@v3
-        with:
-          path: gflags/
-          key: ${{runner.os}}-gflags-2.2.2-${{matrix.arch}}-${{matrix.build_type}}
-
-      - name: Download gflags
-        if: steps.cache-gflags.outputs.cache-hit != 'true'
-        run: |
-          (New-Object System.Net.WebClient).DownloadFile("https://github.com/gflags/gflags/archive/refs/tags/v2.2.2.zip", "v2.2.2.zip")
-          Expand-Archive v2.2.2.zip .
-      - name: Build gflags
-        if: steps.cache-gflags.outputs.cache-hit != 'true'
-        run: |
-          cmake -S gflags-2.2.2 -B build-gflags `
-                -DBUILD_SHARED_LIBS=ON `
-                -DBUILD_TESTING=OFF `
-                -DCMAKE_INSTALL_PREFIX=${{github.workspace}}/gflags
-          cmake --build build-gflags `
-                --config ${{matrix.build_type}} `
-                --target install
-      - name: Cache glog
-        id: cache-glog
-        uses: actions/cache@v3
-        with:
-            path: glog/
-            key: ${{runner.os}}-glog-0.6.0-${{matrix.arch}}-${{matrix.build_type}}
-
-      - name: Download glog
-        if: steps.cache-glog.outputs.cache-hit != 'true'
-        run: |
-            (New-Object System.Net.WebClient).DownloadFile("https://github.com/google/glog/archive/refs/tags/v0.6.0.zip", "glog-0.6.0.zip")
-            Expand-Archive glog-0.6.0.zip .
-      - name: Build glog
-        if: steps.cache-glog.outputs.cache-hit != 'true'
-        run: |
-            cmake -S glog-0.6.0 -B build-glog `
-                -A ${{matrix.arch}} `
-                -DBUILD_SHARED_LIBS=ON `
-                -DWITH_GTEST=OFF `
-                -DWITH_PKGCONFIG=OFF `
-                -DBUILD_TESTING=OFF `
-                -DCMAKE_PREFIX_PATH="${{github.workspace}}/gflags" `
-                -DCMAKE_INSTALL_PREFIX=${{github.workspace}}/glog
-            cmake --build build-glog `
-                --config ${{matrix.build_type}} `
-                --target install
 
       - name: Build ${{ matrix.arch }}
         uses: ./.github/actions/build
