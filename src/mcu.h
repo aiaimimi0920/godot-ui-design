@@ -28,7 +28,6 @@
 #include <godot_cpp/variant/callable.hpp>
 #include <godot_cpp/variant/callable_method_pointer.hpp>
 
-
 using namespace godot;
 
 class MCU : public Node {
@@ -41,7 +40,6 @@ protected:
 	static void _bind_methods();
 
 public:
-
 	static MCU *get_singleton();
 	MCU();
 	~MCU();

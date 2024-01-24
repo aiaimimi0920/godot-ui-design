@@ -26,5 +26,4 @@ MCU::~MCU() {
 }
 
 void MCU::_bind_methods() {
-
 }
