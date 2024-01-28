@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://chogcnt44x25t"]
+[gd_scene load_steps=8 format=3 uid="uid://chogcnt44x25t"]
 
-[ext_resource type="Script" path="res://addons/ui-design/base/BaseDesignNode.gd" id="1_wp1mw"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/base/BaseDesignNode.gd" id="1_wp1mw"]
 
 [sub_resource type="Theme" id="Theme_liwc3"]
 
@@ -10,6 +10,9 @@ corner_radius_top_right = 100
 corner_radius_bottom_right = 100
 corner_radius_bottom_left = 100
 corner_detail = 1
+
+[sub_resource type="MCUSchemeContent" id="MCUSchemeContent_tiv6f"]
+source_color = Color(0.705882, 0.211765, 0.588235, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkdxh"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -40,6 +43,7 @@ grow_vertical = 2
 theme = SubResource("Theme_liwc3")
 theme_override_styles/panel = SubResource("StyleBoxFlat_prqe7")
 script = ExtResource("1_wp1mw")
+scheme = SubResource("MCUSchemeContent_tiv6f")
 
 [node name="MarginContainer1" type="MarginContainer" parent="."]
 unique_name_in_owner = true

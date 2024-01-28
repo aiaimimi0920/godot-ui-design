@@ -9,6 +9,8 @@ enum ShapeToken { CUSTOM=0, FULLY_ROUNDED, EXTRA_LARGE_TOP_ROUNDING, EXTRA_LARGE
 				  LARGE_END_ROUNDING, LARGE_START_ROUNDING, LARGE_ROUNDING, MEDIUM_ROUNDING, SMALL_ROUNDING,
 				  EXTRA_SMALL_TOP_ROUNDING, EXTRA_SMALL_ROUNDING, NO_ROUNDING }
 
+@export var scheme:MCUSchemeContent
+
 @export_enum("Custom", "None", "Extra small", "Small", "Medium", "Large", "Extra large", "Full") 
 var shape_style: int:
 	set(val):
@@ -223,6 +225,7 @@ func _ready():
 		shadow_node_normal_style_array.append(cur_style)
 		shadow_node.set("theme_override_styles/normal",cur_style)
 	call_deferred("update_height_animation")
+	call_deferred("test_func")
 
 
 const elevation_level_map_dp_height={
@@ -397,3 +400,11 @@ func _on_gui_input(event):
 				_on_button_down()
 			else:
 				_on_button_up()
+				
+func test_func():
+	printt("scheme.get_primary_palette_key_color()",scheme.get_primary_palette_key_color())
+	printt("scheme.get_secondary_palette_key_color()",scheme.get_secondary_palette_key_color())
+	printt("scheme.get_tertiary_palette_key_color()",scheme.get_tertiary_palette_key_color())
+	printt("scheme.get_neutral_palette_key_color()",scheme.get_neutral_palette_key_color())
+	printt("scheme.get_neutral_variant_palette_key_color()",scheme.get_neutral_variant_palette_key_color())
+	printt("scheme.get_background()",scheme.get_background())

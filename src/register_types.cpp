@@ -1,7 +1,4 @@
 #include "register_types.h"
-
-#include "resource_loader_vits.h"
-#include "resource_vits.h"
 #include "mcu.h"
 
 #include <godot_cpp/classes/engine.hpp>
@@ -18,7 +15,7 @@ void initialize_ui_design_module(ModuleInitializationLevel p_level) {
 		return;
 	}
 	GDREGISTER_CLASS(MCU);
-	MCU.instantiate();
+	GDREGISTER_CLASS(MCUSchemeContent);
 	MCUPtr = memnew(MCU);
 	Engine::get_singleton()->register_singleton("MCU", MCU::get_singleton());
 }
@@ -27,10 +24,8 @@ void uninitialize_ui_design_module(ModuleInitializationLevel p_level) {
 	if (p_level != MODULE_INITIALIZATION_LEVEL_SCENE) {
 		return;
 	}
-
 	Engine::get_singleton()->unregister_singleton("MCU");
 	memdelete(MCUPtr);
-
 }
 
 extern "C" {

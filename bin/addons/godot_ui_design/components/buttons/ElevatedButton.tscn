@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ck3svwuab8e3x"]
 
-[ext_resource type="PackedScene" uid="uid://chogcnt44x25t" path="res://addons/ui-design/base/BaseDesignNode.tscn" id="1_2n050"]
-[ext_resource type="Script" path="res://addons/ui-design/components/buttons/ElevatedButton.gd" id="2_pa4u1"]
+[ext_resource type="PackedScene" uid="uid://chogcnt44x25t" path="res://addons/godot_ui_design/base/BaseDesignNode.tscn" id="1_2n050"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/buttons/ElevatedButton.gd" id="2_pa4u1"]
 
 [node name="ElevatedButton" instance=ExtResource("1_2n050")]
 script = ExtResource("2_pa4u1")

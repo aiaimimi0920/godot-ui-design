@@ -24,8 +24,6 @@
 #include <cstdio>
 #include <string>
 
-#include "absl/strings/str_cat.h"
-
 namespace material_color_utilities {
 
 int RedFromInt(const Argb argb) { return (argb & 0x00ff0000) >> 16; }
@@ -137,10 +135,6 @@ double RotationDirection(const double from, const double to) {
   return increasing_difference <= 180.0 ? 1.0 : -1.0;
 }
 
-// Converts a color in ARGB format to a hexadecimal string in lowercase.
-//
-// For instance: hex_from_argb(0xff012345) == "ff012345"
-std::string HexFromArgb(Argb argb) { return absl::StrCat(absl::Hex(argb)); }
 
 Argb IntFromLstar(const double lstar) {
   double y = YFromLstar(lstar);
@@ -172,6 +166,6 @@ Vec3 MatrixMultiply(Vec3 input, const double matrix[3][3]) {
       input.a * matrix[1][0] + input.b * matrix[1][1] + input.c * matrix[1][2];
   double c =
       input.a * matrix[2][0] + input.b * matrix[2][1] + input.c * matrix[2][2];
-  return (Vec3){a, b, c};
+  return {a, b, c};
 }
 }  // namespace material_color_utilities

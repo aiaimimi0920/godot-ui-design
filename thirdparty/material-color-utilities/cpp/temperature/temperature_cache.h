@@ -21,6 +21,8 @@
 #include <vector>
 
 #include "cpp/cam/hct.h"
+#include <optional>
+
 
 namespace material_color_utilities {
 
