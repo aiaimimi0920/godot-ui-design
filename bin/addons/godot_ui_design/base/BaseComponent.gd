@@ -387,7 +387,6 @@ func update_state():
 	var target_container_elevation_state_data = get_state_data("ContainerElevation")
 	var target_container_color_state_data = get_state_data("ContainerColor")
 	var target_container_opacity_state_data = get_state_data("ContainerOpacity")
-	printt("target_container_color_state_data",target_container_color_state_data)
 	container_color = target_container_color_state_data
 	elevation_level = target_container_elevation_state_data
 	

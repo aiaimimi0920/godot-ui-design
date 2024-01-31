@@ -10,5 +10,6 @@ base_font = ExtResource("1_nnpia")
 script = ExtResource("1_wufv1")
 font_size = 32
 font_weight = 400
+font_weight_prominent = null
 font_height = 40
 font_tracking = 0.0

@@ -1,54 +1,91 @@
-[gd_scene load_steps=10 format=3 uid="uid://b7r8bckebx7v4"]
+[gd_scene load_steps=12 format=3 uid="uid://b7r8bckebx7v4"]
 
 [ext_resource type="Script" path="res://addons/godot_ui_design/base/BaseComponent.gd" id="1_h5oej"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yei6r"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gkdxh"]
+[sub_resource type="MCUSchemeContent" id="MCUSchemeContent_cvbvs"]
+source_color = Color(0.403922, 0.313726, 0.643137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxphc"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
 shadow_color = Color(0, 0, 0, 0.2)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukqsa"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2erqd"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 border_blend = true
-shadow_color = Color(0, 0, 0, 0.141176)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.14)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4o86x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o45uo"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 border_blend = true
-shadow_color = Color(0, 0, 0, 0.121569)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.12)
+shadow_size = 3
+shadow_offset = Vector2(0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvfc0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kscr"]
+bg_color = Color(0.972549, 0.94902, 0.980392, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vw7im"]
+bg_color = Color(0.501961, 0.411765, 0.74902, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hlt8t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4m0yn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbaj3"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4fuu"]
 bg_color = Color(0.737255, 0.470588, 0.870588, 1)
 draw_center = false
 border_width_left = 3
 border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
+border_color = Color(0.486275, 0.447059, 0.588235, 1)
 expand_margin_left = 2.0
 expand_margin_top = 2.0
 expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
 [node name="BaseComponent" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 40)
 offset_right = 360.0
-offset_bottom = 124.0
+offset_bottom = 40.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_yei6r")
 script = ExtResource("1_h5oej")
 shape_style = 7
-shape_symmetry = 2
+shape_symmetry = 1
 shape_token = 1
-elevation_level = 4
+margin_size = 1024
+top_left = 1024
+top_right = 1024
+bottom_right = 1024
+bottom_left = 1024
+elevation_level = 1
+scheme = SubResource("MCUSchemeContent_cvbvs")
 
 [node name="ShadowNode" type="Control" parent="."]
 unique_name_in_owner = true
@@ -66,16 +103,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 0
-theme_override_constants/margin_top = 0
-theme_override_constants/margin_right = 0
-theme_override_constants/margin_bottom = 0
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
 
 [node name="UmbraShadow" type="Button" parent="ShadowNode/UmbraShadowMargin"]
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_gkdxh")
+theme_override_styles/normal = SubResource("StyleBoxFlat_bxphc")
 
 [node name="PenumbraShadowMargin" type="MarginContainer" parent="ShadowNode"]
 unique_name_in_owner = true
@@ -97,7 +134,7 @@ theme_override_constants/margin_bottom = 0
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_ukqsa")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2erqd")
 
 [node name="AmbientShadowMargin" type="MarginContainer" parent="ShadowNode"]
 unique_name_in_owner = true
@@ -119,7 +156,7 @@ theme_override_constants/margin_bottom = 0
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_4o86x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_o45uo")
 
 [node name="ContainerNode" type="Control" parent="."]
 layout_mode = 2
@@ -134,7 +171,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rvfc0")
+theme_override_styles/panel = SubResource("StyleBoxFlat_8kscr")
 
 [node name="StateLayerNode" type="Control" parent="."]
 layout_mode = 2
@@ -155,8 +192,10 @@ theme_override_constants/margin_bottom = 4
 
 [node name="StateLayer" type="PanelContainer" parent="StateLayerNode/MarginContainer"]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vw7im")
 
 [node name="ContentNode" type="PanelContainer" parent="."]
 layout_mode = 2
@@ -175,6 +214,7 @@ mouse_filter = 2
 
 [node name="FocusIndicator" type="PanelContainer" parent="FocusIndicatorNode"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -182,7 +222,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kbaj3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_w4fuu")
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

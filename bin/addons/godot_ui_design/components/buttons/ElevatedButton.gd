@@ -73,9 +73,10 @@ func get_state_map_data():
 @export var icon_name = "":
 	set(val):
 		icon_name = val
-		if %Icon:
-			%Icon.icon_name = icon_name
-			%Icon.visible = (icon_name!="")
+		if is_inside_tree():
+			if %Icon:
+				%Icon.icon_name = icon_name
+				%Icon.visible = (icon_name!="")
 	get:
 		return icon_name
 

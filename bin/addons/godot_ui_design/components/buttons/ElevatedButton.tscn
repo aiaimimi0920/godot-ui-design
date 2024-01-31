@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dgay7kqaf1ttf"]
+[gd_scene load_steps=12 format=3 uid="uid://dgay7kqaf1ttf"]
 
 [ext_resource type="PackedScene" uid="uid://b7r8bckebx7v4" path="res://addons/godot_ui_design/base/BaseComponent.tscn" id="1_mdfxy"]
 [ext_resource type="Script" path="res://addons/godot_ui_design/components/buttons/ElevatedButton.gd" id="2_htc0c"]
@@ -6,10 +6,7 @@
 [ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="3_jvvyl"]
 [ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="5_eg7r4"]
 
-[sub_resource type="MCUSchemeContent" id="MCUSchemeContent_1h2eu"]
-source_color = Color(0.403922, 0.313726, 0.643137, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnrkv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nrpfn"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 border_blend = true
@@ -21,7 +18,7 @@ shadow_color = Color(0, 0, 0, 0.2)
 shadow_size = 1
 shadow_offset = Vector2(0, 2)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0whqi"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qyil"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 border_blend = true
@@ -33,7 +30,7 @@ shadow_color = Color(0, 0, 0, 0.14)
 shadow_size = 1
 shadow_offset = Vector2(0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5g6x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpimk"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 border_blend = true
@@ -45,16 +42,21 @@ shadow_color = Color(0, 0, 0, 0.12)
 shadow_size = 3
 shadow_offset = Vector2(0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4se3f"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjmyb"]
 bg_color = Color(0.501961, 0.411765, 0.74902, 1)
 corner_radius_top_left = 1024
 corner_radius_top_right = 1024
 corner_radius_bottom_right = 1024
 corner_radius_bottom_left = 1024
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2y2w"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ah0tb"]
+bg_color = Color(0.501961, 0.411765, 0.74902, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oabqx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2qp2o"]
 bg_color = Color(0.737255, 0.470588, 0.870588, 1)
 draw_center = false
 border_width_left = 3
@@ -68,9 +70,7 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
 [node name="ElevatedButton" instance=ExtResource("1_mdfxy")]
-custom_minimum_size = Vector2(0, 40)
-offset_right = 67.0
-offset_bottom = 40.0
+offset_right = 96.0
 script = ExtResource("2_htc0c")
 child_state_map_data = {
 0: {
@@ -129,36 +129,21 @@ font_tracking = 0.1
 label_token = 10
 custom_font = null
 label_text = "hello"
-shape_symmetry = 1
-margin_size = 1024
-top_left = 1024
-top_right = 1024
-bottom_right = 1024
-bottom_left = 1024
-elevation_level = 1
-scheme = SubResource("MCUSchemeContent_1h2eu")
-
-[node name="UmbraShadowMargin" parent="ShadowNode" index="0"]
-theme_override_constants/margin_left = 1
-theme_override_constants/margin_top = 1
-theme_override_constants/margin_right = 1
-theme_override_constants/margin_bottom = 1
 
 [node name="UmbraShadow" parent="ShadowNode/UmbraShadowMargin" index="0"]
-theme_override_styles/normal = SubResource("StyleBoxFlat_cnrkv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nrpfn")
 
 [node name="PenumbraShadow" parent="ShadowNode/PenumbraShadowMargin" index="0"]
-theme_override_styles/normal = SubResource("StyleBoxFlat_0whqi")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3qyil")
 
 [node name="AmbientShadow" parent="ShadowNode/AmbientShadowMargin" index="0"]
-theme_override_styles/normal = SubResource("StyleBoxFlat_y5g6x")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fpimk")
 
 [node name="Container" parent="ContainerNode" index="0"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_4se3f")
+theme_override_styles/panel = SubResource("StyleBoxFlat_pjmyb")
 
 [node name="StateLayer" parent="StateLayerNode/MarginContainer" index="0"]
-modulate = Color(1, 1, 1, 0)
-theme_override_styles/panel = SubResource("StyleBoxFlat_r2y2w")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ah0tb")
 
 [node name="MarginContainer" type="MarginContainer" parent="ContentNode/Content" index="0"]
 layout_mode = 2
@@ -199,5 +184,4 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FocusIndicator" parent="FocusIndicatorNode" index="0"]
-visible = false
-theme_override_styles/panel = SubResource("StyleBoxFlat_oabqx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2qp2o")

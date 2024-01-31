@@ -10,5 +10,6 @@ base_font = ExtResource("1_mvdln")
 script = ExtResource("1_o1h16")
 font_size = 12
 font_weight = 400
+font_weight_prominent = null
 font_height = 16
 font_tracking = 0.4
