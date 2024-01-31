@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b7r8bckebx7v4"]
+[gd_scene load_steps=10 format=3 uid="uid://b7r8bckebx7v4"]
 
 [ext_resource type="Script" path="res://addons/godot_ui_design/base/BaseComponent.gd" id="1_h5oej"]
 
@@ -24,6 +24,8 @@ shadow_color = Color(0, 0, 0, 0.121569)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvfc0"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hlt8t"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4m0yn"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbaj3"]
@@ -47,40 +49,6 @@ shape_style = 7
 shape_symmetry = 2
 shape_token = 1
 elevation_level = 4
-state_map_data = {
-0: {
-"ContainerColor": 11,
-"ContainerElevation": 1,
-"ContainerHeight": 200,
-"ContainerShadowColor": 22,
-"ContainerShape": 1
-},
-1: {
-"ContainerColor": 15,
-"ContainerElevation": 0,
-"ContainerOpacity": 15
-},
-2: {
-"ContainerElevation": 2,
-"StateLayerColor": 0,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 1,
-"FocusIndicatorColor": 1,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"StateLayerColor": 0,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 1,
-"StateLayerColor": 0,
-"StateLayerOpacity": 0.1
-},
-6: {}
-}
 
 [node name="ShadowNode" type="Control" parent="."]
 unique_name_in_owner = true
@@ -190,18 +158,14 @@ unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
 
-[node name="ContentNode" type="Control" parent="."]
+[node name="ContentNode" type="PanelContainer" parent="."]
 layout_mode = 2
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hlt8t")
 
 [node name="Content" type="PanelContainer" parent="ContentNode"]
 unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_4m0yn")
 

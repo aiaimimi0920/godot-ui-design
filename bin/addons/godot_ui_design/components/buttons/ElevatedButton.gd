@@ -1,478 +1,230 @@
-extends BaseDesignNode
-
-var bg_color:Color
-var text_color:Color
-
-@export_group("EnabledState")
-@export_subgroup("Container", "enable_container_")
-@export var enable_container_shape :ShapeStyle = ShapeStyle.FULL
-@export var enable_container_height :float = 40
-@export_range(0,5,1) var enable_container_elevation :int = 1
-@export var enable_container_shadow_color = 0
-@export var enable_container_color = 0
-@export var enable_container_surface_tint_layer_color = 0
-
-@export_subgroup("Label", "enable_label_")
-@export var enable_label_font = 0
-@export var enable_label_line_height = 0
-@export var enable_label_size = 0
-@export var enable_label_weight = 0
-@export var enable_label_tracking = 0
-@export var enable_label_style = 0
-@export var enable_label_color = 0
-
-@export_subgroup("Icon", "enable_icon_")
-@export var enable_icon_size :int= 18
-@export var enable_icon_color = 0
-
-@export_group("DisabledState")
-@export_subgroup("Container", "disabled_container_")
-@export var disabled_container_color = 0
-@export var disabled_container_opacity:float = 0.12
-@export_range(0,5,1) var disabled_container_elevation :int = 0
-
-@export_subgroup("Label", "disabled_label_")
-@export var disabled_label_color = 0
-@export var disabled_label_opacity :float= 0.38
-
-@export_subgroup("Icon", "disabled_icon_")
-@export var disabled_icon_color = 0
-@export var disabled_icon_opacity :float= 0.38
-
-
-@export_group("HoveredState")
-@export_subgroup("Container", "hovered_container_")
-@export_range(0,5,1) var hovered_container_elevation :int = 2
-
-@export_subgroup("Label", "hovered_label_")
-@export var hovered_label_color = 0
-
-@export_subgroup("StateLayer", "hovered_state_layer_")
-@export var hovered_state_layer_color = 0
-@export var hovered_state_layer_opacity = 0
-
-@export_subgroup("Icon", "hovered_icon_")
-@export var hovered_icon_color = 0
-
-
-@export_group("FocusedState")
-@export_subgroup("FocusIndicator", "focused_indicator_")
-@export var focused_indicator_color = 0
-@export var focused_indicator_thickness = 0
-@export var focused_indicator_offset = 0
-
-@export_subgroup("Container", "focused_container_")
-@export_range(0,5,1) var focused_container_elevation :int = 1
-
-@export_subgroup("Label", "focused_label_")
-@export var focused_label_color = 0
-
-@export_subgroup("StateLayer", "focused_state_layer_")
-@export var focused_state_layer_color = 0
-@export var focused_state_layer_opacity = 0
-
-@export_subgroup("Icon", "focused_icon_")
-@export var focused_icon_color = 0
-
-
-@export_group("PressedState")
-@export_subgroup("Container", "pressed_container_")
-@export_range(0,5,1) var pressed_container_elevation :int = 1
-
-@export_subgroup("Label", "pressed_label_")
-@export var pressed_label_color = 0
-
-@export_subgroup("StateLayer", "pressed_state_layer_")
-@export var pressed_state_layer_color = 0
-@export var pressed_state_layer_opacity = 0
-
-@export_subgroup("Icon", "pressed_icon_")
-@export var pressed_icon_color = 0
-
-
-enum ContainerState { ENABLED=0, DISABLED, HOVERED, FOCUSED, PRESSED}
-
-@export_enum("Enabled", "Disabled", "Hovered", "Focused", "Pressed") 
-var container_state: int:
-	set(val):
-		container_state = val
-	get:
-		return container_state
-
-var container_shape:
-	get:
-		return get_target_container_shape()
-
-func get_target_container_shape(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_container_shape(target_container_state)
-
-func _get_target_container_shape(target_container_state):
-	return enable_container_shape
-
-
-var container_height:
-	get:
-		return get_target_container_height()
-
-func get_target_container_height(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_container_height(target_container_state)
-
-func _get_target_container_height(target_container_state):
-	return enable_container_height
-
-
-var container_elevation:
-	get:
-		return get_target_container_elevation()
-
-func get_target_container_elevation(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_container_elevation(target_container_state)
-
-func _get_target_container_elevation(target_container_state):
-	match target_container_state:
-		ContainerState.ENABLED:
-			return enable_container_elevation
-		ContainerState.DISABLED:
-			return disabled_container_elevation
-		ContainerState.HOVERED:
-			return hovered_container_elevation
-		ContainerState.FOCUSED:
-			return focused_container_elevation
-		ContainerState.PRESSED:
-			return pressed_container_elevation
-
-	
-var container_shadow_color:
-	get:
-		return get_target_container_shadow_color()
-
-func get_target_container_shadow_color(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_container_shadow_color(target_container_state)
-
-func _get_target_container_shadow_color(target_container_state):
-	return enable_container_shadow_color
-
-var container_color:
-	get:
-		return get_target_container_color()
-
-func get_target_container_color(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_container_color(target_container_state)
-
-func _get_target_container_color(target_container_state):
-	match target_container_state:
-		ContainerState.ENABLED:
-			return enable_container_color
-		ContainerState.DISABLED:
-			return disabled_container_color
-		ContainerState.HOVERED:
-			return enable_container_color
-		ContainerState.FOCUSED:
-			return enable_container_color
-		ContainerState.PRESSED:
-			return enable_container_color
-
-var container_surface_tint_layer_color:
-	get:
-		return get_target_container_surface_tint_layer_color()
-
-func get_target_container_surface_tint_layer_color(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_container_surface_tint_layer_color(target_container_state)
-
-func _get_target_container_surface_tint_layer_color(target_container_state):
-	return enable_container_surface_tint_layer_color
-
-var container_opacity:
-	get:
-		return get_target_container_opacity()
-
-func get_target_container_opacity(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_container_opacity(target_container_state)
-
-func _get_target_container_opacity(target_container_state):
-	match target_container_state:
-		ContainerState.ENABLED:
-			return 1
-		ContainerState.DISABLED:
-			return disabled_container_opacity
-		ContainerState.HOVERED:
-			return 1
-		ContainerState.FOCUSED:
-			return 1
-		ContainerState.PRESSED:
-			return 1
-
-var label_font:
-	get:
-		return get_target_label_font()
-
-func get_target_label_font(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_label_font(target_container_state)
-
-func _get_target_label_font(target_container_state):
-	return enable_label_font
-
-
-var label_line_height:
-	get:
-		return get_target_label_line_height()
-
-func get_target_label_line_height(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_label_line_height(target_container_state)
-
-func _get_target_label_line_height(target_container_state):
-	return enable_label_line_height
-
-var label_size:
-	get:
-		return get_target_label_size()
-
-func get_target_label_size(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_label_size(target_container_state)
-
-func _get_target_label_size(target_container_state):
-	return enable_label_size
-
-var label_weight:
-	get:
-		return get_target_label_weight()
-
-func get_target_label_weight(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_label_weight(target_container_state)
-
-func _get_target_label_weight(target_container_state):
-	return enable_label_weight
-
-var label_tracking:
-	get:
-		return get_target_label_tracking()
-
-func get_target_label_tracking(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_label_tracking(target_container_state)
-
-func _get_target_label_tracking(target_container_state):
-	return enable_label_tracking
-
-var label_style:
-	get:
-		return get_target_label_style()
-
-func get_target_label_style(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_label_style(target_container_state)
-
-func _get_target_label_style(target_container_state):
-	return enable_label_style
-
-var label_color:
-	get:
-		return get_target_label_color()
-
-func get_target_label_color(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_label_color(target_container_state)
-
-func _get_target_label_color(target_container_state):
-	match target_container_state:
-		ContainerState.ENABLED:
-			return enable_label_color
-		ContainerState.DISABLED:
-			return disabled_label_color
-		ContainerState.HOVERED:
-			return hovered_label_color
-		ContainerState.FOCUSED:
-			return focused_label_color
-		ContainerState.PRESSED:
-			return pressed_label_color
-
-var label_opacity:
-	get:
-		return get_target_label_opacity()
-
-func get_target_label_opacity(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_label_opacity(target_container_state)
-
-func _get_target_label_opacity(target_container_state):
-	match target_container_state:
-		ContainerState.ENABLED:
-			return 1
-		ContainerState.DISABLED:
-			return disabled_label_opacity
-		ContainerState.HOVERED:
-			return 1
-		ContainerState.FOCUSED:
-			return 1
-		ContainerState.PRESSED:
-			return 1
-
-var icon_size:
-	get:
-		return get_target_icon_size()
-
-func get_target_icon_size(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_icon_size(target_container_state)
-
-func _get_target_icon_size(target_container_state):
-	return enable_icon_size
-
-
-var icon_color:
-	get:
-		return get_target_icon_color()
-
-func get_target_icon_color(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_icon_color(target_container_state)
-
-func _get_target_icon_color(target_container_state):
-	match target_container_state:
-		ContainerState.ENABLED:
-			return enable_icon_color
-		ContainerState.DISABLED:
-			return disabled_icon_color
-		ContainerState.HOVERED:
-			return hovered_icon_color
-		ContainerState.FOCUSED:
-			return focused_icon_color
-		ContainerState.PRESSED:
-			return pressed_icon_color
-
-
-var icon_opacity:
-	get:
-		return get_target_icon_opacity()
-
-func get_target_icon_opacity(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_icon_opacity(target_container_state)
-
-func _get_target_icon_opacity(target_container_state):
-	match target_container_state:
-		ContainerState.ENABLED:
-			return 1
-		ContainerState.DISABLED:
-			return disabled_icon_opacity
-		ContainerState.HOVERED:
-			return 1
-		ContainerState.FOCUSED:
-			return 1
-		ContainerState.PRESSED:
-			return 1
-
-
-var indicator_color:
-	get:
-		return get_target_indicator_color()
-
-func get_target_indicator_color(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_indicator_color(target_container_state)
-
-func _get_target_indicator_color(target_container_state):
-	return focused_indicator_color
-
-
-var indicator_thickness:
-	get:
-		return get_target_indicator_thickness()
-
-func get_target_indicator_thickness(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_indicator_thickness(target_container_state)
-
-func _get_target_indicator_thickness(target_container_state):
-	return focused_indicator_thickness
-
-
-var indicator_offset:
-	get:
-		return get_target_indicator_offset()
-
-func get_target_indicator_offset(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_indicator_offset(target_container_state)
-
-func _get_target_indicator_offset(target_container_state):
-	return focused_indicator_offset
-
-
-var state_layer_color:
-	get:
-		return get_target_state_layer_color()
-
-func get_target_state_layer_color(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_state_layer_color(target_container_state)
-
-func _get_target_state_layer_color(target_container_state):
-	match target_container_state:
-		ContainerState.ENABLED:
-			return Color(0,0,0,0)
-		ContainerState.DISABLED:
-			return Color(0,0,0,0)
-		ContainerState.HOVERED:
-			return hovered_state_layer_color
-		ContainerState.FOCUSED:
-			return focused_state_layer_color
-		ContainerState.PRESSED:
-			return pressed_state_layer_color
-
-
-var state_layer_opacity:
-	get:
-		return get_target_state_layer_opacity()
-
-func get_target_state_layer_opacity(target_container_state=-1):
-	if target_container_state == -1:
-		target_container_state = container_state
-	return _get_target_state_layer_opacity(target_container_state)
-
-func _get_target_state_layer_opacity(target_container_state):
-	match target_container_state:
-		ContainerState.ENABLED:
-			return 0
-		ContainerState.DISABLED:
-			return 0
-		ContainerState.HOVERED:
-			return hovered_state_layer_opacity
-		ContainerState.FOCUSED:
-			return focused_state_layer_opacity
-		ContainerState.PRESSED:
-			return pressed_state_layer_opacity
+@tool
+extends BaseComponent
+
+func get_state_map_data():
+	return child_state_map_data
+
+## 颜色角色其实跟状态有关，不同状态可能使用不同的颜色角色。但是一个控件中可能包含多个子内容需要调整颜色
+@export var child_state_map_data = {
+	UIDesignConstants.State.ENABLED:{
+		"ContainerShape":UIDesignConstants.ShapeToken.FULLY_ROUNDED,
+		"ContainerHeight":40,
+		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVERL_1,
+		"ContainerShadowColor":UIDesignConstants.Role.SHADOW,
+		"ContainerColor":UIDesignConstants.Role.PRIMARY,
 		
+		"LabelStyle":UIDesignConstants.LabelToken.LABEL_LARGE,
+		
+		"LabelColor":UIDesignConstants.Role.ON_PRIMARY,
+		
+		"IconSize":18,
+		"IconColor":UIDesignConstants.Role.ON_PRIMARY,
+	},
+	UIDesignConstants.State.DISABLED:{
+		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVERL_0,
+		"ContainerColor":UIDesignConstants.Role.ON_SURFACE,
+		"ContainerOpacity":0.12,
+		
+		"LabelColor":UIDesignConstants.Role.ON_SURFACE,
+		"LabelOpacity":0.38,
+		
+		"IconColor":UIDesignConstants.Role.ON_SURFACE,
+		"IconOpacity":0.38,
+		
+	},
+	UIDesignConstants.State.HOVER:{
+		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVERL_2,
+		
+		"LabelColor":UIDesignConstants.Role.ON_PRIMARY,
+
+		"StateLayerColor":UIDesignConstants.Role.ON_PRIMARY,
+		"StateLayerOpacity":UIDesignConstants.hover_state_layer_opacity,
+		
+		"IconColor":UIDesignConstants.Role.ON_PRIMARY,
+	},
+	UIDesignConstants.State.FOCUSED:{
+		"FocusIndicatorColor":UIDesignConstants.Role.SECONDARY,
+		"FocusIndicatorThickness":UIDesignConstants.focus_indicator_thickness,
+		"FocusIndicatorOffset":UIDesignConstants.focus_indicator_outer_offset,
+		
+		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVERL_1,
+
+		"LabelColor":UIDesignConstants.Role.ON_PRIMARY,
+
+		"StateLayerColor":UIDesignConstants.Role.ON_PRIMARY,
+		"StateLayerOpacity":UIDesignConstants.focus_state_layer_opacity,
+		
+		"IconColor":UIDesignConstants.Role.ON_PRIMARY,
+	},
+	UIDesignConstants.State.ACTIVATED:{},
+	UIDesignConstants.State.PRESSED:{
+		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVERL_1,
+		
+		"LabelColor":UIDesignConstants.Role.ON_PRIMARY,
+
+		"StateLayerColor":UIDesignConstants.Role.ON_PRIMARY,
+		"StateLayerOpacity":UIDesignConstants.pressed_state_layer_opacity,
+		
+		"IconColor":UIDesignConstants.Role.ON_PRIMARY,
+	},
+	UIDesignConstants.State.DRAGGED:{},
+}
+
+@export var icon_name = "":
+	set(val):
+		icon_name = val
+		if %Icon:
+			%Icon.icon_name = icon_name
+			%Icon.visible = (icon_name!="")
+	get:
+		return icon_name
+
+
+func init_state():
+	var target_icon_size_state_data = get_state_data("IconSize")
+	if target_icon_size_state_data:
+		%Icon.icon_size = target_icon_size_state_data
+	
+	icon_name = icon_name
+	
+	var target_label_token_state_data = get_state_data("LabelStyle")
+	label_token = target_label_token_state_data
+	var token = UIDesignConstants.label_token_map[label_token]
+	if token:
+		%Label.set("theme_override_fonts/font",token)
+	else:
+		%Label.set("theme_override_fonts/font",custom_font)
+		
+	%Label.set("theme_override_font_sizes/font_size",font_size)
+	
+	%Label.set("theme_override_constants/line_spacing",font_height-font_size)
+	
+	super.init_state()
+
+
+var icon_color:UIDesignConstants.Role:
+	get:
+		return icon_color
+	set(val):
+		icon_color = val
+		update_color_flag = true
+
+var label_color:UIDesignConstants.Role:
+	get:
+		return label_color
+	set(val):
+		label_color = val
+		update_color_flag = true
+
+func update_state():
+	if update_state_flag == false:
+		return 
+	
+	var target_icon_color_state_data = get_state_data("IconColor")
+	
+	if target_icon_color_state_data:
+		icon_color = target_icon_color_state_data
+
+	var target_label_color_state_data = get_state_data("LabelColor")
+	
+	if target_label_color_state_data:
+		label_color = target_label_color_state_data
+
+	var target_label_opacity_state_data = get_state_data("LabelOpacity")
+	if target_label_opacity_state_data:
+		%Label.modulate.a = target_label_opacity_state_data
+	else:
+		%Label.modulate.a = 1
+
+	var target_icon_opacity_state_data = get_state_data("IconOpacity")
+	if target_icon_opacity_state_data:
+		%Icon.modulate.a = target_icon_opacity_state_data
+	else:
+		%Icon.modulate.a = 1
+
+	super.update_state()
+
+
+func update_color():
+	if update_color_flag == false:
+		return 
+	
+	var cur_color = get_role_color(icon_color)
+	%Icon.set("theme_override_colors/font_color",cur_color)
+
+	var cur_label_color = get_role_color(label_color)
+	%Label.set("theme_override_colors/font_color",cur_label_color)
+
+	super.update_color()
+
+
+@export var font_size: int:
+	set(val):
+		font_size = val
+	get:
+		return font_size
+
+@export var font_weight: int:
+	set(val):
+		font_weight = val
+		## TODO:
+	get:
+		return font_weight
+
+
+@export var font_weight_prominent: int:
+	set(val):
+		font_weight_prominent = val
+		## TODO:
+	get:
+		return font_weight_prominent
+
+@export var font_height: int:
+	set(val):
+		font_height = val
+		## TODO:
+	get:
+		return font_height
+
+@export var font_tracking: float:
+	set(val):
+		font_tracking = val
+		## TODO:
+	get:
+		return font_tracking
+
+
+@export var label_token: UIDesignConstants.LabelToken:
+	set(val):
+		label_token = val
+		var token = UIDesignConstants.label_token_map[label_token]
+		if token:
+			font_size = token.font_size
+			font_weight = token.font_weight
+			font_weight_prominent = token.font_weight_prominent
+			font_height = token.font_height
+			font_tracking = token.font_tracking
+	get:
+		return label_token
+		
+@export var custom_font: Font
+
+var update_label_text_flag = true
+@export var label_text: String:
+	set(val):
+		label_text = val
+		update_label_text_flag=true
+	get:
+		return label_text
+
+func _ready():
+	super._ready()
+
+func _process(delta):
+	super._process(delta)
+	update_label_text()
+
+func update_label_text():
+	if update_label_text_flag==false:
+		return 
+	%Label.text = label_text

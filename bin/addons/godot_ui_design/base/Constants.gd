@@ -388,3 +388,35 @@ var state_map_data = {
 	},
 	State.DRAGGED:{},
 }
+
+enum LabelToken { CUSTOM=0,
+				BODY_LARGE, BODY_MEDIUM, BODY_SMALL, 
+				DISPLAY_LARGE, DISPLAY_MEDIUM, DISPLAY_SMALL,
+				HEADLINE_LARGE, HEADLINE_MEDIUM, HEADLINE_SMALL,
+				LABEL_LARGE, LABEL_MEDIUM, LABEL_SMALL,
+				TITLE_LARGE, TITLE_MEDIUM, TITLE_SMALL,
+				}
+
+const label_token_map = {
+	LabelToken.CUSTOM:null,
+	
+	LabelToken.BODY_LARGE:preload("res://addons/godot_ui_design/font/body_large.tres"),
+	LabelToken.BODY_MEDIUM:preload("res://addons/godot_ui_design/font/body_medium.tres"),
+	LabelToken.BODY_SMALL:preload("res://addons/godot_ui_design/font/body_small.tres"),
+	
+	LabelToken.DISPLAY_LARGE:preload("res://addons/godot_ui_design/font/display_large.tres"),
+	LabelToken.DISPLAY_MEDIUM:preload("res://addons/godot_ui_design/font/display_medium.tres"),
+	LabelToken.DISPLAY_SMALL:preload("res://addons/godot_ui_design/font/display_small.tres"),
+	
+	LabelToken.HEADLINE_LARGE:preload("res://addons/godot_ui_design/font/headline_large.tres"),
+	LabelToken.HEADLINE_MEDIUM:preload("res://addons/godot_ui_design/font/headline_medium.tres"),
+	LabelToken.HEADLINE_SMALL:preload("res://addons/godot_ui_design/font/headline_small.tres"),
+	
+	LabelToken.LABEL_LARGE:preload("res://addons/godot_ui_design/font/label_large.tres"),
+	LabelToken.LABEL_MEDIUM:preload("res://addons/godot_ui_design/font/label_medium.tres"),
+	LabelToken.LABEL_SMALL:preload("res://addons/godot_ui_design/font/label_small.tres"),
+	
+	LabelToken.TITLE_LARGE:preload("res://addons/godot_ui_design/font/title_large.tres"),
+	LabelToken.TITLE_MEDIUM:preload("res://addons/godot_ui_design/font/title_medium.tres"),
+	LabelToken.TITLE_SMALL:preload("res://addons/godot_ui_design/font/title_small.tres"),
+}

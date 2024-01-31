@@ -1,5 +1,6 @@
+@tool
 extends PanelContainer
-
+class_name BaseComponent
 ######################### 形状相关代码 #########################
 var update_shape_flag = true
 
@@ -295,7 +296,7 @@ func get_role_color(cur_role):
 	return cur_color
 
 ## 颜色角色其实跟状态有关，不同状态可能使用不同的颜色角色。但是一个控件中可能包含多个子内容需要调整颜色
-@export var state_map_data = {
+var state_map_data = {
 	UIDesignConstants.State.ENABLED:{
 		"ContainerShape":UIDesignConstants.ShapeToken.FULLY_ROUNDED,
 		"ContainerHeight":40,
@@ -338,10 +339,14 @@ func get_role_color(cur_role):
 func get_state_data(data_name,cur_state=null):
 	if cur_state == null:
 		cur_state = state
-	if state_map_data[cur_state].has(data_name):
-		return state_map_data[cur_state][data_name]
-	return state_map_data[UIDesignConstants.State.ENABLED].get(data_name,null)
+		
+	var cur_state_map_data = get_state_map_data()
+	if cur_state_map_data[cur_state].has(data_name):
+		return cur_state_map_data[cur_state][data_name]
+	return cur_state_map_data[UIDesignConstants.State.ENABLED].get(data_name,null)
 
+func get_state_map_data():
+	return state_map_data
 
 func init_state():
 	var target_container_shape_state_data = get_state_data("ContainerShape")
@@ -382,6 +387,7 @@ func update_state():
 	var target_container_elevation_state_data = get_state_data("ContainerElevation")
 	var target_container_color_state_data = get_state_data("ContainerColor")
 	var target_container_opacity_state_data = get_state_data("ContainerOpacity")
+	printt("target_container_color_state_data",target_container_color_state_data)
 	container_color = target_container_color_state_data
 	elevation_level = target_container_elevation_state_data
 	
@@ -415,17 +421,12 @@ func update_color():
 		return 
 	
 	var cur_color = get_role_color(container_color)
-	
 	var shape_style = %Container.get("theme_override_styles/panel")
 	shape_style.bg_color = cur_color
 
 	var cur_state_layer_color = get_role_color(state_layer_color)
 	var state_layer_style = %StateLayer.get("theme_override_styles/panel")
-	shape_style.bg_color = cur_state_layer_color
-
-	#var cur_focus_indicator_color_color = get_role_color(focus_indicator_color)
-	#var focus_indicator_style = %FocusIndicator.get("theme_override_styles/panel")
-	#focus_indicator_style.border_color = cur_focus_indicator_color_color
+	state_layer_style.bg_color = cur_state_layer_color
 
 	update_color_flag = false
 
@@ -440,9 +441,10 @@ func init_node():
 	
 
 func init_styles():
-	var shape_style = %Container.get("theme_override_styles/panel").duplicate(true)
-	%Container.set("theme_override_styles/panel",shape_style)
-	%StateLayer.set("theme_override_styles/panel",shape_style)
+	var shape_style_1 = %Container.get("theme_override_styles/panel").duplicate(true)
+	%Container.set("theme_override_styles/panel",shape_style_1)
+	var shape_style_2 = %Container.get("theme_override_styles/panel").duplicate(true)
+	%StateLayer.set("theme_override_styles/panel",shape_style_2)
 	
 	var focus_indicator_style = %FocusIndicator.get("theme_override_styles/panel").duplicate(true)
 	%FocusIndicator.set("theme_override_styles/panel",focus_indicator_style)

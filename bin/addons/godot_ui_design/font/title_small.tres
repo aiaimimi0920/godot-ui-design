@@ -1,0 +1,15 @@
+[gd_resource type="FontVariation" script_class="BaseFont" load_steps=4 format=3 uid="uid://bgi18c07wtrny"]
+
+[ext_resource type="Script" path="res://addons/godot_ui_design/font/base_font.gd" id="1_3jwst"]
+[ext_resource type="FontFile" uid="uid://247i2wfruc05" path="res://addons/godot_ui_design/font/Roboto/Roboto-Regular.ttf" id="1_4anf0"]
+[ext_resource type="FontFile" uid="uid://b123cpgl1s5ql" path="res://addons/godot_ui_design/font/NotoSerifSC/NotoSerifSC-Regular.otf" id="2_dbxde"]
+
+[resource]
+fallbacks = Array[Font]([ExtResource("2_dbxde")])
+base_font = ExtResource("1_4anf0")
+script = ExtResource("1_3jwst")
+font_size = 14
+font_weight = 500
+font_weight_prominent = null
+font_height = 20
+font_tracking = 0.1

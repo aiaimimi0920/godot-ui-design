@@ -1,0 +1,102 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgay7kqaf1ttf"]
+
+[ext_resource type="PackedScene" uid="uid://b7r8bckebx7v4" path="res://addons/godot_ui_design/base/BaseComponent.tscn" id="1_mdfxy"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/buttons/ElevatedButton.gd" id="2_htc0c"]
+[ext_resource type="FontFile" uid="uid://07hdy6t2ed4l" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="3_ey7br"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="3_jvvyl"]
+
+[node name="ElevatedButton" instance=ExtResource("1_mdfxy")]
+offset_right = 67.0
+offset_bottom = 23.0
+script = ExtResource("2_htc0c")
+child_state_map_data = {
+0: {
+"ContainerColor": 11,
+"ContainerElevation": 1,
+"ContainerHeight": 40,
+"ContainerShadowColor": 22,
+"ContainerShape": 1,
+"IconColor": 0,
+"IconSize": 18,
+"LabelColor": 0,
+"LabelFont": -1,
+"LabelLineHeight": -1,
+"LabelSize": -1,
+"LabelStyle": -1,
+"LabelTracking": -1,
+"LabelWeight": -1
+},
+1: {
+"ContainerColor": 15,
+"ContainerElevation": 0,
+"ContainerOpacity": 0.12,
+"IconColor": 15,
+"IconOpacity": 0.38,
+"LabelColor": 15,
+"LabelOpacity": 0.38
+},
+2: {
+"ContainerElevation": 2,
+"IconColor": 0,
+"LabelColor": 0,
+"StateLayerColor": 0,
+"StateLayerOpacity": 0.08
+},
+3: {
+"ContainerElevation": 1,
+"FocusIndicatorColor": 1,
+"FocusIndicatorOffset": 2,
+"FocusIndicatorThickness": 3,
+"IconColor": 0,
+"LabelColor": 0,
+"StateLayerColor": 0,
+"StateLayerOpacity": 0.1
+},
+4: {},
+5: {
+"ContainerElevation": 1,
+"IconColor": 0,
+"LabelColor": 0,
+"StateLayerColor": 0,
+"StateLayerOpacity": 0.1
+},
+6: {}
+}
+icon_name = ""
+shape_style = 0
+shape_symmetry = 0
+shape_token = 0
+elevation_level = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="ContentNode/Content" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 24
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContentNode/Content/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Icon" type="Label" parent="ContentNode/Content/MarginContainer/HBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_ey7br")
+theme_override_font_sizes/font_size = 18
+text = "󰐕"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_jvvyl")
+icon_name = "plus"
+icon_size = 18
+
+[node name="MarginContainer" type="MarginContainer" parent="ContentNode/Content/MarginContainer/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+
+[node name="Label" type="Label" parent="ContentNode/Content/MarginContainer/HBoxContainer/MarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1

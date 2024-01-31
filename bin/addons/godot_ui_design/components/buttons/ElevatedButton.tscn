@@ -1,48 +1,203 @@
-[gd_scene load_steps=3 format=3 uid="uid://ck3svwuab8e3x"]
+[gd_scene load_steps=13 format=3 uid="uid://dgay7kqaf1ttf"]
 
-[ext_resource type="PackedScene" uid="uid://chogcnt44x25t" path="res://addons/godot_ui_design/base/BaseDesignNode.tscn" id="1_2n050"]
-[ext_resource type="Script" path="res://addons/godot_ui_design/components/buttons/ElevatedButton.gd" id="2_pa4u1"]
+[ext_resource type="PackedScene" uid="uid://b7r8bckebx7v4" path="res://addons/godot_ui_design/base/BaseComponent.tscn" id="1_mdfxy"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/buttons/ElevatedButton.gd" id="2_htc0c"]
+[ext_resource type="FontFile" uid="uid://07hdy6t2ed4l" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="3_ey7br"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="3_jvvyl"]
+[ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="5_eg7r4"]
 
-[node name="ElevatedButton" instance=ExtResource("1_2n050")]
-script = ExtResource("2_pa4u1")
-enable_container_shape = 7
-enable_container_height = 40.0
-enable_container_elevation = 1
-enable_container_shadow_color = 0
-enable_container_color = 0
-enable_container_surface_tint_layer_color = 0
-enable_label_font = 0
-enable_label_line_height = 0
-enable_label_size = 0
-enable_label_weight = 0
-enable_label_tracking = 0
-enable_label_style = 0
-enable_label_color = 0
-enable_icon_size = 18
-enable_icon_color = 0
-disabled_container_color = 0
-disabled_container_opacity = 0.12
-disabled_container_elevation = 0
-disabled_label_color = 0
-disabled_label_opacity = 0.38
-disabled_icon_color = 0
-disabled_icon_opacity = 0.38
-hovered_container_elevation = 2
-hovered_label_color = 0
-hovered_state_layer_color = 0
-hovered_state_layer_opacity = 0
-hovered_icon_color = 0
-focused_indicator_color = 0
-focused_indicator_thickness = 0
-focused_indicator_offset = 0
-focused_container_elevation = 1
-focused_label_color = 0
-focused_state_layer_color = 0
-focused_state_layer_opacity = 0
-focused_icon_color = 0
-pressed_container_elevation = 1
-pressed_label_color = 0
-pressed_state_layer_color = 0
-pressed_state_layer_opacity = 0
-pressed_icon_color = 0
-container_state = 0
+[sub_resource type="MCUSchemeContent" id="MCUSchemeContent_1h2eu"]
+source_color = Color(0.403922, 0.313726, 0.643137, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cnrkv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.2)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0whqi"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.14)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5g6x"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.12)
+shadow_size = 3
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4se3f"]
+bg_color = Color(0.501961, 0.411765, 0.74902, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r2y2w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oabqx"]
+bg_color = Color(0.737255, 0.470588, 0.870588, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.486275, 0.447059, 0.588235, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="ElevatedButton" instance=ExtResource("1_mdfxy")]
+custom_minimum_size = Vector2(0, 40)
+offset_right = 67.0
+offset_bottom = 40.0
+script = ExtResource("2_htc0c")
+child_state_map_data = {
+0: {
+"ContainerColor": 0,
+"ContainerElevation": 1,
+"ContainerHeight": 40,
+"ContainerShadowColor": 22,
+"ContainerShape": 1,
+"IconColor": 26,
+"IconSize": 18,
+"LabelColor": 26,
+"LabelStyle": 10
+},
+1: {
+"ContainerColor": 15,
+"ContainerElevation": 0,
+"ContainerOpacity": 0.12,
+"IconColor": 15,
+"IconOpacity": 0.38,
+"LabelColor": 15,
+"LabelOpacity": 0.38
+},
+2: {
+"ContainerElevation": 2,
+"IconColor": 26,
+"LabelColor": 26,
+"StateLayerColor": 26,
+"StateLayerOpacity": 0.08
+},
+3: {
+"ContainerElevation": 1,
+"FocusIndicatorColor": 1,
+"FocusIndicatorOffset": 2,
+"FocusIndicatorThickness": 3,
+"IconColor": 26,
+"LabelColor": 26,
+"StateLayerColor": 26,
+"StateLayerOpacity": 0.1
+},
+4: {},
+5: {
+"ContainerElevation": 1,
+"IconColor": 26,
+"LabelColor": 26,
+"StateLayerColor": 26,
+"StateLayerOpacity": 0.1
+},
+6: {}
+}
+icon_name = "alert"
+font_size = 14
+font_weight = 500
+font_weight_prominent = 700
+font_height = 20
+font_tracking = 0.1
+label_token = 10
+custom_font = null
+label_text = "hello"
+shape_symmetry = 1
+margin_size = 1024
+top_left = 1024
+top_right = 1024
+bottom_right = 1024
+bottom_left = 1024
+elevation_level = 1
+scheme = SubResource("MCUSchemeContent_1h2eu")
+
+[node name="UmbraShadowMargin" parent="ShadowNode" index="0"]
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="UmbraShadow" parent="ShadowNode/UmbraShadowMargin" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_cnrkv")
+
+[node name="PenumbraShadow" parent="ShadowNode/PenumbraShadowMargin" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_0whqi")
+
+[node name="AmbientShadow" parent="ShadowNode/AmbientShadowMargin" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_y5g6x")
+
+[node name="Container" parent="ContainerNode" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_4se3f")
+
+[node name="StateLayer" parent="StateLayerNode/MarginContainer" index="0"]
+modulate = Color(1, 1, 1, 0)
+theme_override_styles/panel = SubResource("StyleBoxFlat_r2y2w")
+
+[node name="MarginContainer" type="MarginContainer" parent="ContentNode/Content" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 24
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContentNode/Content/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Icon" type="Label" parent="ContentNode/Content/MarginContainer/HBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_ey7br")
+theme_override_font_sizes/font_size = 18
+text = "󰀦"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_jvvyl")
+icon_name = "alert"
+icon_size = 18
+
+[node name="MarginContainer" type="MarginContainer" parent="ContentNode/Content/MarginContainer/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+
+[node name="Label" type="Label" parent="ContentNode/Content/MarginContainer/HBoxContainer/MarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_eg7r4")
+theme_override_font_sizes/font_size = 14
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FocusIndicator" parent="FocusIndicatorNode" index="0"]
+visible = false
+theme_override_styles/panel = SubResource("StyleBoxFlat_oabqx")
