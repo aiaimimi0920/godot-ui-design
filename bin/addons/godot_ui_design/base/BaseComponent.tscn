@@ -7,7 +7,7 @@
 [sub_resource type="MCUSchemeContent" id="MCUSchemeContent_cvbvs"]
 source_color = Color(0.403922, 0.313726, 0.643137, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bxphc"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmkv7"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 border_blend = true
@@ -19,7 +19,7 @@ shadow_color = Color(0, 0, 0, 0.2)
 shadow_size = 1
 shadow_offset = Vector2(0, 2)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2erqd"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imcfk"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 border_blend = true
@@ -31,7 +31,7 @@ shadow_color = Color(0, 0, 0, 0.14)
 shadow_size = 1
 shadow_offset = Vector2(0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o45uo"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj41c"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 border_color = Color(0.8, 0.8, 0.8, 0)
 border_blend = true
@@ -43,21 +43,25 @@ shadow_color = Color(0, 0, 0, 0.12)
 shadow_size = 3
 shadow_offset = Vector2(0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8kscr"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xc7q6"]
 bg_color = Color(0.972549, 0.94902, 0.980392, 1)
 corner_radius_top_left = 1024
 corner_radius_top_right = 1024
 corner_radius_bottom_right = 1024
 corner_radius_bottom_left = 1024
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vw7im"]
-bg_color = Color(0.501961, 0.411765, 0.74902, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jgb7"]
+bg_color = Color(0.972549, 0.94902, 0.980392, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hlt8t"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4m0yn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w4fuu"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgqhb"]
 bg_color = Color(0.737255, 0.470588, 0.870588, 1)
 draw_center = false
 border_width_left = 3
@@ -112,7 +116,7 @@ theme_override_constants/margin_bottom = 1
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_bxphc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vmkv7")
 
 [node name="PenumbraShadowMargin" type="MarginContainer" parent="ShadowNode"]
 unique_name_in_owner = true
@@ -134,7 +138,7 @@ theme_override_constants/margin_bottom = 0
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_2erqd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_imcfk")
 
 [node name="AmbientShadowMargin" type="MarginContainer" parent="ShadowNode"]
 unique_name_in_owner = true
@@ -156,7 +160,7 @@ theme_override_constants/margin_bottom = 0
 unique_name_in_owner = true
 layout_mode = 2
 mouse_filter = 2
-theme_override_styles/normal = SubResource("StyleBoxFlat_o45uo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fj41c")
 
 [node name="ContainerNode" type="Control" parent="."]
 layout_mode = 2
@@ -171,7 +175,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8kscr")
+theme_override_styles/panel = SubResource("StyleBoxFlat_xc7q6")
 
 [node name="StateLayerNode" type="Control" parent="."]
 layout_mode = 2
@@ -185,17 +189,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_constants/margin_left = 4
-theme_override_constants/margin_top = 4
-theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
 
 [node name="StateLayer" type="PanelContainer" parent="StateLayerNode/MarginContainer"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_vw7im")
+theme_override_styles/panel = SubResource("StyleBoxFlat_2jgb7")
 
 [node name="ContentNode" type="PanelContainer" parent="."]
 layout_mode = 2
@@ -222,7 +222,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_w4fuu")
+theme_override_styles/panel = SubResource("StyleBoxFlat_rgqhb")
 
 [connection signal="focus_entered" from="." to="." method="_on_focus_entered"]
 [connection signal="focus_exited" from="." to="." method="_on_focus_exited"]

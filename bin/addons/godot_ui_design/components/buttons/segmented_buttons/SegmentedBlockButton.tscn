@@ -1,0 +1,225 @@
+[gd_scene load_steps=12 format=3 uid="uid://begib386pej3n"]
+
+[ext_resource type="PackedScene" uid="uid://b7r8bckebx7v4" path="res://addons/godot_ui_design/base/BaseComponent.tscn" id="1_xun13"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/buttons/segmented_buttons/SegmentedBlockButton.gd" id="2_1g8sn"]
+[ext_resource type="FontFile" uid="uid://07hdy6t2ed4l" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="3_prjwf"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="4_prm5p"]
+[ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="5_bljfo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r34du"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.2)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ei5ob"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.14)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d1ol5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.12)
+shadow_size = 3
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hagkc"]
+bg_color = Color(0.501961, 0.411765, 0.74902, 1)
+draw_center = false
+border_color = Color(0.501961, 0.411765, 0.74902, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkow6"]
+bg_color = Color(0.501961, 0.411765, 0.74902, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmqd4"]
+bg_color = Color(0.737255, 0.470588, 0.870588, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.486275, 0.447059, 0.588235, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="SegmentedBlockButton" instance=ExtResource("1_xun13")]
+offset_right = 96.0
+script = ExtResource("2_1g8sn")
+child_state_map_data = {
+0: {
+"ContainerColor": 32,
+"ContainerElevation": 0,
+"ContainerHeight": 40,
+"ContainerShadowColor": 22,
+"ContainerShape": 1,
+"IconSize": 18,
+"LabelStyle": 10,
+"OutlineColor": 20,
+"OutlineOpacity": 1.0,
+"OutlineWidth": 1,
+"SelectedIconColor": 25,
+"SelectedLabelColor": 25,
+"UnselectedIconColor": 25,
+"UnselectedLabelColor": 25
+},
+1: {
+"ContainerColor": 15,
+"ContainerElevation": 0,
+"ContainerOpacity": 0.12,
+"IconOpacity": 0.38,
+"LabelOpacity": 0.38,
+"OutlineColor": 15,
+"OutlineOpacity": 0.12,
+"SelectedIconColor": 25,
+"SelectedLabelColor": 25,
+"UnselectedIconColor": 25,
+"UnselectedLabelColor": 25
+},
+2: {
+"OutlineColor": 20,
+"SelectedIconColor": 25,
+"SelectedLabelColor": 25,
+"SelectedStateLayerColor": 25,
+"StateLayerOpacity": 0.08,
+"UnselectedIconColor": 25,
+"UnselectedLabelColor": 25,
+"UnselectedStateLayerColor": 25
+},
+3: {
+"FocusIndicatorColor": 30,
+"FocusIndicatorOffset": 2,
+"FocusIndicatorThickness": 3,
+"OutlineColor": 25,
+"SelectedIconColor": 25,
+"SelectedLabelColor": 25,
+"SelectedStateLayerColor": 25,
+"StateLayerOpacity": 0.1,
+"UnselectedIconColor": 25,
+"UnselectedLabelColor": 25,
+"UnselectedStateLayerColor": 25
+},
+4: {},
+5: {
+"OutlineColor": 20,
+"SelectedIconColor": 25,
+"SelectedLabelColor": 25,
+"SelectedStateLayerColor": 25,
+"StateLayerOpacity": 0.1,
+"UnselectedIconColor": 25,
+"UnselectedLabelColor": 25,
+"UnselectedStateLayerColor": 25
+},
+6: {}
+}
+icon_name = "alert"
+font_size = 14
+font_weight = 500
+font_weight_prominent = 700
+font_height = 20
+font_tracking = 0.1
+label_token = 10
+custom_font = null
+label_text = "hello"
+scheme = null
+
+[node name="UmbraShadow" parent="ShadowNode/UmbraShadowMargin" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_r34du")
+
+[node name="PenumbraShadow" parent="ShadowNode/PenumbraShadowMargin" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_ei5ob")
+
+[node name="AmbientShadow" parent="ShadowNode/AmbientShadowMargin" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_d1ol5")
+
+[node name="Container" parent="ContainerNode" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_hagkc")
+
+[node name="StateLayer" parent="StateLayerNode/MarginContainer" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_xkow6")
+
+[node name="MarginContainer" type="MarginContainer" parent="ContentNode/Content" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 24
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContentNode/Content/MarginContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="SelectedIcon" type="Label" parent="ContentNode/Content/MarginContainer/HBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_prjwf")
+theme_override_font_sizes/font_size = 18
+text = "󰄬"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_prm5p")
+icon_name = "check"
+icon_size = 18
+
+[node name="Icon" type="Label" parent="ContentNode/Content/MarginContainer/HBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_prjwf")
+theme_override_font_sizes/font_size = 18
+text = "󰀦"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_prm5p")
+icon_name = "alert"
+icon_size = 18
+
+[node name="MarginContainer" type="MarginContainer" parent="ContentNode/Content/MarginContainer/HBoxContainer" index="2"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+
+[node name="Label" type="Label" parent="ContentNode/Content/MarginContainer/HBoxContainer/MarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_bljfo")
+theme_override_font_sizes/font_size = 14
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FocusIndicator" parent="FocusIndicatorNode" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_kmqd4")

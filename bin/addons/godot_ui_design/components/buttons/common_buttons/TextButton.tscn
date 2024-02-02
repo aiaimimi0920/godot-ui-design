@@ -1,0 +1,178 @@
+[gd_scene load_steps=12 format=3 uid="uid://dl2giu5j3e8vj"]
+
+[ext_resource type="PackedScene" uid="uid://b7r8bckebx7v4" path="res://addons/godot_ui_design/base/BaseComponent.tscn" id="1_wjhix"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/buttons/common_buttons/TextButton.gd" id="2_oeb0b"]
+[ext_resource type="FontFile" uid="uid://07hdy6t2ed4l" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="3_os0wg"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="4_50unm"]
+[ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="5_b1clm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p6lbq"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.2)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vedf0"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.14)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rm6c8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.12)
+shadow_size = 3
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4jsc"]
+bg_color = Color(0.501961, 0.411765, 0.74902, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qesq8"]
+bg_color = Color(0.501961, 0.411765, 0.74902, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4fug"]
+bg_color = Color(0.737255, 0.470588, 0.870588, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.486275, 0.447059, 0.588235, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="TextButton" instance=ExtResource("1_wjhix")]
+offset_right = 96.0
+script = ExtResource("2_oeb0b")
+child_state_map_data = {
+0: {
+"ContainerColor": 32,
+"ContainerElevation": 0,
+"ContainerHeight": 40,
+"ContainerOpacity": 0,
+"ContainerShadowColor": 22,
+"ContainerShape": 1,
+"IconColor": 25,
+"IconSize": 18,
+"LabelColor": 25,
+"LabelStyle": 10
+},
+1: {
+"IconColor": 15,
+"IconOpacity": 0.38,
+"LabelColor": 15,
+"LabelOpacity": 0.38
+},
+2: {
+"IconColor": 25,
+"LabelColor": 25,
+"StateLayerColor": 25,
+"StateLayerOpacity": 0.08
+},
+3: {
+"FocusIndicatorColor": 30,
+"FocusIndicatorOffset": 2,
+"FocusIndicatorThickness": 3,
+"IconColor": 25,
+"LabelColor": 25,
+"StateLayerColor": 25,
+"StateLayerOpacity": 0.1
+},
+4: {},
+5: {
+"IconColor": 25,
+"LabelColor": 25,
+"StateLayerColor": 25,
+"StateLayerOpacity": 0.1
+},
+6: {}
+}
+icon_name = "alert"
+font_size = 14
+font_weight = 500
+font_weight_prominent = 700
+font_height = 20
+font_tracking = 0.1
+label_token = 10
+custom_font = null
+label_text = "hello"
+scheme = null
+
+[node name="UmbraShadow" parent="ShadowNode/UmbraShadowMargin" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_p6lbq")
+
+[node name="PenumbraShadow" parent="ShadowNode/PenumbraShadowMargin" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_vedf0")
+
+[node name="AmbientShadow" parent="ShadowNode/AmbientShadowMargin" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_rm6c8")
+
+[node name="Container" parent="ContainerNode" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_v4jsc")
+
+[node name="StateLayer" parent="StateLayerNode/MarginContainer" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_qesq8")
+
+[node name="MarginContainer" type="MarginContainer" parent="ContentNode/Content" index="0"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContentNode/Content/MarginContainer" index="0"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Icon" type="Label" parent="ContentNode/Content/MarginContainer/HBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_os0wg")
+theme_override_font_sizes/font_size = 18
+text = "󰀦"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_50unm")
+icon_name = "alert"
+icon_size = 18
+
+[node name="Label" type="Label" parent="ContentNode/Content/MarginContainer/HBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_b1clm")
+theme_override_font_sizes/font_size = 14
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FocusIndicator" parent="FocusIndicatorNode" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_f4fug")

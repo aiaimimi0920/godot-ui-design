@@ -1,4 +1,3 @@
-@tool
 extends PanelContainer
 class_name BaseComponent
 ######################### 形状相关代码 #########################
@@ -141,6 +140,14 @@ func update_shape():
 	shape_style.corner_radius_bottom_right = bottom_right
 	shape_style.corner_radius_bottom_left = bottom_left
 	shape_style.corner_detail = corner_detail
+	
+	var state_layer_style = %StateLayer.get("theme_override_styles/panel")
+	state_layer_style.corner_radius_top_left = top_left
+	state_layer_style.corner_radius_top_right = top_right
+	state_layer_style.corner_radius_bottom_right = bottom_right
+	state_layer_style.corner_radius_bottom_left = bottom_left
+	state_layer_style.corner_detail = corner_detail
+	
 	
 	for node in [%UmbraShadow, %PenumbraShadow, %AmbientShadow]:
 		var shadow_style = node.get("theme_override_styles/normal")
@@ -355,7 +362,10 @@ func init_state():
 	shape_token = target_container_shape_state_data
 	size.y = target_container_height_state_data
 	custom_minimum_size.y = target_container_height_state_data
-	shadow_color = get_role_color(target_container_shadow_color_state_data)
+	if target_container_shadow_color_state_data!=null:
+		shadow_color = get_role_color(target_container_shadow_color_state_data)
+	else:
+		shadow_color = Color.BLACK
 	
 	var target_focus_indicator_color_state_data = get_state_data("FocusIndicatorColor",UIDesignConstants.State.FOCUSED)
 	var target_focus_indicator_thickness_state_data = get_state_data("FocusIndicatorThickness",UIDesignConstants.State.FOCUSED)
@@ -387,10 +397,13 @@ func update_state():
 	var target_container_elevation_state_data = get_state_data("ContainerElevation")
 	var target_container_color_state_data = get_state_data("ContainerColor")
 	var target_container_opacity_state_data = get_state_data("ContainerOpacity")
-	container_color = target_container_color_state_data
-	elevation_level = target_container_elevation_state_data
+	if target_container_color_state_data!=null:
+		container_color = target_container_color_state_data
 	
-	if target_container_opacity_state_data:
+	if target_container_elevation_state_data!=null:
+		elevation_level = target_container_elevation_state_data
+	
+	if target_container_opacity_state_data!=null:
 		%Container.modulate.a = target_container_opacity_state_data
 	else:
 		%Container.modulate.a = 1
@@ -401,7 +414,7 @@ func update_state():
 		state_layer_color = target_state_layer_color_state_data
 	
 	var target_state_layer_opacity_state_data = get_state_data("StateLayerOpacity")
-	if target_state_layer_opacity_state_data:
+	if target_state_layer_opacity_state_data!=null:
 		%StateLayer.modulate.a = target_state_layer_opacity_state_data
 	else:
 		%StateLayer.modulate.a = 0
@@ -473,10 +486,14 @@ func enable():
 		state = UIDesignConstants.State.ENABLED
 		check_state()
 
+func _on_pressed():
+	pass
+
 func _on_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.get_button_index() == MOUSE_BUTTON_LEFT:
 			if event.is_pressed():
+				_on_pressed()
 				check_state()
 
 func _on_focus_entered():
@@ -520,6 +537,6 @@ func check_state():
 			state = UIDesignConstants.State.ENABLED
 	
 func check_mouse_position():
-	var cur_mouse_position = get_local_mouse_position()
-	return get_rect().has_point(cur_mouse_position)
+	var cur_mouse_position = get_global_mouse_position()
+	return get_global_rect().has_point(cur_mouse_position)
 	

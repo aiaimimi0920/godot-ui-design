@@ -1,0 +1,163 @@
+[gd_scene load_steps=11 format=3 uid="uid://bcyyovo8an2w1"]
+
+[ext_resource type="PackedScene" uid="uid://b7r8bckebx7v4" path="res://addons/godot_ui_design/base/BaseComponent.tscn" id="1_effr8"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/buttons/icon_buttons/FilledIconButton.gd" id="2_o4opt"]
+[ext_resource type="FontFile" uid="uid://07hdy6t2ed4l" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="3_8p5i3"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="4_xfl5s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83uv4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.2)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhc0q"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.14)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tf1x"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.12)
+shadow_size = 3
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwpae"]
+bg_color = Color(0.501961, 0.411765, 0.74902, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsyub"]
+bg_color = Color(0.501961, 0.411765, 0.74902, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cntsk"]
+bg_color = Color(0.737255, 0.470588, 0.870588, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.486275, 0.447059, 0.588235, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="FilledIconButton" instance=ExtResource("1_effr8")]
+offset_right = 52.0
+script = ExtResource("2_o4opt")
+child_state_map_data = {
+0: {
+"ContainerColor": 25,
+"ContainerElevation": 0,
+"ContainerHeight": 40,
+"ContainerShadowColor": 22,
+"ContainerShape": 1,
+"ContainerWidth": 40,
+"IconColor": 26,
+"IconSize": 24,
+"ToggleSelectedContainerColor": 25,
+"ToggleSelectedIconColor": 26,
+"ToggleUnselectedContainerColor": 14,
+"ToggleUnselectedIconColor": 25
+},
+1: {
+"ContainerColor": 15,
+"ContainerOpacity": 0.12,
+"IconColor": 15,
+"IconOpacity": 0.38
+},
+2: {
+"IconColor": 26,
+"StateLayerColor": 26,
+"StateLayerOpacity": 0.08,
+"ToggleSelectedIconColor": 26,
+"ToggleSelectedStateLayerColor": 26,
+"ToggleUnselectedIconColor": 25,
+"ToggleUnselectedStateLayerColor": 25
+},
+3: {
+"FocusIndicatorColor": 30,
+"FocusIndicatorOffset": 2,
+"FocusIndicatorThickness": 3,
+"IconColor": 26,
+"StateLayerColor": 26,
+"StateLayerOpacity": 0.1,
+"ToggleSelectedIconColor": 26,
+"ToggleSelectedStateLayerColor": 26,
+"ToggleUnselectedIconColor": 25,
+"ToggleUnselectedStateLayerColor": 25
+},
+4: {},
+5: {
+"IconColor": 26,
+"StateLayerColor": 26,
+"StateLayerOpacity": 0.1,
+"ToggleSelectedIconColor": 26,
+"ToggleSelectedStateLayerColor": 26,
+"ToggleUnselectedIconColor": 25,
+"ToggleUnselectedStateLayerColor": 25
+},
+6: {}
+}
+icon_name = "alert"
+toggled = false
+selected = false
+scheme = null
+
+[node name="UmbraShadow" parent="ShadowNode/UmbraShadowMargin" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_83uv4")
+
+[node name="PenumbraShadow" parent="ShadowNode/PenumbraShadowMargin" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_xhc0q")
+
+[node name="AmbientShadow" parent="ShadowNode/AmbientShadowMargin" index="0"]
+theme_override_styles/normal = SubResource("StyleBoxFlat_5tf1x")
+
+[node name="Container" parent="ContainerNode" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_dwpae")
+
+[node name="StateLayer" parent="StateLayerNode/MarginContainer" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_lsyub")
+
+[node name="Icon" type="Label" parent="ContentNode/Content" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_8p5i3")
+theme_override_font_sizes/font_size = 18
+text = "󰀦"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_xfl5s")
+icon_name = "alert"
+icon_size = 18
+
+[node name="FocusIndicator" parent="FocusIndicatorNode" index="0"]
+theme_override_styles/panel = SubResource("StyleBoxFlat_cntsk")

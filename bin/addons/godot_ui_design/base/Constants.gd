@@ -63,6 +63,7 @@ const func_map ={
 	Role.TERTIARY: "get_tertiary_palette_key_color",
 	Role.NEUTRAL: "get_neutral_palette_key_color",
 	Role.NEUTRAL_VARIANT: "get_neutral_variant_palette_key_color",
+	
 	Role.BACKGROUND: "get_background",
 	Role.ON_BACKGROUND: "get_on_background",
 	Role.SURFACE: "get_surface",
@@ -322,6 +323,7 @@ const hover_state_layer_opacity = 0.08
 const disabled_state_layer_opacity = 0.08
 const focus_state_layer_opacity = 0.10
 const pressed_state_layer_opacity = 0.10
+const dragged_state_layer_opacity = 0.16
 
 const focus_indicator_thickness = 3
 const focus_indicator_outer_offset = 2
@@ -420,3 +422,11 @@ const label_token_map = {
 	LabelToken.TITLE_MEDIUM:preload("res://addons/godot_ui_design/font/title_medium.tres"),
 	LabelToken.TITLE_SMALL:preload("res://addons/godot_ui_design/font/title_small.tres"),
 }
+
+enum FABToken { CUSTOM=0,
+				PRIMARY_SMALL, PRIMARY, PRIMARY_LARGE, 
+				BRANDED, BRANDED_LARGE, 
+				SECONDARY_SMALL, SECONDARY, SECONDARY_LARGE, 
+				SURFACE_SMALL, SURFACE, SURFACE_LARGE, 
+				TERTIARY_SMALL, TERTIARY, TERTIARY_LARGE, 
+				}
