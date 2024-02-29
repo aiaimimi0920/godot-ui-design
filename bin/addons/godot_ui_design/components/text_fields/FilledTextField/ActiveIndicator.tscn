@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://blhxpsop7syb8"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_ayoxo"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/text_fields/FilledTextField/ActiveIndicator.gd" id="2_umwe4"]
+
+[node name="ActiveIndicator" instance=ExtResource("1_ayoxo")]
+offset_right = 84.0
+script = ExtResource("2_umwe4")
+child_init_attr_data = {
+9: 112,
+10: 1,
+12: 22,
+13: 12
+}
+child_update_attr_data = {
+0: {
+11: 0.38,
+15: 15
+},
+1: {
+11: 1,
+14: 0,
+15: 17
+},
+2: {
+11: 1,
+15: 15
+},
+4: {
+11: 1,
+15: 25
+},
+8: {},
+16: {},
+32: {}
+}
+
+[node name="BaseComponent" parent="." index="0"]
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="StateLayer" parent="BaseComponent" index="1"]
+visible = false
+
+[node name="Content" parent="BaseComponent" index="2"]
+visible = false
+
+[node name="FocusIndicator" parent="BaseComponent" index="3"]
+visible = false

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1dqouefo6ijq"]
+
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/search/SearchView/SearchViewControl.gd" id="1_jodto"]
+[ext_resource type="PackedScene" uid="uid://q46ae24tx6n6" path="res://addons/godot_ui_design/components/search/SearchView/SearchView.tscn" id="2_ioavb"]
+
+[node name="SearchViewControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+script = ExtResource("1_jodto")
+
+[node name="SearchView" parent="." instance=ExtResource("2_ioavb")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="search_something" from="SearchView" to="." method="_on_search_view_search_something"]

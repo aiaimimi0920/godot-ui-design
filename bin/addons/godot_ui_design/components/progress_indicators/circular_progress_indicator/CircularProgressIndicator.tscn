@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqb54skiqqihx"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_kaff5"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/progress_indicators/circular_progress_indicator/CircularProgressIndicator.gd" id="2_0cg0e"]
+[ext_resource type="PackedScene" uid="uid://dsnufcbpmkrys" path="res://addons/godot_ui_design/components/progress_indicators/circular_progress_indicator/Track.tscn" id="3_hdtgt"]
+
+[node name="CircularProgressIndicator" instance=ExtResource("1_kaff5")]
+offset_right = 8.0
+offset_bottom = 27.0
+script = ExtResource("2_0cg0e")
+child_init_attr_data = {
+9: 48,
+10: 48,
+12: 22,
+13: 1,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {},
+1: {
+11: 0,
+14: 0,
+15: 32,
+33: 0,
+35: 25,
+50: 0,
+61: 1,
+63: 0
+},
+2: {
+33: 0.08
+},
+4: {
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+33: 0.1
+},
+32: {}
+}
+radius = 48
+ring_width = 4
+max_value = 100
+min_value = 0
+now_left_value = 0
+now_right_value = 0
+show_mode = 0
+
+[node name="Track2Polygon" type="Polygon2D" parent="BaseComponent/Content" index="0"]
+unique_name_in_owner = true
+clip_children = 1
+color = Color(1, 0, 1, 1)
+
+[node name="Track2" parent="BaseComponent/Content/Track2Polygon" index="0" instance=ExtResource("3_hdtgt")]
+unique_name_in_owner = true
+left_value = 0
+right_value = 0
+max_value = 100
+
+[node name="Track1Polygon" type="Polygon2D" parent="BaseComponent/Content" index="1"]
+unique_name_in_owner = true
+clip_children = 1
+color = Color(0, 0.862745, 0.219608, 1)
+
+[node name="Track1" parent="BaseComponent/Content/Track1Polygon" index="0" instance=ExtResource("3_hdtgt")]
+unique_name_in_owner = true
+left_value = 0
+right_value = 0
+max_value = 100
+metadata/_edit_use_anchors_ = true

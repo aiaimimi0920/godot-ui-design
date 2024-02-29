@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgnmckxnimcwb"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_pnswx"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/separator/HSeparator.gd" id="2_dxfi2"]
+
+[node name="HSeparator" instance=ExtResource("1_pnswx")]
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 0.0
+offset_bottom = 8.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+script = ExtResource("2_dxfi2")
+show_mode = 0
+child_init_attr_data = {
+10: 1,
+12: 22,
+13: 12,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {},
+1: {
+11: 1,
+14: 0,
+15: 32
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+
+[node name="BaseComponent" parent="." index="0"]
+layout_mode = 0
+offset_right = 0.0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="UmbraShadowMargin" parent="BaseComponent/Container" index="0"]
+visible = false
+
+[node name="PenumbraShadowMargin" parent="BaseComponent/Container" index="1"]
+visible = false
+
+[node name="AmbientShadowMargin" parent="BaseComponent/Container" index="2"]
+visible = false
+
+[node name="StateLayer" parent="BaseComponent" index="1"]
+visible = false
+
+[node name="Content" parent="BaseComponent" index="2"]
+visible = false
+
+[node name="FocusIndicator" parent="BaseComponent" index="3"]
+visible = false
+
+[connection signal="resized" from="." to="." method="_on_resized"]

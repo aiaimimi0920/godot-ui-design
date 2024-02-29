@@ -1,0 +1,163 @@
+[gd_scene load_steps=8 format=3 uid="uid://dixo4nmfm3pqu"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_7vdp2"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/tabs/SecondaryTabItem.gd" id="2_q6p0m"]
+[ext_resource type="FontFile" uid="uid://07hdy6t2ed4l" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="4_1lip3"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="5_fquvy"]
+[ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="5_tqqbd"]
+[ext_resource type="PackedScene" uid="uid://biqhbmikpd5gx" path="res://addons/godot_ui_design/components/badge/Badge.tscn" id="7_8oj3j"]
+[ext_resource type="PackedScene" uid="uid://j6lyuwxh37ry" path="res://addons/godot_ui_design/components/separator/HSeparatorControl.tscn" id="8_qadp2"]
+
+[node name="SecondaryTabItem" instance=ExtResource("1_7vdp2")]
+offset_right = 84.0
+size_flags_horizontal = 3
+toggle_mode = true
+script = ExtResource("2_q6p0m")
+item_text = "test"
+icon_name = ""
+badge_num = "3"
+child_init_attr_data = {
+0: 15,
+10: 48,
+12: 22,
+13: 12,
+28: 24,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {},
+1: {
+1: {
+"selected": 15,
+"unselected": 17
+},
+2: 1,
+11: 1,
+14: 0,
+15: 7,
+29: {
+"selected": 15,
+"unselected": 17
+},
+30: 1,
+33: 0,
+35: 12,
+50: 0,
+61: 1,
+63: 0
+},
+2: {
+1: 15,
+2: 1,
+29: 15,
+30: 1,
+33: 0.08,
+35: 15
+},
+4: {
+1: 15,
+2: 1,
+29: 15,
+30: 1,
+33: 0.1,
+35: 15,
+63: 1
+},
+8: {},
+16: {
+1: 15,
+2: 1,
+29: 15,
+30: 1,
+33: 0.1,
+35: 15
+},
+32: {}
+}
+
+[node name="BaseComponent" parent="." index="0"]
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="StateLayer" parent="BaseComponent" index="1"]
+visible = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BaseComponent/Content" index="0"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+
+[node name="Icon" type="Label" parent="BaseComponent/Content/HBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_1lip3")
+theme_override_font_sizes/font_size = 18
+text = "󰀦"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_fquvy")
+icon_name = "alert"
+icon_size = 18
+
+[node name="TextLabel" type="Label" parent="BaseComponent/Content/HBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_tqqbd")
+theme_override_font_sizes/font_size = 14
+text = "hello"
+vertical_alignment = 1
+
+[node name="Badge" parent="BaseComponent/Content/HBoxContainer" index="2" instance=ExtResource("7_8oj3j")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseComponent/Content" index="1"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = -1
+
+[node name="HSeparatorControl" parent="BaseComponent/Content/MarginContainer" index="0" instance=ExtResource("8_qadp2")]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="HSeparator" parent="BaseComponent/Content/MarginContainer/HSeparatorControl" index="0"]
+child_init_attr_data = {
+10: 2,
+12: 22,
+13: 12,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {},
+1: {
+11: 1,
+14: 0,
+15: 25
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+
+[node name="FocusIndicator" parent="BaseComponent" index="3"]
+visible = false
+
+[connection signal="resized" from="." to="." method="_on_resized"]
+
+[editable path="BaseComponent/Content/MarginContainer/HSeparatorControl"]

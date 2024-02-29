@@ -1,0 +1,100 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxcmmdk58o4ll"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_axwkc"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/carousel/CarouselItem.gd" id="2_ov4g5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_blbxq"]
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[node name="CarouselItem" instance=ExtResource("1_axwkc")]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("2_ov4g5")
+child_init_attr_data = {
+9: 40,
+10: 40,
+12: 22,
+13: 3,
+25: 1,
+27: 0,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {
+11: 0.38,
+14: 0,
+15: 7,
+24: 20,
+26: 0.12
+},
+1: {
+11: 1,
+14: 0,
+15: 7,
+24: 20,
+26: 1,
+33: 0,
+35: 14,
+50: 0,
+61: 1,
+63: 0,
+111: 1,
+126: 0
+},
+2: {
+14: 1,
+24: 20,
+33: 0.08,
+35: 15
+},
+4: {
+14: 0,
+24: 15,
+33: 0.1,
+35: 15,
+63: 1
+},
+8: {},
+16: {
+14: 0,
+24: 20,
+33: 0.1,
+35: 15
+},
+32: {}
+}
+item_heigth = 100
+no_item_width = 0
+small_item_width = 40
+medium_item_width = 60
+large_item_width = 120
+show_mode = 0
+
+[node name="BaseComponent" parent="." index="0"]
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Content" parent="BaseComponent" index="2"]
+clip_children = 2
+clip_contents = true
+theme_override_styles/panel = SubResource("StyleBoxFlat_blbxq")
+
+[node name="Control" type="Control" parent="BaseComponent/Content" index="0"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="BaseComponent/Content/Control" index="0"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

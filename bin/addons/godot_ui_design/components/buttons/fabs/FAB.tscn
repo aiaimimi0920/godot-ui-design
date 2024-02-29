@@ -1,635 +1,658 @@
-[gd_scene load_steps=11 format=3 uid="uid://3u52ksmtstwb"]
+[gd_scene load_steps=6 format=3 uid="uid://dqp470w5uskqm"]
 
-[ext_resource type="PackedScene" uid="uid://b7r8bckebx7v4" path="res://addons/godot_ui_design/base/BaseComponent.tscn" id="1_jcvta"]
-[ext_resource type="Script" path="res://addons/godot_ui_design/components/buttons/fabs/FAB.gd" id="2_pjrql"]
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_q0bj5"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/buttons/fabs/FAB.gd" id="2_33118"]
 [ext_resource type="FontFile" uid="uid://07hdy6t2ed4l" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="3_8at1s"]
 [ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="4_ayfsm"]
+[ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="5_vli2a"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cvhie"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_color = Color(0.8, 0.8, 0.8, 0)
-border_blend = true
-corner_radius_top_left = 1024
-corner_radius_top_right = 1024
-corner_radius_bottom_right = 1024
-corner_radius_bottom_left = 1024
-shadow_color = Color(0, 0, 0, 0.2)
-shadow_size = 1
-shadow_offset = Vector2(0, 2)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q10le"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_color = Color(0.8, 0.8, 0.8, 0)
-border_blend = true
-corner_radius_top_left = 1024
-corner_radius_top_right = 1024
-corner_radius_bottom_right = 1024
-corner_radius_bottom_left = 1024
-shadow_color = Color(0, 0, 0, 0.14)
-shadow_size = 1
-shadow_offset = Vector2(0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmr3s"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_color = Color(0.8, 0.8, 0.8, 0)
-border_blend = true
-corner_radius_top_left = 1024
-corner_radius_top_right = 1024
-corner_radius_bottom_right = 1024
-corner_radius_bottom_left = 1024
-shadow_color = Color(0, 0, 0, 0.12)
-shadow_size = 3
-shadow_offset = Vector2(0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6wno"]
-bg_color = Color(0.501961, 0.411765, 0.74902, 1)
-corner_radius_top_left = 1024
-corner_radius_top_right = 1024
-corner_radius_bottom_right = 1024
-corner_radius_bottom_left = 1024
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7nnp0"]
-bg_color = Color(0.501961, 0.411765, 0.74902, 1)
-corner_radius_top_left = 1024
-corner_radius_top_right = 1024
-corner_radius_bottom_right = 1024
-corner_radius_bottom_left = 1024
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tmdf"]
-bg_color = Color(0.737255, 0.470588, 0.870588, 1)
-draw_center = false
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.486275, 0.447059, 0.588235, 1)
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-
-[node name="FAB" instance=ExtResource("1_jcvta")]
-offset_right = 58.0
-script = ExtResource("2_pjrql")
-fab_token = 3
-child_state_map_data_dict = {
+[node name="FAB" instance=ExtResource("1_q0bj5")]
+offset_right = 84.0
+script = ExtResource("2_33118")
+fab_token = 2
+new_child_init_attr_data = {
 0: {
-0: {
-"ContainerColor": 27,
-"ContainerElevation": 1,
-"ContainerHeight": 56,
-"ContainerShadowColor": 22,
-"ContainerShape": 7,
-"ContainerWidth": 56,
-"IconColor": 28,
-"IconSize": 24
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"IconColor": 28,
-"StateLayerColor": 28,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 28,
-"StateLayerColor": 28,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"IconColor": 28,
-"StateLayerColor": 28,
-"StateLayerOpacity": 0.1
-},
-6: {}
+9: 56,
+10: 56,
+12: 22,
+13: 7,
+28: 24,
+62: 3,
+64: 2
 },
 1: {
-0: {
-"ContainerColor": 27,
-"ContainerElevation": 1,
-"ContainerHeight": 40,
-"ContainerShadowColor": 22,
-"ContainerShape": 8,
-"ContainerWidth": 40,
-"IconColor": 28,
-"IconSize": 24
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"IconColor": 28,
-"StateLayerColor": 28,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 28,
-"StateLayerColor": 28,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"IconColor": 28,
-"StateLayerColor": 28,
-"StateLayerOpacity": 0.1
-},
-6: {}
+9: 40,
+10: 40,
+12: 22,
+13: 8,
+28: 24,
+62: 3,
+64: 2
 },
 2: {
-0: {
-"ContainerColor": 27,
-"ContainerElevation": 1,
-"ContainerHeight": 56,
-"ContainerShadowColor": 22,
-"ContainerShape": 7,
-"ContainerWidth": 56,
-"IconColor": 28,
-"IconSize": 24
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"IconColor": 28,
-"StateLayerColor": 28,
-"StateLayerOpacity": 0.08
+9: 56,
+10: 56,
+12: 22,
+13: 7,
+28: 24,
+62: 3,
+64: 2
 },
 3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 28,
-"StateLayerColor": 28,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"IconColor": 28,
-"StateLayerColor": 28,
-"StateLayerOpacity": 0.1
-},
-6: {}
-},
-3: {
-0: {
-"ContainerColor": 27,
-"ContainerElevation": 1,
-"ContainerHeight": 96,
-"ContainerShadowColor": 22,
-"ContainerShape": 3,
-"ContainerWidth": 96,
-"IconColor": 28,
-"IconSize": 36
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"IconColor": 28,
-"StateLayerColor": 28,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 28,
-"StateLayerColor": 28,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"IconColor": 28,
-"StateLayerColor": 28,
-"StateLayerOpacity": 0.1
-},
-6: {}
+9: 96,
+10: 96,
+12: 22,
+13: 3,
+28: 36,
+62: 3,
+64: 2
 },
 4: {
-0: {
-"ContainerColor": 13,
-"ContainerElevation": 1,
-"ContainerHeight": 56,
-"ContainerShadowColor": 22,
-"ContainerShape": 7,
-"ContainerWidth": 56,
-"IconColor": 25,
-"IconSize": 36
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.1
-},
-6: {}
+9: 56,
+10: 56,
+12: 22,
+13: 7,
+28: 36,
+62: 3,
+64: 2
 },
 5: {
-0: {
-"ContainerColor": 13,
-"ContainerElevation": 1,
-"ContainerHeight": 96,
-"ContainerShadowColor": 22,
-"ContainerShape": 3,
-"ContainerWidth": 96,
-"IconColor": 31,
-"IconSize": 48
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.1
-},
-6: {}
+9: 96,
+10: 96,
+12: 22,
+13: 3,
+28: 48,
+62: 3,
+64: 2
 },
 6: {
-0: {
-"ContainerColor": 32,
-"ContainerElevation": 1,
-"ContainerHeight": 40,
-"ContainerShadowColor": 22,
-"ContainerShape": 8,
-"ContainerWidth": 40,
-"IconColor": 33,
-"IconSize": 24
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"IconColor": 33,
-"StateLayerColor": 33,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 33,
-"StateLayerColor": 33,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"IconColor": 33,
-"StateLayerColor": 33,
-"StateLayerOpacity": 0.1
-},
-6: {}
+9: 40,
+10: 40,
+12: 22,
+13: 8,
+28: 24,
+62: 3,
+64: 2
 },
 7: {
-0: {
-"ContainerColor": 32,
-"ContainerElevation": 1,
-"ContainerHeight": 56,
-"ContainerShadowColor": 22,
-"ContainerShape": 7,
-"ContainerWidth": 56,
-"IconColor": 33,
-"IconSize": 24
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"IconColor": 33,
-"StateLayerColor": 33,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 33,
-"StateLayerColor": 33,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"IconColor": 33,
-"StateLayerColor": 33,
-"StateLayerOpacity": 0.1
-},
-6: {}
+9: 56,
+10: 56,
+12: 22,
+13: 7,
+28: 24,
+62: 3,
+64: 2
 },
 8: {
-0: {
-"ContainerColor": 32,
-"ContainerElevation": 1,
-"ContainerHeight": 96,
-"ContainerShadowColor": 22,
-"ContainerShape": 3,
-"ContainerWidth": 96,
-"IconColor": 33,
-"IconSize": 24
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"IconColor": 33,
-"StateLayerColor": 33,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 33,
-"StateLayerColor": 33,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"IconColor": 33,
-"StateLayerColor": 33,
-"StateLayerOpacity": 0.1
-},
-6: {}
+9: 96,
+10: 96,
+12: 22,
+13: 3,
+28: 36,
+62: 3,
+64: 2
 },
 9: {
-0: {
-"ContainerColor": 13,
-"ContainerElevation": 1,
-"ContainerHeight": 40,
-"ContainerShadowColor": 22,
-"ContainerShape": 8,
-"ContainerWidth": 40,
-"IconColor": 25,
-"IconSize": 24
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"IconColor": 25,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 25,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"IconColor": 25,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.1
-},
-6: {}
+9: 40,
+10: 40,
+12: 22,
+13: 8,
+28: 24,
+62: 3,
+64: 2
 },
 10: {
-0: {
-"ContainerColor": 13,
-"ContainerElevation": 1,
-"ContainerHeight": 56,
-"ContainerShadowColor": 22,
-"ContainerShape": 7,
-"ContainerWidth": 56,
-"IconColor": 25,
-"IconSize": 24
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"IconColor": 25,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 25,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"IconColor": 25,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.1
-},
-6: {}
+9: 56,
+10: 56,
+12: 22,
+13: 7,
+28: 24,
+62: 3,
+64: 2
 },
 11: {
-0: {
-"ContainerColor": 13,
-"ContainerElevation": 1,
-"ContainerHeight": 96,
-"ContainerShadowColor": 22,
-"ContainerShape": 3,
-"ContainerWidth": 96,
-"IconColor": 25,
-"IconSize": 36
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"IconColor": 25,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 25,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"IconColor": 25,
-"StateLayerColor": 25,
-"StateLayerOpacity": 0.1
-},
-6: {}
+9: 96,
+10: 96,
+12: 22,
+13: 3,
+28: 36,
+62: 3,
+64: 2
 },
 12: {
-0: {
-"ContainerColor": 36,
-"ContainerElevation": 1,
-"ContainerHeight": 40,
-"ContainerShadowColor": 22,
-"ContainerShape": 8,
-"ContainerWidth": 40,
-"IconColor": 37,
-"IconSize": 24
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"IconColor": 37,
-"StateLayerColor": 37,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 37,
-"StateLayerColor": 37,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"IconColor": 37,
-"StateLayerColor": 37,
-"StateLayerOpacity": 0.1
-},
-6: {}
+9: 40,
+10: 40,
+12: 22,
+13: 8,
+28: 24,
+62: 3,
+64: 2
 },
 13: {
-0: {
-"ContainerColor": 36,
-"ContainerElevation": 1,
-"ContainerHeight": 56,
-"ContainerShadowColor": 22,
-"ContainerShape": 8,
-"ContainerWidth": 56,
-"IconColor": 37,
-"IconSize": 24
-},
-1: {},
-2: {
-"ContainerElevation": 2,
-"IconColor": 37,
-"StateLayerColor": 37,
-"StateLayerOpacity": 0.08
-},
-3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 37,
-"StateLayerColor": 37,
-"StateLayerOpacity": 0.1
-},
-4: {},
-5: {
-"ContainerElevation": 3,
-"IconColor": 37,
-"StateLayerColor": 37,
-"StateLayerOpacity": 0.1
-},
-6: {}
+9: 56,
+10: 56,
+12: 22,
+13: 7,
+28: 24,
+62: 3,
+64: 2
 },
 14: {
+9: 96,
+10: 96,
+12: 22,
+13: 3,
+28: 36,
+62: 3,
+64: 2
+}
+}
+new_child_update_attr_data = {
 0: {
-"ContainerColor": 36,
-"ContainerElevation": 1,
-"ContainerHeight": 96,
-"ContainerShadowColor": 22,
-"ContainerShape": 8,
-"ContainerWidth": 96,
-"IconColor": 37,
-"IconSize": 36
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 27,
+29: 28,
+30: 1,
+33: 0,
+35: 28,
+50: 0,
+61: 30,
+63: 0
 },
-1: {},
 2: {
-"ContainerElevation": 2,
-"IconColor": 37,
-"StateLayerColor": 37,
-"StateLayerOpacity": 0.08
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
+},
+1: {
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 27,
+29: 28,
+30: 1,
+33: 0,
+35: 28,
+50: 0,
+61: 30,
+63: 0
+},
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
+},
+2: {
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 27,
+29: 28,
+30: 1,
+33: 0,
+35: 28,
+50: 0,
+61: 30,
+63: 0
+},
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
 },
 3: {
-"ContainerElevation": 3,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 37,
-"StateLayerColor": 37,
-"StateLayerOpacity": 0.1
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 27,
+29: 28,
+30: 1,
+33: 0,
+35: 28,
+50: 0,
+61: 30,
+63: 0
 },
-4: {},
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
+},
+4: {
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 11,
+29: 25,
+30: 1,
+33: 0,
+35: 25,
+50: 0,
+61: 30,
+63: 0
+},
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
+},
 5: {
-"ContainerElevation": 3,
-"IconColor": 37,
-"StateLayerColor": 37,
-"StateLayerOpacity": 0.1
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 11,
+29: 25,
+30: 1,
+33: 0,
+35: 25,
+50: 0,
+61: 30,
+63: 0
 },
-6: {}
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
+},
+6: {
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 32,
+29: 33,
+30: 1,
+33: 0,
+35: 33,
+50: 0,
+61: 30,
+63: 0
+},
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
+},
+7: {
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 32,
+29: 33,
+30: 1,
+33: 0,
+35: 33,
+50: 0,
+61: 30,
+63: 0
+},
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
+},
+8: {
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 32,
+29: 33,
+30: 1,
+33: 0,
+35: 33,
+50: 0,
+61: 30,
+63: 0
+},
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
+},
+9: {
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 11,
+29: 25,
+30: 1,
+33: 0,
+35: 25,
+50: 0,
+61: 30,
+63: 0
+},
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
+},
+10: {
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 11,
+29: 25,
+30: 1,
+33: 0,
+35: 25,
+50: 0,
+61: 30,
+63: 0
+},
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
+},
+11: {
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 11,
+29: 25,
+30: 1,
+33: 0,
+35: 25,
+50: 0,
+61: 30,
+63: 0
+},
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
+},
+12: {
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 36,
+29: 37,
+30: 1,
+33: 0,
+35: 37,
+50: 0,
+61: 30,
+63: 0
+},
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
+},
+13: {
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 36,
+29: 37,
+30: 1,
+33: 0,
+35: 37,
+50: 0,
+61: 30,
+63: 0
+},
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
+},
+14: {
+0: {},
+1: {
+11: 1,
+14: 1,
+15: 36,
+29: 37,
+30: 1,
+33: 0,
+35: 37,
+50: 0,
+61: 30,
+63: 0
+},
+2: {
+14: 2,
+33: 0.08
+},
+4: {
+14: 1,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1
+},
+32: {}
 }
 }
+label_text = ""
 icon_name = "alert"
-scheme = null
+child_init_attr_data = {
+0: 10,
+10: 40,
+12: 22,
+13: 1,
+28: 18,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {
+1: 15,
+2: 0.38,
+29: 15,
+30: 0.38
+},
+1: {
+1: 25,
+2: 1,
+11: 0,
+14: 0,
+15: 32,
+29: 25,
+30: 1,
+33: 0,
+50: 0,
+61: 1,
+63: 0
+},
+2: {
+33: 0.08
+},
+4: {
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+33: 0.1
+},
+32: {}
+}
 
-[node name="UmbraShadow" parent="ShadowNode/UmbraShadowMargin" index="0"]
-theme_override_styles/normal = SubResource("StyleBoxFlat_cvhie")
-
-[node name="PenumbraShadow" parent="ShadowNode/PenumbraShadowMargin" index="0"]
-theme_override_styles/normal = SubResource("StyleBoxFlat_q10le")
-
-[node name="AmbientShadow" parent="ShadowNode/AmbientShadowMargin" index="0"]
-theme_override_styles/normal = SubResource("StyleBoxFlat_dmr3s")
-
-[node name="Container" parent="ContainerNode" index="0"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_i6wno")
-
-[node name="StateLayer" parent="StateLayerNode/MarginContainer" index="0"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_7nnp0")
-
-[node name="Icon" type="Label" parent="ContentNode/Content" index="0"]
-unique_name_in_owner = true
+[node name="HBoxContainer" type="HBoxContainer" parent="BaseComponent/Content" index="0"]
 layout_mode = 2
 size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Icon" type="Label" parent="BaseComponent/Content/HBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("3_8at1s")
 theme_override_font_sizes/font_size = 18
@@ -640,5 +663,13 @@ script = ExtResource("4_ayfsm")
 icon_name = "alert"
 icon_size = 18
 
-[node name="FocusIndicator" parent="FocusIndicatorNode" index="0"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_8tmdf")
+[node name="Label" type="Label" parent="BaseComponent/Content/HBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_vli2a")
+theme_override_font_sizes/font_size = 14
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1

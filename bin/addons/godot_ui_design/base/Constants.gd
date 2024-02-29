@@ -203,15 +203,15 @@ const margin_size_map = {
 	ShapeStyle.FULL:1024,
 }
 
-enum ElevationLevel { LEVERL_0=0, LEVERL_1, LEVERL_2, LEVERL_3, LEVERL_4, LEVERL_5}
+enum ElevationLevel { LEVEL_0=0, LEVEL_1, LEVEL_2, LEVEL_3, LEVEL_4, LEVEL_5}
 
 const elevation_level_map_dp_height={
-	ElevationLevel.LEVERL_0:0,
-	ElevationLevel.LEVERL_1:1,
-	ElevationLevel.LEVERL_2:3,
-	ElevationLevel.LEVERL_3:6,
-	ElevationLevel.LEVERL_4:8,
-	ElevationLevel.LEVERL_5:12,
+	ElevationLevel.LEVEL_0:0,
+	ElevationLevel.LEVEL_1:1,
+	ElevationLevel.LEVEL_2:3,
+	ElevationLevel.LEVEL_3:6,
+	ElevationLevel.LEVEL_4:8,
+	ElevationLevel.LEVEL_5:12,
 }
 
 const umbra_shadow_offset = {
@@ -307,12 +307,12 @@ const ambient_opacity = 0.12
 
 const opacity_array = [umbra_opacity, penumbra_opacity, ambient_opacity]
 
-enum State { ENABLED=0, DISABLED, HOVER, FOCUSED, ACTIVATED, PRESSED, DRAGGED }
+enum State { ENABLED=1, DISABLED=0, HOVERED=2, FOCUSED=4, ACTIVATED=8, PRESSED=16, DRAGGED=32 }
 
 const state_map_opacity = {
 	State.ENABLED:0,
 	State.DISABLED:0,
-	State.HOVER:0.08,
+	State.HOVERED:0.08,
 	State.FOCUSED:0.10,
 	State.ACTIVATED:0,
 	State.PRESSED:0.10,
@@ -333,7 +333,7 @@ var state_map_data = {
 	State.ENABLED:{
 		"ContainerShape":ShapeToken.FULLY_ROUNDED,
 		"ContainerHeight":40,
-		"ContainerElevation":ElevationLevel.LEVERL_1,
+		"ContainerElevation":ElevationLevel.LEVEL_1,
 		"ContainerShadowColor":Role.SHADOW,
 		"ContainerColor":Role.SURFACE_CONTAINER_LOW,
 		
@@ -343,7 +343,7 @@ var state_map_data = {
 		"IconColor":Role.PRIMARY,
 	},
 	State.DISABLED:{
-		"ContainerElevation":ElevationLevel.LEVERL_0,
+		"ContainerElevation":ElevationLevel.LEVEL_0,
 		"ContainerColor":Role.ON_SURFACE,
 		"ContainerOpacity":Role.ON_SURFACE,
 		
@@ -353,8 +353,8 @@ var state_map_data = {
 		"IconColor":Role.ON_SURFACE,
 		"IconOpacity":0.38,
 	},
-	State.HOVER:{
-		"ContainerElevation":ElevationLevel.LEVERL_2,
+	State.HOVERED:{
+		"ContainerElevation":ElevationLevel.LEVEL_2,
 
 		"LabelColor":Role.PRIMARY,
 		
@@ -368,7 +368,7 @@ var state_map_data = {
 		"FocusIndicatorThickness":focus_indicator_thickness,
 		"FocusIndicatorOffset":focus_indicator_outer_offset,
 		
-		"ContainerElevation":ElevationLevel.LEVERL_1,
+		"ContainerElevation":ElevationLevel.LEVEL_1,
 
 		"LabelColor":Role.PRIMARY,
 		
@@ -379,7 +379,7 @@ var state_map_data = {
 	},
 	State.ACTIVATED:{},
 	State.PRESSED:{
-		"ContainerElevation":ElevationLevel.LEVERL_1,
+		"ContainerElevation":ElevationLevel.LEVEL_1,
 
 		"LabelColor":Role.PRIMARY,
 		
@@ -430,3 +430,35 @@ enum FABToken { CUSTOM=0,
 				SURFACE_SMALL, SURFACE, SURFACE_LARGE, 
 				TERTIARY_SMALL, TERTIARY, TERTIARY_LARGE, 
 				}
+
+enum Attr { LABEL_TOKEN, LABEL_COLOR, LABEL_OPACITY, 
+			LABEL_FONT_SIZE,LABEL_FONT_WEIGHT,LABEL_FONT_WEIGHT_PROMINENT,
+			LABEL_FONT_HEIGHT,LABEL_FONT_TRACKING,LABEL_FONT,
+			
+			SHAPE_WIDTH,SHAPE_HEIGHT,SHAPE_OPACITY,
+			SHAPE_SHADOWCOLOR,SHAPE_TOKEN,SHAPE_ELEVATION,SHAPE_COLOR,
+			SHAPE_STYLE,SHAPE_SYMMETRY,SHAPE_FAMILY,
+			SHAPE_MARGIN_SIZE,SHAPE_TOP_LEFT,SHAPE_TOP_RIGHT,
+			SHAPE_BOTTOM_RIGHT,SHAPE_BOTTOM_LEFT,
+			SHAPE_OUTLINE_COLOR, SHAPE_OUTLINE_WIDTH, 
+			SHAPE_OUTLINE_OPACITY, SHAPE_OUTLINE_OFFSET,
+			
+			ICON_SIZE, ICON_COLOR, ICON_OPACITY,
+			
+			STATE_LAYER_WIDTH,STATE_LAYER_HEIGHT,STATE_LAYER_OPACITY,
+			STATE_LAYER_TOKEN,STATE_LAYER_COLOR,
+			STATE_LAYER_STYLE,STATE_LAYER_SYMMETRY,STATE_LAYER_FAMILY,
+			STATE_LAYER_MARGIN_SIZE,STATE_LAYER_TOP_LEFT,STATE_LAYER_TOP_RIGHT,
+			STATE_LAYER_BOTTOM_RIGHT,STATE_LAYER_BOTTOM_LEFT,
+			STATE_LAYER_OUTLINE_COLOR, STATE_LAYER_OUTLINE_WIDTH, 
+			STATE_LAYER_OUTLINE_OPACITY, STATE_LAYER_OUTLINE_OFFSET,
+			
+			FOCUS_INDICATOR_WIDTH,FOCUS_INDICATOR_HEIGHT,FOCUS_INDICATOR_OPACITY,
+			FOCUS_INDICATOR_TOKEN,FOCUS_INDICATOR_COLOR,
+			FOCUS_INDICATOR_STYLE,FOCUS_INDICATOR_SYMMETRY,FOCUS_INDICATOR_FAMILY,
+			FOCUS_INDICATOR_MARGIN_SIZE,FOCUS_INDICATOR_TOP_LEFT,FOCUS_INDICATOR_TOP_RIGHT,
+			FOCUS_INDICATOR_BOTTOM_RIGHT,FOCUS_INDICATOR_BOTTOM_LEFT,
+			FOCUS_INDICATOR_OUTLINE_COLOR, FOCUS_INDICATOR_OUTLINE_WIDTH, 
+			FOCUS_INDICATOR_OUTLINE_OPACITY, FOCUS_INDICATOR_OUTLINE_OFFSET,
+			}
+

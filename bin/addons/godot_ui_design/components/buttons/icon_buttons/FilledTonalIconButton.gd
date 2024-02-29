@@ -1,176 +1,88 @@
-extends BaseComponent
+extends "res://addons/godot_ui_design/components/buttons/BaseButtonComponent.gd"
 
-func get_state_map_data():
-	return child_state_map_data
+func trigger_init_shape():
+	super.trigger_init_shape()
+	_trigger_init_shape(%Container, {
+		UIDesignConstants.Attr.SHAPE_TOKEN:UIDesignConstants.Attr.SHAPE_TOKEN,
+		UIDesignConstants.Attr.SHAPE_HEIGHT:UIDesignConstants.Attr.SHAPE_HEIGHT,
+		UIDesignConstants.Attr.SHAPE_WIDTH:UIDesignConstants.Attr.SHAPE_WIDTH,
+		UIDesignConstants.Attr.SHAPE_SHADOWCOLOR:UIDesignConstants.Attr.SHAPE_SHADOWCOLOR,
+	})
 
-## 颜色角色其实跟状态有关，不同状态可能使用不同的颜色角色。但是一个控件中可能包含多个子内容需要调整颜色
-@export var child_state_map_data = {
-	UIDesignConstants.State.ENABLED:{
-		"ContainerShape":UIDesignConstants.ShapeToken.FULLY_ROUNDED,
-		"ContainerWidth":40,
-		"ContainerHeight":40,
-		
-		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVERL_0,
-		"ContainerShadowColor":UIDesignConstants.Role.SHADOW,
-		"ContainerColor":UIDesignConstants.Role.SECONDARY_CONTAINER,
-		
-		"ToggleUnselectedContainerColor":UIDesignConstants.Role.SURFACE_CONTAINER_HIGHEST,
-		"ToggleSelectedContainerColor":UIDesignConstants.Role.SECONDARY_CONTAINER,
-		
-		"IconSize":24,
-		"IconColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"ToggleUnselectedIconColor":UIDesignConstants.Role.ON_SURFACE_VARIANT,
-		"ToggleSelectedIconColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-	},
-	UIDesignConstants.State.DISABLED:{
-		"ContainerColor":UIDesignConstants.Role.ON_SURFACE,
-		"ContainerOpacity":0.12,
+func trigger_update_shape():
+	super.trigger_update_shape()
+	_trigger_update_shape(%StateLayer, {
+		UIDesignConstants.Attr.SHAPE_COLOR:UIDesignConstants.Attr.STATE_LAYER_COLOR,
+		UIDesignConstants.Attr.SHAPE_OPACITY:UIDesignConstants.Attr.STATE_LAYER_OPACITY,
+	})
 
-		"IconColor":UIDesignConstants.Role.ON_SURFACE,
-		"IconOpacity":0.38,
-		
-	},
-	UIDesignConstants.State.HOVER:{
-		"StateLayerOpacity":UIDesignConstants.hover_state_layer_opacity,
-		
-		"StateLayerColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"ToggleUnselectedStateLayerColor":UIDesignConstants.Role.ON_SURFACE_VARIANT,
-		"ToggleSelectedStateLayerColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"IconColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"ToggleUnselectedIconColor":UIDesignConstants.Role.ON_SURFACE_VARIANT,
-		"ToggleSelectedIconColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-	},
-	UIDesignConstants.State.FOCUSED:{
-		"FocusIndicatorColor":UIDesignConstants.Role.SECONDARY_COLOR,
-		"FocusIndicatorThickness":UIDesignConstants.focus_indicator_thickness,
-		"FocusIndicatorOffset":UIDesignConstants.focus_indicator_outer_offset,
-		
-		"StateLayerOpacity":UIDesignConstants.focus_state_layer_opacity,
-		
-		"StateLayerColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"ToggleUnselectedStateLayerColor":UIDesignConstants.Role.ON_SURFACE_VARIANT,
-		"ToggleSelectedStateLayerColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"IconColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"ToggleUnselectedIconColor":UIDesignConstants.Role.ON_SURFACE_VARIANT,
-		"ToggleSelectedIconColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-	},
-	UIDesignConstants.State.ACTIVATED:{},
-	UIDesignConstants.State.PRESSED:{
-		"StateLayerOpacity":UIDesignConstants.pressed_state_layer_opacity,
-		
-		"StateLayerColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"ToggleUnselectedStateLayerColor":UIDesignConstants.Role.ON_SURFACE_VARIANT,
-		"ToggleSelectedStateLayerColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"IconColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"ToggleUnselectedIconColor":UIDesignConstants.Role.ON_SURFACE_VARIANT,
-		"ToggleSelectedIconColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-	},
-	UIDesignConstants.State.DRAGGED:{
-	},
+
+@export var new_child_init_attr_data = {
+	UIDesignConstants.Attr.SHAPE_TOKEN:UIDesignConstants.ShapeToken.FULLY_ROUNDED,
+	UIDesignConstants.Attr.SHAPE_HEIGHT:40,
+	UIDesignConstants.Attr.SHAPE_WIDTH:40,
+	UIDesignConstants.Attr.SHAPE_SHADOWCOLOR:UIDesignConstants.Role.SHADOW,
+
+	UIDesignConstants.Attr.ICON_SIZE:24,
+	
+	UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_WIDTH:UIDesignConstants.focus_indicator_thickness,
+	UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_OFFSET:UIDesignConstants.focus_indicator_outer_offset,
 }
 
-@export var icon_name = "":
-	set(val):
-		icon_name = val
-		if is_inside_tree():
-			if %Icon:
-				%Icon.icon_name = icon_name
-				%Icon.visible = (icon_name!="")
-	get:
-		return icon_name
-
-
-func init_state():
-	var target_icon_size_state_data = get_state_data("IconSize")
-	if target_icon_size_state_data:
-		%Icon.icon_size = target_icon_size_state_data
+func get_init_attr_data():
+	return new_child_init_attr_data
 	
-	icon_name = icon_name
-	
-	super.init_state()
-	
-	var target_container_width_state_data = get_state_data("ContainerWidth")
-	size.x = target_container_width_state_data
-	custom_minimum_size.x = target_container_width_state_data
 
+@export var new_child_update_attr_data = {
+		UIDesignConstants.State.ENABLED:{				
+				UIDesignConstants.Attr.SHAPE_COLOR:{
+						"selected":UIDesignConstants.Role.SECONDARY_CONTAINER,
+						"unselected":UIDesignConstants.Role.SURFACE_CONTAINER_HIGHEST,
+					},
+				UIDesignConstants.Attr.SHAPE_OPACITY:1,
+				UIDesignConstants.Attr.SHAPE_ELEVATION:UIDesignConstants.ElevationLevel.LEVEL_0,
+				
+				UIDesignConstants.Attr.ICON_COLOR:{
+					"selected":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
+					"unselected":UIDesignConstants.Role.ON_SURFACE_VARIANT,
+				},
 
-var icon_color:UIDesignConstants.Role:
-	get:
-		return icon_color
-	set(val):
-		icon_color = val
-		update_color_flag = true
+				UIDesignConstants.Attr.ICON_OPACITY:1,
+				
+				UIDesignConstants.Attr.STATE_LAYER_OPACITY:0,
+				
+				UIDesignConstants.Attr.FOCUS_INDICATOR_OPACITY:0,
+				UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_COLOR:UIDesignConstants.Role.SECONDARY_COLOR,
+				UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_OPACITY:0,
+			
+				UIDesignConstants.Attr.STATE_LAYER_COLOR:{
+					"selected":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
+					"unselected":UIDesignConstants.Role.ON_SURFACE_VARIANT,
+				},
+			},
+		UIDesignConstants.State.DISABLED:{
+				UIDesignConstants.Attr.SHAPE_COLOR:UIDesignConstants.Role.ON_SURFACE,
+				UIDesignConstants.Attr.SHAPE_OPACITY:0.12,
+				
+				UIDesignConstants.Attr.ICON_COLOR:UIDesignConstants.Role.ON_SURFACE,
+				UIDesignConstants.Attr.ICON_OPACITY:0.38,
+			},
+		UIDesignConstants.State.HOVERED:{
+				UIDesignConstants.Attr.STATE_LAYER_OPACITY:UIDesignConstants.hover_state_layer_opacity,
+			},
+		UIDesignConstants.State.FOCUSED:{
+				UIDesignConstants.Attr.STATE_LAYER_OPACITY:UIDesignConstants.focus_state_layer_opacity,
+				UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_OPACITY:1,
+			},
+		UIDesignConstants.State.ACTIVATED:{
+			},
+		UIDesignConstants.State.PRESSED:{
+			UIDesignConstants.Attr.STATE_LAYER_OPACITY:UIDesignConstants.pressed_state_layer_opacity,
+			},
+		UIDesignConstants.State.DRAGGED:{
+			},
+	}
 
+func get_update_attr_data():
+	return new_child_update_attr_data
 
-func update_state():
-	if update_state_flag == false:
-		return 
-	
-	var target_icon_color_state_data = get_state_data("IconColor")
-	
-	if target_icon_color_state_data:
-		icon_color = target_icon_color_state_data
-
-
-	var target_icon_opacity_state_data = get_state_data("IconOpacity")
-	if target_icon_opacity_state_data:
-		%Icon.modulate.a = target_icon_opacity_state_data
-	else:
-		%Icon.modulate.a = 1
-
-	super.update_state()
-	
-	if toggled:
-		var target_container_color_state_data
-		var target_state_layer_color_state_data
-		target_icon_color_state_data = null
-		if selected:
-			target_container_color_state_data = get_state_data("ToggleSelectedContainerColor")
-			target_icon_color_state_data = get_state_data("ToggleSelectedIconColor")
-			target_state_layer_color_state_data = get_state_data("ToggleSelectedStateLayerColor")
-		else:
-			target_container_color_state_data = get_state_data("ToggleUnselectedContainerColor")
-			target_icon_color_state_data = get_state_data("ToggleUnselectedIconColor")
-			target_state_layer_color_state_data = get_state_data("ToggleUnselectedStateLayerColor")
-		if target_container_color_state_data:
-			container_color = target_container_color_state_data
-		if target_icon_color_state_data:
-			icon_color = target_icon_color_state_data
-		if target_state_layer_color_state_data:
-			state_layer_color = target_state_layer_color_state_data
-	else:
-		pass
-
-
-func update_color():
-	if update_color_flag == false:
-		return 
-	
-	var cur_color = get_role_color(icon_color)
-	%Icon.set("theme_override_colors/font_color",cur_color)
-
-	super.update_color()
-
-func _ready():
-	super._ready()
-
-func _process(delta):
-	super._process(delta)
-
-@export var toggled = false
-
-@export var selected = false
-
-func _on_pressed():
-	if toggled:
-		selected = not selected

@@ -1,166 +1,106 @@
-[gd_scene load_steps=12 format=3 uid="uid://ci7w4g61j0s1r"]
+[gd_scene load_steps=6 format=3 uid="uid://crn87dy6cg6cb"]
 
-[ext_resource type="PackedScene" uid="uid://b7r8bckebx7v4" path="res://addons/godot_ui_design/base/BaseComponent.tscn" id="1_uyl1t"]
-[ext_resource type="Script" path="res://addons/godot_ui_design/components/buttons/common_buttons/FilledButton.gd" id="2_8t0c4"]
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_y4jm7"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/buttons/common_buttons/FilledButton.gd" id="2_dv3qb"]
 [ext_resource type="FontFile" uid="uid://07hdy6t2ed4l" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="3_y4pbt"]
 [ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="4_t6p7u"]
 [ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="5_1rd08"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83uv4"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_color = Color(0.8, 0.8, 0.8, 0)
-border_blend = true
-corner_radius_top_left = 1024
-corner_radius_top_right = 1024
-corner_radius_bottom_right = 1024
-corner_radius_bottom_left = 1024
-shadow_color = Color(0, 0, 0, 0.2)
-shadow_size = 1
-shadow_offset = Vector2(0, 2)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhc0q"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_color = Color(0.8, 0.8, 0.8, 0)
-border_blend = true
-corner_radius_top_left = 1024
-corner_radius_top_right = 1024
-corner_radius_bottom_right = 1024
-corner_radius_bottom_left = 1024
-shadow_color = Color(0, 0, 0, 0.14)
-shadow_size = 1
-shadow_offset = Vector2(0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tf1x"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_color = Color(0.8, 0.8, 0.8, 0)
-border_blend = true
-corner_radius_top_left = 1024
-corner_radius_top_right = 1024
-corner_radius_bottom_right = 1024
-corner_radius_bottom_left = 1024
-shadow_color = Color(0, 0, 0, 0.12)
-shadow_size = 3
-shadow_offset = Vector2(0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwpae"]
-bg_color = Color(0.501961, 0.411765, 0.74902, 1)
-corner_radius_top_left = 1024
-corner_radius_top_right = 1024
-corner_radius_bottom_right = 1024
-corner_radius_bottom_left = 1024
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsyub"]
-bg_color = Color(0.501961, 0.411765, 0.74902, 1)
-corner_radius_top_left = 1024
-corner_radius_top_right = 1024
-corner_radius_bottom_right = 1024
-corner_radius_bottom_left = 1024
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cntsk"]
-bg_color = Color(0.737255, 0.470588, 0.870588, 1)
-draw_center = false
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.486275, 0.447059, 0.588235, 1)
-expand_margin_left = 2.0
-expand_margin_top = 2.0
-expand_margin_right = 2.0
-expand_margin_bottom = 2.0
-
-[node name="FilledButton" instance=ExtResource("1_uyl1t")]
-offset_right = 96.0
-script = ExtResource("2_8t0c4")
-child_state_map_data = {
+[node name="FilledButton" instance=ExtResource("1_y4jm7")]
+offset_right = 84.0
+script = ExtResource("2_dv3qb")
+new_child_update_attr_data = {
 0: {
-"ContainerColor": 25,
-"ContainerElevation": 0,
-"ContainerHeight": 40,
-"ContainerShadowColor": 22,
-"ContainerShape": 1,
-"IconColor": 26,
-"IconSize": 18,
-"LabelColor": 26,
-"LabelStyle": 10
+1: 15,
+2: 0.38,
+11: 0.12,
+15: 15,
+29: 15,
+30: 0.38
 },
 1: {
-"ContainerColor": 15,
-"ContainerElevation": 0,
-"ContainerOpacity": 0.12,
-"IconColor": 15,
-"IconOpacity": 0.38,
-"LabelColor": 15,
-"LabelOpacity": 0.38
+1: 26,
+2: 1,
+11: 1,
+14: 0,
+15: 25,
+29: 26,
+30: 1,
+33: 0,
+35: 26,
+50: 0,
+61: 30,
+63: 0
 },
 2: {
-"ContainerElevation": 1,
-"IconColor": 26,
-"LabelColor": 26,
-"StateLayerColor": 26,
-"StateLayerOpacity": 0.08
+14: 1,
+33: 0.08
 },
-3: {
-"ContainerElevation": 0,
-"FocusIndicatorColor": 30,
-"FocusIndicatorOffset": 2,
-"FocusIndicatorThickness": 3,
-"IconColor": 26,
-"LabelColor": 26,
-"StateLayerColor": 26,
-"StateLayerOpacity": 0.1
+4: {
+33: 0.1,
+63: 1
 },
-4: {},
-5: {
-"ContainerElevation": 0,
-"IconColor": 26,
-"LabelColor": 26,
-"StateLayerColor": 26,
-"StateLayerOpacity": 0.1
+8: {},
+16: {
+33: 0.1
 },
-6: {
-"ContainerElevation": 3,
-"IconColor": 26,
-"LabelColor": 26,
-"StateLayerColor": 26,
-"StateLayerOpacity": 0.16
+32: {
+14: 3,
+33: 0.16
 }
 }
-icon_name = "alert"
-font_size = 14
-font_weight = 500
-font_weight_prominent = 700
-font_height = 20
-font_tracking = 0.1
-label_token = 10
-custom_font = null
 label_text = "hello"
+icon_name = "alert"
+child_init_attr_data = {
+0: 10,
+10: 40,
+12: 22,
+13: 1,
+28: 18,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {
+1: 15,
+2: 0.38,
+29: 15,
+30: 0.38
+},
+1: {
+1: 25,
+2: 1,
+11: 0,
+14: 0,
+15: 32,
+29: 25,
+30: 1,
+33: 0,
+50: 0,
+61: 1,
+63: 0
+},
+2: {
+33: 0.08
+},
+4: {
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+33: 0.1
+},
+32: {}
+}
 
-[node name="UmbraShadow" parent="ShadowNode/UmbraShadowMargin" index="0"]
-theme_override_styles/normal = SubResource("StyleBoxFlat_83uv4")
-
-[node name="PenumbraShadow" parent="ShadowNode/PenumbraShadowMargin" index="0"]
-theme_override_styles/normal = SubResource("StyleBoxFlat_xhc0q")
-
-[node name="AmbientShadow" parent="ShadowNode/AmbientShadowMargin" index="0"]
-theme_override_styles/normal = SubResource("StyleBoxFlat_5tf1x")
-
-[node name="Container" parent="ContainerNode" index="0"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_dwpae")
-
-[node name="StateLayer" parent="StateLayerNode/MarginContainer" index="0"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_lsyub")
-
-[node name="MarginContainer" type="MarginContainer" parent="ContentNode/Content" index="0"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BaseComponent/Content" index="0"]
 layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_right = 24
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_constants/separation = 8
 
-[node name="HBoxContainer" type="HBoxContainer" parent="ContentNode/Content/MarginContainer" index="0"]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="Icon" type="Label" parent="ContentNode/Content/MarginContainer/HBoxContainer" index="0"]
+[node name="Icon" type="Label" parent="BaseComponent/Content/HBoxContainer" index="0"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -173,12 +113,7 @@ script = ExtResource("4_t6p7u")
 icon_name = "alert"
 icon_size = 18
 
-[node name="MarginContainer" type="MarginContainer" parent="ContentNode/Content/MarginContainer/HBoxContainer" index="1"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 8
-
-[node name="Label" type="Label" parent="ContentNode/Content/MarginContainer/HBoxContainer/MarginContainer" index="0"]
+[node name="Label" type="Label" parent="BaseComponent/Content/HBoxContainer" index="1"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -188,6 +123,3 @@ theme_override_font_sizes/font_size = 14
 text = "hello"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="FocusIndicator" parent="FocusIndicatorNode" index="0"]
-theme_override_styles/panel = SubResource("StyleBoxFlat_cntsk")

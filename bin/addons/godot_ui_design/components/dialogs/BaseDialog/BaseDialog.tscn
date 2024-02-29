@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://5mhnn6n2te6"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_gbc2w"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/dialogs/BaseDialog/BaseDialog.gd" id="2_cihf1"]
+[ext_resource type="FontFile" uid="uid://07hdy6t2ed4l" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="3_1jsa0"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="4_wbai0"]
+[ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="5_cf2sp"]
+[ext_resource type="PackedScene" uid="uid://cn7pi4ndbyiv" path="res://addons/godot_ui_design/components/buttons/common_buttons/TextButton.tscn" id="6_nufs2"]
+
+[node name="BaseDialog" instance=ExtResource("1_gbc2w")]
+offset_right = 84.0
+script = ExtResource("2_cihf1")
+support_text = "support"
+head_text = "head"
+head_icon_name = ""
+child_init_attr_data = {
+0: 10,
+9: 280,
+10: 48,
+12: 22,
+13: 3,
+28: 24,
+62: 3,
+64: 2,
+100: 9,
+200: 2
+}
+child_update_attr_data = {
+0: {},
+1: {
+1: 15,
+2: 1,
+11: 1,
+14: 3,
+15: 13,
+29: 30,
+30: 1,
+101: 15,
+201: 17
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+action_list = [{
+"action_data": {},
+"action_name": "action_name1",
+"action_sig_name": "action_sig_name1"
+}, {
+"action_data": {},
+"action_name": "action_name2",
+"action_sig_name": "action_sig_name2"
+}]
+action_tscn = ExtResource("6_nufs2")
+
+[node name="StateLayer" parent="BaseComponent" index="1"]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseComponent/Content" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="ContentVBoxContainer" type="VBoxContainer" parent="BaseComponent/Content/MarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="HeadIcon" type="Label" parent="BaseComponent/Content/MarginContainer/ContentVBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_1jsa0")
+theme_override_font_sizes/font_size = 18
+text = "󰀦"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_wbai0")
+icon_name = "alert"
+icon_size = 18
+
+[node name="HeadLabel" type="Label" parent="BaseComponent/Content/MarginContainer/ContentVBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_cf2sp")
+theme_override_font_sizes/font_size = 14
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SupportLabel" type="Label" parent="BaseComponent/Content/MarginContainer/ContentVBoxContainer" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_cf2sp")
+theme_override_font_sizes/font_size = 14
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="TextButtonHBoxContainer" type="HBoxContainer" parent="BaseComponent/Content/MarginContainer/ContentVBoxContainer" index="3"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="FocusIndicator" parent="BaseComponent" index="3"]
+visible = false

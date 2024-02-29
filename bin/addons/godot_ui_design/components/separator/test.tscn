@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8aphnhuhwudr"]
+
+[ext_resource type="PackedScene" uid="uid://j6lyuwxh37ry" path="res://addons/godot_ui_design/components/separator/HSeparatorControl.tscn" id="1_ot482"]
+
+[node name="Test" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -562.0
+offset_bottom = -107.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 2
+color = Color(1, 0.0117647, 1, 1)
+
+[node name="HSeparatorControl" parent="." instance=ExtResource("1_ot482")]
+layout_mode = 2
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1, 5)
+layout_mode = 2
+color = Color(0.0745098, 1, 0.027451, 1)

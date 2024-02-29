@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2ljdnkibq8xr"]
+
+[ext_resource type="PackedScene" uid="uid://dof825y3nxvni" path="res://addons/godot_ui_design/components/menu/MenuControl.tscn" id="1_rlo1o"]
+
+[node name="MenuDemo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuControl" parent="." instance=ExtResource("1_rlo1o")]
+layout_mode = 1
+item_list = [{
+"label_text": "text1",
+"type": "item"
+}, {
+"type": "separator"
+}, {
+"label_text": "text2",
+"type": "item"
+}, {
+"attach_data": [{
+"label_text": "sub_1",
+"type": "item"
+}],
+"label_text": "text3",
+"type": "item"
+}]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dof825y3nxvni"]
+
+[ext_resource type="PackedScene" uid="uid://dcfqimtfqfyub" path="res://addons/godot_ui_design/components/menu/Menu.tscn" id="1_8uno1"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/menu/MenuControl.gd" id="1_iluc1"]
+
+[node name="MenuControl" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_iluc1")
+
+[node name="Menu" parent="." instance=ExtResource("1_8uno1")]
+unique_name_in_owner = true
+layout_mode = 1

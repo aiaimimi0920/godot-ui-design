@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://8n8v30yyj5k5"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_37wqw"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/cards/ElevatedCard.gd" id="2_55o0c"]
+
+[node name="ElevatedCard" instance=ExtResource("1_37wqw")]
+offset_right = 84.0
+script = ExtResource("2_55o0c")
+child_init_attr_data = {
+9: 40,
+10: 40,
+12: 22,
+13: 8,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {
+11: 0.38,
+14: 1,
+15: 7
+},
+1: {
+11: 1,
+14: 1,
+15: 11,
+33: 0,
+35: 11,
+50: 0,
+61: 1,
+63: 0
+},
+2: {
+14: 2,
+33: 0.08,
+35: 15
+},
+4: {
+14: 1,
+33: 0.1,
+35: 15,
+63: 1
+},
+8: {},
+16: {
+14: 1,
+33: 0.1,
+35: 15
+},
+32: {
+14: 4,
+33: 0.16,
+35: 15
+}
+}

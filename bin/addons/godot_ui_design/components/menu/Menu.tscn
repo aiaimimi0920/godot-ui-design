@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcfqimtfqfyub"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_hqisl"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/menu/Menu.gd" id="2_k1e7u"]
+[ext_resource type="PackedScene" uid="uid://dj1tr4ixu8nmr" path="res://addons/godot_ui_design/components/menu/MenuItem.tscn" id="3_fxh6c"]
+[ext_resource type="PackedScene" uid="uid://j6lyuwxh37ry" path="res://addons/godot_ui_design/components/separator/HSeparatorControl.tscn" id="4_dywlr"]
+
+[node name="Menu" instance=ExtResource("1_hqisl")]
+offset_right = 84.0
+script = ExtResource("2_k1e7u")
+child_init_attr_data = {
+9: 112,
+10: 48,
+12: 22,
+13: 11,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {},
+1: {
+11: 1,
+14: 2,
+15: 12,
+33: 0,
+50: 0,
+61: 1,
+63: 0
+},
+2: {},
+4: {
+63: 1
+},
+8: {},
+16: {
+33: 0.1
+},
+32: {}
+}
+item_list = []
+menu_item_tscn = ExtResource("3_fxh6c")
+separator_tscn = ExtResource("4_dywlr")
+
+[node name="StateLayer" parent="BaseComponent" index="1"]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseComponent/Content" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="ContentVBoxContainer" type="VBoxContainer" parent="BaseComponent/Content/MarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0

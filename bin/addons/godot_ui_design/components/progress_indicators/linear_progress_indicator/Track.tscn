@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://cviwrgfkomnpl"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_brbqg"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/progress_indicators/linear_progress_indicator/Track.gd" id="2_0je1u"]
+
+[node name="Track" instance=ExtResource("1_brbqg")]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("2_0je1u")
+active_track = true
+track_mode = 2
+left_value = 100
+right_value = 900
+min_value = 0
+max_value = 1000
+total_width = 1000
+new_child_init_attr_data = {
+9: 0,
+10: 4,
+12: 22,
+13: 1
+}
+active_update_attr_data = {
+0: {},
+1: {
+11: 1,
+14: 0,
+15: 25
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+inactive_update_attr_data = {
+0: {},
+1: {
+11: 1,
+14: 0,
+15: 27
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+
+[node name="BaseComponent" parent="." index="0"]
+custom_minimum_size = Vector2(0, 0)
+offset_right = 2.0
+offset_bottom = 2.0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="StateLayer" parent="BaseComponent" index="1"]
+visible = false
+
+[node name="FocusIndicator" parent="BaseComponent" index="3"]
+visible = false

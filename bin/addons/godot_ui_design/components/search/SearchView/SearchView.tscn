@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=3 uid="uid://q46ae24tx6n6"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_jhh5t"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/search/SearchView/SearchView.gd" id="2_8tsh0"]
+[ext_resource type="PackedScene" uid="uid://c6k621gw8oe4h" path="res://addons/godot_ui_design/components/search/SearchView/SearchHead.tscn" id="3_65vm0"]
+[ext_resource type="PackedScene" uid="uid://j6lyuwxh37ry" path="res://addons/godot_ui_design/components/separator/HSeparatorControl.tscn" id="4_maomb"]
+
+[node name="SearchView" instance=ExtResource("1_jhh5t")]
+offset_right = 1308.0
+offset_bottom = 905.0
+script = ExtResource("2_8tsh0")
+child_init_attr_data = {
+12: 22,
+13: 12
+}
+child_update_attr_data = {
+0: {},
+1: {
+11: 1,
+14: 0,
+15: 13
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+input_text = ""
+support_text = ""
+
+[node name="BaseComponent" parent="." index="0"]
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="StateLayer" parent="BaseComponent" index="1"]
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BaseComponent/Content" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="SearchHead" parent="BaseComponent/Content/VBoxContainer" index="0" instance=ExtResource("3_65vm0")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HSeparatorControl" parent="BaseComponent/Content/VBoxContainer" index="1" instance=ExtResource("4_maomb")]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="HSeparator" parent="BaseComponent/Content/VBoxContainer/HSeparatorControl" index="0"]
+child_update_attr_data = {
+0: {},
+1: {
+11: 1,
+14: 0,
+15: 20
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+
+[node name="ContentScrollContainer" type="ScrollContainer" parent="BaseComponent/Content/VBoxContainer" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ContentPanelContainer" type="PanelContainer" parent="BaseComponent/Content/VBoxContainer/ContentScrollContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="FocusIndicator" parent="BaseComponent" index="3"]
+visible = false
+
+[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="pressed_lead" from="BaseComponent/Content/VBoxContainer/SearchHead" to="." method="_on_search_head_pressed_lead"]
+[connection signal="search_something" from="BaseComponent/Content/VBoxContainer/SearchHead" to="." method="_on_search_head_search_something"]
+
+[editable path="BaseComponent/Content/VBoxContainer/HSeparatorControl"]

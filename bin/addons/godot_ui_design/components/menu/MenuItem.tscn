@@ -1,0 +1,147 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj1tr4ixu8nmr"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_xmn0l"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/menu/MenuItem.gd" id="2_7e5wm"]
+[ext_resource type="FontFile" uid="uid://07hdy6t2ed4l" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="3_vn3kj"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="4_gbdpu"]
+[ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="5_si62w"]
+
+[node name="MenuItem" instance=ExtResource("1_xmn0l")]
+offset_right = 84.0
+script = ExtResource("2_7e5wm")
+label_text = "TEST"
+leading_icon_name = ""
+trailing_label_text = "TEST2"
+trailing_icon_name = ""
+child_init_attr_data = {
+9: 112,
+10: 48,
+12: 22,
+13: 11,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {
+1: 15,
+2: 0.08,
+29: 15,
+30: 0.08
+},
+1: {
+1: 15,
+2: 1,
+11: 1,
+14: 0,
+15: {
+"selected": 32,
+"unselected": 32
+},
+29: 17,
+30: 1,
+33: 0,
+50: 0,
+61: 1,
+63: 0
+},
+2: {
+1: 15,
+2: 1,
+29: 17,
+30: 1,
+33: 0.08,
+35: 15
+},
+4: {
+1: 15,
+2: 1,
+29: 17,
+30: 1,
+33: 0.1,
+35: 15,
+63: 1
+},
+8: {},
+16: {
+1: 15,
+2: 1,
+29: 17,
+30: 1,
+33: 0.1,
+35: 15,
+63: 1
+},
+32: {}
+}
+
+[node name="BaseComponent" parent="." index="0"]
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseComponent/Content" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BaseComponent/Content/MarginContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="LeadingIcon" type="Label" parent="BaseComponent/Content/MarginContainer/HBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_vn3kj")
+theme_override_font_sizes/font_size = 18
+text = "󰀦"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_gbdpu")
+icon_name = "alert"
+icon_size = 18
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseComponent/Content/MarginContainer/HBoxContainer" index="1"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="Label" type="Label" parent="BaseComponent/Content/MarginContainer/HBoxContainer/MarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_si62w")
+theme_override_font_sizes/font_size = 14
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TrailingIcon" type="Label" parent="BaseComponent/Content/MarginContainer/HBoxContainer" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_vn3kj")
+theme_override_font_sizes/font_size = 18
+text = "󰀦"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_gbdpu")
+icon_name = "alert"
+icon_size = 18
+
+[node name="TrailingLabel" type="Label" parent="BaseComponent/Content/MarginContainer/HBoxContainer" index="3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_si62w")
+theme_override_font_sizes/font_size = 14
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1

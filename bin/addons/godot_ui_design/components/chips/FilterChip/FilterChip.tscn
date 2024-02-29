@@ -1,0 +1,248 @@
+[gd_scene load_steps=6 format=3 uid="uid://b1s5tnhmdmv2g"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_a8nta"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/chips/FilterChip/FilterChip.gd" id="2_0irfx"]
+[ext_resource type="FontFile" uid="uid://07hdy6t2ed4l" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="3_gkuey"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="4_epvod"]
+[ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="5_rlu4x"]
+
+[node name="FilterChip" instance=ExtResource("1_a8nta")]
+offset_right = 84.0
+toggle_mode = true
+script = ExtResource("2_0irfx")
+filter_label_array = Array[String](["hello"])
+filter_leading_icon_name_array = Array[String](["alert"])
+show_close_button = false
+selected_index = 0
+label_text = "hello"
+leading_icon_name = "alert"
+trailing_icon_name = ""
+child_init_attr_data = {
+0: 10,
+10: 32,
+12: 22,
+13: 9,
+25: 1,
+27: 0,
+28: 18,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {
+1: 15,
+2: 0.38,
+11: 0.12,
+14: 0,
+15: 15,
+24: 15,
+26: 0.12,
+29: 15,
+30: 0.38,
+129: 15
+},
+1: {
+1: {
+"selected": 33,
+"unselected": 17
+},
+2: 1,
+11: 1,
+14: 1,
+15: {
+"selected": 32,
+"unselected": 11
+},
+24: {
+"selected": 32,
+"unselected": 20
+},
+26: {
+"selected": 0,
+"unselected": 1
+},
+29: {
+"selected": 33,
+"unselected": 25
+},
+30: 1,
+33: 0,
+35: 12,
+50: 0,
+61: 1,
+63: 0,
+129: {
+"selected": 33,
+"unselected": 17
+}
+},
+2: {
+1: {
+"selected": 33,
+"unselected": 17
+},
+2: 1,
+14: {
+"selected": 1,
+"unselected": 0
+},
+29: {
+"selected": 33,
+"unselected": 25
+},
+30: 1,
+33: 0.08,
+35: {
+"selected": 33,
+"unselected": 17
+},
+129: {
+"selected": 33,
+"unselected": 17
+}
+},
+4: {
+1: {
+"selected": 33,
+"unselected": 17
+},
+2: 1,
+14: {
+"selected": 0,
+"unselected": 0
+},
+29: {
+"selected": 33,
+"unselected": 25
+},
+30: 1,
+33: 0.1,
+35: {
+"selected": 33,
+"unselected": 17
+},
+63: 1,
+129: {
+"selected": 33,
+"unselected": 17
+}
+},
+8: {},
+16: {
+1: {
+"selected": 33,
+"unselected": 17
+},
+2: 1,
+14: {
+"selected": 0,
+"unselected": 0
+},
+29: {
+"selected": 33,
+"unselected": 25
+},
+30: 1,
+33: 0.1,
+35: {
+"selected": 33,
+"unselected": 17
+},
+129: {
+"selected": 33,
+"unselected": 17
+}
+},
+32: {
+1: {
+"selected": 33,
+"unselected": 17
+},
+2: 1,
+14: {
+"selected": 4,
+"unselected": 4
+},
+29: {
+"selected": 33,
+"unselected": 25
+},
+30: 1,
+33: 0.16,
+35: {
+"selected": 33,
+"unselected": 17
+},
+129: {
+"selected": 33,
+"unselected": 17
+}
+}
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseComponent/Content" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BaseComponent/Content/MarginContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="LeadingIcon" type="Label" parent="BaseComponent/Content/MarginContainer/HBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_gkuey")
+theme_override_font_sizes/font_size = 18
+text = "󰀦"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_epvod")
+icon_name = "alert"
+icon_size = 18
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseComponent/Content/MarginContainer/HBoxContainer" index="1"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="Label" type="Label" parent="BaseComponent/Content/MarginContainer/HBoxContainer/MarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_rlu4x")
+theme_override_font_sizes/font_size = 14
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TrailingIcon" type="Label" parent="BaseComponent/Content/MarginContainer/HBoxContainer" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_gkuey")
+theme_override_font_sizes/font_size = 18
+text = "󰀦"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_epvod")
+icon_name = "alert"
+icon_size = 18
+
+[node name="CloseButton" type="Button" parent="BaseComponent/Content/MarginContainer/HBoxContainer/TrailingIcon" index="0"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="pressed" from="BaseComponent/Content/MarginContainer/HBoxContainer/TrailingIcon/CloseButton" to="." method="_on_close_button_pressed"]

@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0eestbah0uq3"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_v3cg8"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/tooltips/rich_tooltip/RichTooltip.gd" id="2_b5tcx"]
+[ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="3_cn7p2"]
+[ext_resource type="PackedScene" uid="uid://cn7pi4ndbyiv" path="res://addons/godot_ui_design/components/buttons/common_buttons/TextButton.tscn" id="3_i526p"]
+
+[node name="RichTooltip" instance=ExtResource("1_v3cg8")]
+offset_right = 84.0
+mouse_filter = 2
+script = ExtResource("2_b5tcx")
+subhead_text = ""
+support_text = ""
+action_array = []
+text_button_tscn = ExtResource("3_i526p")
+child_init_attr_data = {
+0: 15,
+10: 24,
+12: 22,
+13: 8,
+62: 3,
+64: 2,
+100: 2
+}
+child_update_attr_data = {
+0: {
+1: 17,
+2: 0.38,
+101: 17
+},
+1: {
+1: 17,
+2: 1,
+11: 1,
+14: 2,
+15: 12,
+33: 0,
+35: 12,
+50: 0,
+61: 1,
+63: 0,
+101: 17
+},
+2: {
+33: 0.08,
+35: 25
+},
+4: {
+33: 0.1,
+35: 25,
+63: 1
+},
+8: {},
+16: {
+33: 0.1,
+35: 25
+},
+32: {}
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseComponent/Content" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BaseComponent/Content/MarginContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BaseComponent/Content/MarginContainer/VBoxContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="SubheadLabel" type="Label" parent="BaseComponent/Content/MarginContainer/VBoxContainer/VBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("3_cn7p2")
+theme_override_font_sizes/font_size = 14
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SupportLabel" type="Label" parent="BaseComponent/Content/MarginContainer/VBoxContainer/VBoxContainer" index="1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="ActionFlowContainer" type="FlowContainer" parent="BaseComponent/Content/MarginContainer/VBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]

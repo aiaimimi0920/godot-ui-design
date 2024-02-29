@@ -1,274 +1,207 @@
-extends BaseComponent
+extends BaseComponent2
 
-func get_state_map_data():
-	return child_state_map_data
 
-## 颜色角色其实跟状态有关，不同状态可能使用不同的颜色角色。但是一个控件中可能包含多个子内容需要调整颜色
-@export var child_state_map_data = {
-	UIDesignConstants.State.ENABLED:{
-		"ContainerShape":UIDesignConstants.ShapeToken.FULLY_ROUNDED,
-		"ContainerHeight":40,
-		
-		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVERL_0,
-		"ContainerShadowColor":UIDesignConstants.Role.SHADOW,
-		"ContainerColor":UIDesignConstants.Role.SECONDARY_CONTAINER,
-		"ContainerOpacity":0,
-		
-		"OutlineWidth":1,
-		"OutlineColor":UIDesignConstants.Role.OUTLINE,
-		"OutlineOpacity":1.0,
-		
-		"LabelStyle":UIDesignConstants.LabelToken.LABEL_LARGE,
-		
-		"UnselectedLabelColor":UIDesignConstants.Role.ON_SURFACE,
-		"SelectedLabelColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"IconSize":18,
-		"UnselectedIconColor":UIDesignConstants.Role.ON_SURFACE,
-		"SelectedIconColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-	},
-	UIDesignConstants.State.DISABLED:{
-		"OutlineColor":UIDesignConstants.Role.ON_SURFACE,
-		"OutlineOpacity":0.12,
+func trigger_init_shape():
+	_trigger_init_shape(%Container, {
+		UIDesignConstants.Attr.SHAPE_TOKEN:UIDesignConstants.Attr.SHAPE_TOKEN,
+		UIDesignConstants.Attr.SHAPE_HEIGHT:UIDesignConstants.Attr.SHAPE_HEIGHT,
+		UIDesignConstants.Attr.SHAPE_WIDTH:UIDesignConstants.Attr.SHAPE_WIDTH,
+		UIDesignConstants.Attr.SHAPE_SHADOWCOLOR:UIDesignConstants.Attr.SHAPE_SHADOWCOLOR,
+	})
 
-		"UnselectedLabelColor":UIDesignConstants.Role.ON_SURFACE,
-		"SelectedLabelColor":UIDesignConstants.Role.ON_SURFACE,
-		"LabelOpacity":0.38,
+	_trigger_init_shape(%StateLayer, {
+		UIDesignConstants.Attr.SHAPE_TOKEN:UIDesignConstants.Attr.SHAPE_TOKEN,
+		UIDesignConstants.Attr.SHAPE_HEIGHT:UIDesignConstants.Attr.SHAPE_HEIGHT,
+	})
+	
+	_trigger_init_shape(%FocusIndicator, {
+		UIDesignConstants.Attr.SHAPE_TOKEN:UIDesignConstants.Attr.SHAPE_TOKEN,
+		UIDesignConstants.Attr.SHAPE_HEIGHT:UIDesignConstants.Attr.SHAPE_HEIGHT,
 
-		"UnselectedIconColor":UIDesignConstants.Role.ON_SURFACE,
-		"SelectedIconColor":UIDesignConstants.Role.ON_SURFACE,
-		"IconOpacity":0.38,
-	},
-	UIDesignConstants.State.HOVER:{
+		UIDesignConstants.Attr.SHAPE_OUTLINE_WIDTH:UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_WIDTH,
+		UIDesignConstants.Attr.SHAPE_OUTLINE_OFFSET:UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_OFFSET,
+	})
+	pass
 
-		"UnselectedLabelColor":UIDesignConstants.Role.ON_SURFACE,
-		"SelectedLabelColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"StateLayerOpacity":UIDesignConstants.hover_state_layer_opacity,
-		
-		"UnselectedStateLayerColor":UIDesignConstants.Role.ON_SURFACE,
-		"SelectedStateLayerColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"UnselectedIconColor":UIDesignConstants.Role.ON_SURFACE,
-		"SelectedIconColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-	},
-	UIDesignConstants.State.FOCUSED:{
-		"FocusIndicatorColor":UIDesignConstants.Role.SECONDARY_COLOR,
-		"FocusIndicatorThickness":UIDesignConstants.focus_indicator_thickness,
-		"FocusIndicatorOffset":UIDesignConstants.focus_indicator_outer_offset,
-		
-		"UnselectedLabelColor":UIDesignConstants.Role.ON_SURFACE,
-		"SelectedLabelColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"StateLayerOpacity":UIDesignConstants.focus_state_layer_opacity,
-		
-		"UnselectedStateLayerColor":UIDesignConstants.Role.ON_SURFACE,
-		"SelectedStateLayerColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"UnselectedIconColor":UIDesignConstants.Role.ON_SURFACE,
-		"SelectedIconColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-	},
-	UIDesignConstants.State.ACTIVATED:{},
-	UIDesignConstants.State.PRESSED:{
-		"UnselectedLabelColor":UIDesignConstants.Role.ON_SURFACE,
-		"SelectedLabelColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"StateLayerOpacity":UIDesignConstants.pressed_state_layer_opacity,
-		
-		"UnselectedStateLayerColor":UIDesignConstants.Role.ON_SURFACE,
-		"SelectedStateLayerColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-		
-		"UnselectedIconColor":UIDesignConstants.Role.ON_SURFACE,
-		"SelectedIconColor":UIDesignConstants.Role.ON_SECONDARY_CONTAINER,
-	},
-	UIDesignConstants.State.DRAGGED:{
-	},
-}
 
-var outline_color:UIDesignConstants.Role:
-	get:
-		return outline_color
+
+func trigger_update_shape():
+	_trigger_update_shape(%Container, {
+		UIDesignConstants.Attr.SHAPE_COLOR:UIDesignConstants.Attr.SHAPE_COLOR,
+		UIDesignConstants.Attr.SHAPE_OPACITY:UIDesignConstants.Attr.SHAPE_OPACITY,
+		UIDesignConstants.Attr.SHAPE_ELEVATION:UIDesignConstants.Attr.SHAPE_ELEVATION,
+	})
+
+	_trigger_update_shape(%StateLayer, {
+		UIDesignConstants.Attr.SHAPE_COLOR:UIDesignConstants.Attr.SHAPE_COLOR,
+		UIDesignConstants.Attr.SHAPE_OPACITY:UIDesignConstants.Attr.STATE_LAYER_OPACITY,
+	})
+	
+	_trigger_update_shape(%FocusIndicator, {
+		UIDesignConstants.Attr.SHAPE_OPACITY:UIDesignConstants.Attr.FOCUS_INDICATOR_OPACITY,
+		UIDesignConstants.Attr.SHAPE_OUTLINE_COLOR:UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_COLOR,
+		UIDesignConstants.Attr.SHAPE_OUTLINE_OPACITY:UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_OPACITY,
+	})
+
+@export var child_init_attr_data = {
+		UIDesignConstants.Attr.SHAPE_TOKEN:UIDesignConstants.ShapeToken.FULLY_ROUNDED,
+		UIDesignConstants.Attr.SHAPE_HEIGHT:40,
+		UIDesignConstants.Attr.SHAPE_WIDTH:40,
+		UIDesignConstants.Attr.SHAPE_SHADOWCOLOR:UIDesignConstants.Role.SHADOW,
+		
+		UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_WIDTH:UIDesignConstants.focus_indicator_thickness,
+		UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_OFFSET:UIDesignConstants.focus_indicator_outer_offset,
+	}
+
+
+
+func get_init_attr_data():
+	return child_init_attr_data
+
+@export var child_update_attr_data = {
+		UIDesignConstants.State.ENABLED:{
+				UIDesignConstants.Attr.SHAPE_COLOR:UIDesignConstants.Role.SECONDARY_CONTAINER,
+				UIDesignConstants.Attr.SHAPE_OPACITY:0,
+				UIDesignConstants.Attr.SHAPE_ELEVATION:UIDesignConstants.ElevationLevel.LEVEL_0,
+
+				UIDesignConstants.Attr.STATE_LAYER_OPACITY:0,
+				
+				UIDesignConstants.Attr.FOCUS_INDICATOR_OPACITY:0,
+				UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_COLOR:UIDesignConstants.Role.SECONDARY,
+				UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_OPACITY:0,
+			},
+		UIDesignConstants.State.DISABLED:{
+			},
+		UIDesignConstants.State.HOVERED:{
+				UIDesignConstants.Attr.STATE_LAYER_OPACITY:0,
+			},
+		UIDesignConstants.State.FOCUSED:{
+				UIDesignConstants.Attr.STATE_LAYER_OPACITY:0,
+				UIDesignConstants.Attr.FOCUS_INDICATOR_OUTLINE_OPACITY:0,
+			},
+		UIDesignConstants.State.ACTIVATED:{
+			},
+		UIDesignConstants.State.PRESSED:{
+			UIDesignConstants.Attr.STATE_LAYER_OPACITY:0,
+			},
+		UIDesignConstants.State.DRAGGED:{
+			},
+	}
+
+func get_update_attr_data():
+	return child_update_attr_data
+
+
+@export var density:int=0:
 	set(val):
-		outline_color = val
-		update_color_flag = true
+		density = val
+		_init_flag = true
 
-@onready var outlined_button_list = [%SegmentedBlockButton1,%SegmentedBlockButton2,%SegmentedBlockButton3,%SegmentedBlockButton4,%SegmentedBlockButton5]
-
-
-func init_state():
-	
-	super.init_state()
-	var target_container_height_state_data = get_state_data("ContainerHeight")
-	var target_outline_width_state_data = get_state_data("OutlineWidth")
-	var target_outline_color_state_data = get_state_data("OutlineColor")
-	var target_label_style_state_data = get_state_data("LabelStyle")
-	var target_icon_size_state_data = get_state_data("IconSize")
-	var target_height = target_container_height_state_data + density*4
-	size.y = target_height
-	custom_minimum_size.y = target_height
-	
-	var max_list = max(len(text_list),len(icon_list))
-	while len(text_list)< max_list:
-		text_list.append("")
-
-	while len(icon_list)< max_list:
-		icon_list.append("")
-	
-	if max_list==2:
-		outlined_button_list[0].visible = true
-		
-		outlined_button_list[1].visible = false
-		outlined_button_list[2].visible = false
-		outlined_button_list[3].visible = false
-		outlined_button_list[4].visible = true
-		
-		outlined_button_list[0].icon_name = icon_list[0]
-		outlined_button_list[0].label_text = text_list[0]
-		
-		outlined_button_list[4].icon_name = icon_list[1]
-		outlined_button_list[4].label_text = text_list[1]
-		
-	elif max_list==3:
-		outlined_button_list[0].visible = true
-		outlined_button_list[1].visible = false
-		outlined_button_list[2].visible = true
-		outlined_button_list[3].visible = false
-		outlined_button_list[4].visible = true
-		
-		outlined_button_list[0].icon_name = icon_list[0]
-		outlined_button_list[0].label_text = text_list[0]
-		
-		outlined_button_list[2].icon_name = icon_list[1]
-		outlined_button_list[2].label_text = text_list[1]
-		
-		outlined_button_list[4].icon_name = icon_list[2]
-		outlined_button_list[4].label_text = text_list[2]
-		
-	elif max_list==4:
-		outlined_button_list[0].visible = true
-		outlined_button_list[1].visible = true
-		outlined_button_list[2].visible = true
-		outlined_button_list[3].visible = false
-		outlined_button_list[4].visible = true
-		
-		outlined_button_list[0].icon_name = icon_list[0]
-		outlined_button_list[0].label_text = text_list[0]
-		
-		outlined_button_list[1].icon_name = icon_list[1]
-		outlined_button_list[1].label_text = text_list[1]
-		
-		outlined_button_list[2].icon_name = icon_list[2]
-		outlined_button_list[2].label_text = text_list[2]
-		
-		outlined_button_list[4].icon_name = icon_list[3]
-		outlined_button_list[4].label_text = text_list[3]
-		
-	elif max_list==5:
-		outlined_button_list[0].visible = true
-		outlined_button_list[1].visible = true
-		outlined_button_list[2].visible = true
-		outlined_button_list[3].visible = true
-		outlined_button_list[4].visible = true
-		
-		outlined_button_list[0].icon_name = icon_list[0]
-		outlined_button_list[0].label_text = text_list[0]
-		
-		outlined_button_list[1].icon_name = icon_list[1]
-		outlined_button_list[1].label_text = text_list[1]
-		
-		outlined_button_list[2].icon_name = icon_list[2]
-		outlined_button_list[2].label_text = text_list[2]
-		
-		outlined_button_list[3].icon_name = icon_list[3]
-		outlined_button_list[3].label_text = text_list[3]
-		
-		outlined_button_list[4].icon_name = icon_list[4]
-		outlined_button_list[4].label_text = text_list[4]
-		
-
-	for node in outlined_button_list:
-		for state_key in child_state_map_data:
-			for state_data_key in child_state_map_data[state_key].keys():
-				node.child_state_map_data[state_key][state_data_key] = child_state_map_data[state_key][state_data_key]
-	
-		node.child_state_map_data[UIDesignConstants.State.ENABLED]["ContainerHeight"] = target_height
-		node.child_state_map_data[UIDesignConstants.State.ENABLED]["ContainerShape"] = UIDesignConstants.ShapeToken.CUSTOM
-		
-		node.multiple_selected = multiple_selected
-		node._ready()
-	
-	outlined_button_list[0].selected = true
-	
-	var container_layer_style = %Container.get("theme_override_styles/panel")
-	container_layer_style.draw_center = false
-	container_layer_style.border_width_left = target_outline_width_state_data
-	container_layer_style.border_width_top = target_outline_width_state_data
-	container_layer_style.border_width_right = target_outline_width_state_data
-	container_layer_style.border_width_bottom = target_outline_width_state_data
-
-
-func update_state():
-	if update_state_flag == false:
-		return 
-
-	super.update_state()
-
-	var target_outline_opacity_state_data = get_state_data("OutlineOpacity")
-	if target_outline_opacity_state_data!=null:
-		%Container.modulate.a = target_outline_opacity_state_data
-	else:
-		%Container.modulate.a = 1
-		
-
-func update_color():
-	if update_color_flag == false:
-		return 
-	
-	var cur_outline_color = get_role_color(outline_color)
-	var state_layer_style = %Container.get("theme_override_styles/panel")
-	state_layer_style.border_color = cur_outline_color
-
-	super.update_color()
+@onready var block_button_list = [%SegmentedBlockButton1,%SegmentedBlockButton2,%SegmentedBlockButton3,%SegmentedBlockButton4,%SegmentedBlockButton5]
 
 func _ready():
 	super._ready()
+	var cur_len_block = len_block
+	cur_len_block = max(2,cur_len_block)
+	cur_len_block = min(5,cur_len_block)
+	var len_target_index = len_map[cur_len_block][init_selected_index]
+	for node in block_button_list:
+		node.visible = false
+	
+	for i in len_map[cur_len_block]:
+		var node = block_button_list[i]
+		node.visible = true
+		if i == len_target_index:
+			node.button_pressed = true
+			node._on_toggled(true)
+		else:
+			node.button_pressed = false
+			node._on_toggled(false)
+	_init_flag = true
+	
+@export var init_selected_index = 0
 
-func _process(delta):
-	super._process(delta)
 
-@export var density:int=0
+func _init_all():
+	if _init_flag == false:
+		return 
+	child_init_attr_data = child_init_attr_data.duplicate(true)
+	child_init_attr_data[UIDesignConstants.Attr.SHAPE_HEIGHT] = 40 + density * 4
+	var max_size_x = 0
+	var all_size_len = 0
+	for node in block_button_list:
+		if node.visible:
+			max_size_x = max(node.size.x, max_size_x)
+			all_size_len += 1
+	for node in block_button_list:
+		node.new_child_init_attr_data[UIDesignConstants.Attr.SHAPE_HEIGHT] = child_init_attr_data[UIDesignConstants.Attr.SHAPE_HEIGHT]
+		node.new_child_init_attr_data[UIDesignConstants.Attr.SHAPE_WIDTH] = max_size_x
+		node._init_flag = true
+	
+	child_init_attr_data[UIDesignConstants.Attr.SHAPE_WIDTH] = max_size_x * all_size_len
+	super._init_all()
+
 
 @export var text_list:PackedStringArray = ["hello","hi"]:
 	set(val):
 		text_list = val
-		update_state_flag = true
+		if block_button_list==null:
+			await ready
+		var cur_len_block = len_block
+		cur_len_block = max(2,cur_len_block)
+		cur_len_block = min(5,cur_len_block)
+		var len_target_index = len(len_map[cur_len_block])
+		
+		for i in range(len_target_index):
+			var target_index = len_map[cur_len_block][i]
+			block_button_list[target_index].label_text = text_list[i%len(text_list)]
 	get:
 		return text_list
-	
+
 @export var icon_list:PackedStringArray = ["alert","alert"]:
 	set(val):
 		icon_list = val
-		update_state_flag = true
+		if block_button_list==null:
+			await ready
+		var cur_len_block = len_block
+		cur_len_block = max(2,cur_len_block)
+		cur_len_block = min(5,cur_len_block)
+		var len_target_index = len(len_map[cur_len_block])
+		for i in range(len_target_index):
+			var target_index = len_map[cur_len_block][i]
+			block_button_list[target_index].icon_name = icon_list[i%len(icon_list)]
 	get:
 		return icon_list
 
+var len_block:
+	get:
+		return max(text_list.size(),icon_list.size())
+
+var len_map={
+	2:[0,4],
+	3:[0,2,4],
+	4:[0,1,2,4],
+	5:[0,1,2,3,4],
+}
+
 @export var multiple_selected=false 
 
-func _on_segmented_block_button_selected_sig(node):
+func _on_segmented_block_button_custom_toggled(toggled_on, node):
 	if multiple_selected == false:
-		for cur_node in outlined_button_list:
-			if cur_node!=node:
-				cur_node.selected = false
+		if toggled_on:
+			for cur_node in block_button_list:
+				if cur_node!=node:
+					cur_node.button_pressed = false
+	
+	var have_selected = false
+	for cur_node in block_button_list:
+		if cur_node.button_pressed:
+			have_selected = true
+	
+	if not have_selected:
+		node.button_pressed = true
 
-func _on_segmented_block_button_resized():
-	var max_size_x = 0
-	for node in outlined_button_list:
-		max_size_x = max(node.size.x,max_size_x)
-	var target_size_x = 0
-	for node in outlined_button_list:
-		node.size.x = max_size_x
-		node.custom_minimum_size.x = max_size_x
-		if node.visible:
-			target_size_x += max_size_x
-	size.x = target_size_x
-	custom_minimum_size.x = target_size_x
+
+func _on_container_resized():
+	_init_flag = true
+

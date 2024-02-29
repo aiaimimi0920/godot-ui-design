@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://po0mp6o0ei1y"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_x01bu"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/cards/OutlinedCard.gd" id="2_4my70"]
+
+[node name="OutlinedCard" instance=ExtResource("1_x01bu")]
+offset_right = 84.0
+script = ExtResource("2_4my70")
+child_init_attr_data = {
+9: 40,
+10: 40,
+12: 22,
+13: 8,
+25: 1,
+27: 0,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {
+14: 0,
+24: 20,
+26: 0.12
+},
+1: {
+11: 0,
+14: 0,
+15: 7,
+24: 21,
+26: 1,
+33: 0,
+35: 14,
+50: 0,
+61: 1,
+63: 0
+},
+2: {
+14: 1,
+24: 21,
+33: 0.08,
+35: 15
+},
+4: {
+14: 0,
+24: 15,
+33: 0.1,
+35: 15,
+63: 1
+},
+8: {},
+16: {
+14: 0,
+24: 21,
+33: 0.1,
+35: 15
+},
+32: {
+14: 3,
+24: 21,
+33: 0.16,
+35: 15
+}
+}

@@ -1,0 +1,368 @@
+[gd_scene load_steps=13 format=3 uid="uid://d0cghvgaedgfr"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_jrpb8"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/text_fields/OutlinedTextField/OutlinedTextField.gd" id="2_pq63d"]
+[ext_resource type="PackedScene" uid="uid://bfuk3u0p7iuq1" path="res://addons/godot_ui_design/components/text_fields/OutlinedTextField/TextContainer.tscn" id="3_dvm6x"]
+[ext_resource type="FontFile" uid="uid://07hdy6t2ed4l" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="4_1w8so"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="5_rqftu"]
+[ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="6_2iqxo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sobno"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_640w0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbjd6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i5vmt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1yfvj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ergp"]
+
+[node name="OutlinedTextField" instance=ExtResource("1_jrpb8")]
+offset_right = 84.0
+script = ExtResource("2_pq63d")
+child_init_attr_data = {
+0: 1,
+9: 200,
+10: 4,
+12: 22,
+13: 1,
+28: 24,
+62: 3,
+64: 2,
+100: 3,
+200: 1
+}
+child_update_attr_data = {
+0: {
+1: 15,
+2: 0.38,
+29: 15,
+30: 0.38,
+101: 15,
+102: 0.38,
+201: 15,
+202: 0.38
+},
+1: {
+1: 17,
+2: 1,
+11: 0,
+14: 0,
+15: 25,
+29: 17,
+30: 1,
+33: 0,
+35: 25,
+50: 0,
+61: 1,
+63: 0,
+101: 17,
+102: 1,
+201: 15,
+202: 1,
+301: 17,
+302: 1
+},
+2: {
+1: 17,
+2: 1,
+29: 17,
+33: 0.08,
+101: 17,
+102: 1,
+201: 15,
+202: 1
+},
+4: {
+1: 25,
+2: 1,
+29: 17,
+33: 0.1,
+63: 1,
+101: 17,
+102: 1,
+201: 15,
+202: 1
+},
+8: {},
+16: {
+33: 0.1
+},
+32: {}
+}
+empty_label_text = "Label text"
+populated_label_text = "Label text"
+supporting_label_text = "Supporting text"
+character_counter_label_text = "0/1"
+prefix_label_text = "A-"
+suffix_label_text = "@gmail.com"
+multiple_line_count = 0
+show_mode = 0
+line_custom_minimum_size = Vector2(60, 24)
+multiple_custom_minimum_size = Vector2(120, 72)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BaseComponent/Content" index="0"]
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="TextContainerControl" type="Control" parent="BaseComponent/Content/VBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="TextContainerPolygon2D" type="Polygon2D" parent="BaseComponent/Content/VBoxContainer/TextContainerControl" index="0"]
+unique_name_in_owner = true
+clip_children = 2
+color = Color(1, 0.152941, 1, 1)
+
+[node name="TextContainer" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D" index="0" instance=ExtResource("3_dvm6x")]
+unique_name_in_owner = true
+offset_right = 50.0
+offset_bottom = 8.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer" index="1"]
+
+[node name="HBoxContainerControl" type="Control" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer" index="0"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl" index="0"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 0, 1)
+
+[node name="PopulatedLabelText" type="Label" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl" index="1"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_left = 17.0
+offset_top = 8.0
+offset_right = 18.0
+offset_bottom = 29.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("6_2iqxo")
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+
+[node name="EmptyContainer" type="HBoxContainer" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl" index="2"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 33.0
+offset_bottom = 21.0
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="EmptyLabelTextMarginContainer" type="MarginContainer" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/EmptyContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="EmptyLabelText" type="Label" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/EmptyContainer/EmptyLabelTextMarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("6_2iqxo")
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/EmptyContainer/EmptyLabelTextMarginContainer" index="1"]
+visible = false
+layout_mode = 2
+color = Color(0, 0.337255, 0.337255, 1)
+
+[node name="PopulatedContainer" type="HBoxContainer" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl" index="3"]
+unique_name_in_owner = true
+layout_mode = 1
+offset_right = 98.0
+offset_bottom = 42.0
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="LeadingIconMarginContainer" type="MarginContainer" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+
+[node name="LeadingIcon" type="Label" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/LeadingIconMarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_1w8so")
+theme_override_font_sizes/font_size = 18
+text = "󰀦"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_rqftu")
+icon_name = "alert"
+icon_size = 18
+
+[node name="PopulatedLabelContainerMarginContainer" type="MarginContainer" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="PopulatedLabelContainer" type="VBoxContainer" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/PopulatedLabelContainerMarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="LineContainer" type="HBoxContainer" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/PopulatedLabelContainerMarginContainer/PopulatedLabelContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="PrefixText" type="Label" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/PopulatedLabelContainerMarginContainer/PopulatedLabelContainer/LineContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("6_2iqxo")
+theme_override_font_sizes/font_size = 14
+vertical_alignment = 1
+
+[node name="PopulatedInputTextControl" type="Control" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/PopulatedLabelContainerMarginContainer/PopulatedLabelContainer/LineContainer" index="1"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="PopulatedInputText" type="LineEdit" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/PopulatedLabelContainerMarginContainer/PopulatedLabelContainer/LineContainer/PopulatedInputTextControl" index="0"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+offset_right = 59.0625
+offset_bottom = 23.0
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sobno")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_640w0")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_jbjd6")
+expand_to_text_length = true
+flat = true
+caret_blink = true
+
+[node name="SuffixText" type="Label" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/PopulatedLabelContainerMarginContainer/PopulatedLabelContainer/LineContainer" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("6_2iqxo")
+theme_override_font_sizes/font_size = 14
+vertical_alignment = 1
+
+[node name="MultipleContainer" type="HBoxContainer" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/PopulatedLabelContainerMarginContainer/PopulatedLabelContainer" index="1"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="PopulatedMultipleInputTextControl" type="Control" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/PopulatedLabelContainerMarginContainer/PopulatedLabelContainer/MultipleContainer" index="0"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="PopulatedMultipleInputText" type="TextEdit" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/PopulatedLabelContainerMarginContainer/PopulatedLabelContainer/MultipleContainer/PopulatedMultipleInputTextControl" index="0"]
+unique_name_in_owner = true
+layout_mode = 1
+size_flags_horizontal = 3
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_i5vmt")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1yfvj")
+theme_override_styles/read_only = SubResource("StyleBoxEmpty_1ergp")
+wrap_mode = 1
+caret_blink = true
+
+[node name="TrailingIconMarginContainer" type="MarginContainer" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+
+[node name="TrailingIcon" type="Label" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/TrailingIconMarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_1w8so")
+theme_override_font_sizes/font_size = 18
+text = "󰀦"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("5_rqftu")
+icon_name = "alert"
+icon_size = 18
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseComponent/Content/VBoxContainer" index="1"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BaseComponent/Content/VBoxContainer/MarginContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="SupportingText" type="Label" parent="BaseComponent/Content/VBoxContainer/MarginContainer/HBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("6_2iqxo")
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CharacterCounterText" type="Label" parent="BaseComponent/Content/VBoxContainer/MarginContainer/HBoxContainer" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("6_2iqxo")
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="finish_activated" from="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer" to="." method="_on_text_container_finish_activated"]
+[connection signal="item_rect_changed" from="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer" to="." method="_on_text_container_item_rect_changed"]
+[connection signal="resized" from="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer" to="." method="_on_text_container_resized"]
+[connection signal="start_activated" from="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer" to="." method="_on_text_container_start_activated"]
+[connection signal="resized" from="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer" to="." method="_on_h_box_container_resized"]
+[connection signal="visibility_changed" from="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/LeadingIconMarginContainer/LeadingIcon" to="." method="_on_leading_icon_visibility_changed"]
+[connection signal="text_changed" from="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/PopulatedLabelContainerMarginContainer/PopulatedLabelContainer/LineContainer/PopulatedInputTextControl/PopulatedInputText" to="." method="_on_populated_input_text_text_changed"]
+[connection signal="text_changed" from="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/PopulatedLabelContainerMarginContainer/PopulatedLabelContainer/MultipleContainer/PopulatedMultipleInputTextControl/PopulatedMultipleInputText" to="." method="_on_populated_multiple_input_text_text_changed"]
+[connection signal="visibility_changed" from="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D/TextContainer/CanvasLayer/HBoxContainerControl/PopulatedContainer/TrailingIconMarginContainer/TrailingIcon" to="." method="_on_trailing_icon_visibility_changed"]

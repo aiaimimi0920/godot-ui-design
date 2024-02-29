@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://bm5xi0m8f5fcf"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_m7j1k"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/sliders/Handle.gd" id="2_gp0tn"]
+
+[node name="Handle" instance=ExtResource("1_m7j1k")]
+offset_right = 8.0
+offset_bottom = 8.0
+toggle_mode = true
+script = ExtResource("2_gp0tn")
+new_child_init_attr_data = {
+10: 44,
+12: 22,
+13: 1,
+25: 1
+}
+new_child_update_attr_data = {
+0: {
+11: 0.38,
+14: 0,
+15: 15
+},
+1: {
+11: 1,
+14: 1,
+15: 25,
+24: 26,
+26: 0
+},
+2: {
+15: 25
+},
+4: {
+15: 25
+},
+8: {},
+16: {
+15: 25
+},
+32: {}
+}
+
+[node name="BaseComponent" parent="." index="0"]
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Container" parent="BaseComponent" index="0"]
+size_flags_horizontal = 4
+
+[node name="StateLayer" parent="BaseComponent" index="1"]
+visible = false
+
+[node name="Content" parent="BaseComponent" index="2"]
+visible = false
+
+[node name="FocusIndicator" parent="BaseComponent" index="3"]
+visible = false

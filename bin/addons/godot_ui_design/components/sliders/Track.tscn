@@ -1,0 +1,88 @@
+[gd_scene load_steps=4 format=3 uid="uid://d17i7ykcqpe7l"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_f8q60"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/sliders/Track.gd" id="2_ntu3c"]
+[ext_resource type="PackedScene" uid="uid://0y88rht7hhk7" path="res://addons/godot_ui_design/components/sliders/Point.tscn" id="3_ohnik"]
+
+[node name="Track" instance=ExtResource("1_f8q60")]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("2_ntu3c")
+point_tscn = ExtResource("3_ohnik")
+track_mode = 2
+active_track = true
+left_value = 100
+right_value = 900
+min_value = 0
+max_value = 1000
+total_width = 1000
+total_tick_count = 0
+show_center_value = false
+center_value = 0
+num_mode = 0
+new_child_init_attr_data = {
+9: 0,
+10: 16,
+12: 22,
+13: 1
+}
+active_update_attr_data = {
+0: {
+11: 0.38,
+14: 0,
+15: 15
+},
+1: {
+11: 1,
+14: 0,
+15: 25
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+inactive_update_attr_data = {
+0: {
+11: 0.38,
+14: 0,
+15: 16
+},
+1: {
+11: 1,
+14: 0,
+15: 27
+},
+2: {},
+4: {
+15: 32
+},
+8: {},
+16: {
+15: 32
+},
+32: {}
+}
+
+[node name="BaseComponent" parent="." index="0"]
+custom_minimum_size = Vector2(0, 0)
+offset_right = 2.0
+offset_bottom = 2.0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="StateLayer" parent="BaseComponent" index="1"]
+visible = false
+
+[node name="TickNodes" type="Control" parent="BaseComponent/Content" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="FocusIndicator" parent="BaseComponent" index="3"]
+visible = false
+
+[connection signal="resized" from="." to="." method="_on_resized"]

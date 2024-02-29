@@ -1,0 +1,25 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj42ahxndroqu"]
+
+[ext_resource type="PackedScene" uid="uid://ds13qtsalxwe5" path="res://addons/godot_ui_design/components/tabs/Tab.tscn" id="1_24hy4"]
+
+[node name="TabDemo" type="Control"]
+custom_minimum_size = Vector2(500, 90)
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Tab" parent="." instance=ExtResource("1_24hy4")]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = 0.0
+offset_bottom = 8.0
+grow_horizontal = 2
+item_list = [{
+"badge_num": "1",
+"icon_name": "close",
+"item_text": "item_text1"
+}, {
+"badge_num": "3",
+"icon_name": "close",
+"item_text": "item_text2"
+}]

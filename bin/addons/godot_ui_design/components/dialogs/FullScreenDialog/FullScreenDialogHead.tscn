@@ -1,0 +1,116 @@
+[gd_scene load_steps=6 format=3 uid="uid://cghc3w8qs02vc"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_7ljut"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/dialogs/FullScreenDialog/FullScreenDialogHead.gd" id="2_tl8xe"]
+[ext_resource type="PackedScene" uid="uid://cn7pi4ndbyiv" path="res://addons/godot_ui_design/components/buttons/common_buttons/TextButton.tscn" id="3_iskv6"]
+[ext_resource type="PackedScene" uid="uid://bw0oei7qdm4mc" path="res://addons/godot_ui_design/components/buttons/icon_buttons/StandardIconButton.tscn" id="4_y8oy6"]
+[ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="5_t4byv"]
+
+[node name="FullScreenDialogHead" instance=ExtResource("1_7ljut")]
+offset_right = 84.0
+script = ExtResource("2_tl8xe")
+head_text = "head"
+show_mode = 0
+child_init_attr_data = {
+0: 13,
+10: 56,
+12: 22,
+13: 12,
+62: 3,
+64: 2
+}
+normal_child_update_attr_data = {
+0: {},
+1: {
+1: 15,
+2: 1,
+11: 1,
+14: 0,
+15: 7
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+scroll_child_update_attr_data = {
+0: {},
+1: {
+1: 15,
+2: 1,
+11: 1,
+14: 2,
+15: 12
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+action_list = [{
+"action_data": {},
+"action_name": "action_name1",
+"action_sig_name": "action_sig_name1"
+}, {
+"action_data": {},
+"action_name": "action_name2",
+"action_sig_name": "action_sig_name2"
+}]
+action_tscn = ExtResource("3_iskv6")
+
+[node name="BaseComponent" parent="." index="0"]
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="StateLayer" parent="BaseComponent" index="1"]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseComponent/Content" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BaseComponent/Content/MarginContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 16
+
+[node name="HeadIconButton" parent="BaseComponent/Content/MarginContainer/HBoxContainer" index="0" instance=ExtResource("4_y8oy6")]
+layout_mode = 2
+size_flags_vertical = 4
+icon_name = "close"
+
+[node name="HeadTextContainer" type="HBoxContainer" parent="BaseComponent/Content/MarginContainer/HBoxContainer" index="1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="HeadTextLabel" type="Label" parent="BaseComponent/Content/MarginContainer/HBoxContainer/HeadTextContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_t4byv")
+theme_override_font_sizes/font_size = 14
+text = "hello"
+vertical_alignment = 1
+
+[node name="TextButtonHBoxContainer" type="HBoxContainer" parent="BaseComponent/Content/MarginContainer/HBoxContainer" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="FocusIndicator" parent="BaseComponent" index="3"]
+visible = false
+
+[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="pressed" from="BaseComponent/Content/MarginContainer/HBoxContainer/HeadIconButton" to="." method="_on_head_icon_button_pressed"]

@@ -1,0 +1,173 @@
+[gd_scene load_steps=9 format=3 uid="uid://dshmix6xecv0w"]
+
+[ext_resource type="Script" path="res://addons/godot_ui_design/base/BaseComponent2.gd" id="1_dhno1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xc7q6"]
+bg_color = Color(0.972549, 0.94902, 0.980392, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vmkv7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.2)
+shadow_size = 1
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_imcfk"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.14)
+shadow_size = 1
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fj41c"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+shadow_color = Color(0, 0, 0, 0.12)
+shadow_size = 3
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jgb7"]
+bg_color = Color(0.972549, 0.94902, 0.980392, 1)
+corner_radius_top_left = 1024
+corner_radius_top_right = 1024
+corner_radius_bottom_right = 1024
+corner_radius_bottom_left = 1024
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4m0yn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rgqhb"]
+bg_color = Color(0.737255, 0.470588, 0.870588, 1)
+draw_center = false
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.486275, 0.447059, 0.588235, 1)
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[node name="Interactive" type="Button"]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 188.0
+offset_bottom = 50.0
+script = ExtResource("1_dhno1")
+
+[node name="BaseComponent" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 1
+offset_right = 73.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="Container" type="PanelContainer" parent="BaseComponent"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xc7q6")
+
+[node name="UmbraShadowMargin" type="MarginContainer" parent="BaseComponent/Container"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="UmbraShadow" type="Button" parent="BaseComponent/Container/UmbraShadowMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_vmkv7")
+
+[node name="PenumbraShadowMargin" type="MarginContainer" parent="BaseComponent/Container"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="PenumbraShadow" type="Button" parent="BaseComponent/Container/PenumbraShadowMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_imcfk")
+
+[node name="AmbientShadowMargin" type="MarginContainer" parent="BaseComponent/Container"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+show_behind_parent = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="AmbientShadow" type="Button" parent="BaseComponent/Container/AmbientShadowMargin"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fj41c")
+
+[node name="StateLayer" type="PanelContainer" parent="BaseComponent"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2jgb7")
+
+[node name="Content" type="PanelContainer" parent="BaseComponent"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4m0yn")
+
+[node name="FocusIndicator" type="PanelContainer" parent="BaseComponent"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_rgqhb")
+
+[connection signal="button_down" from="." to="." method="start_press"]
+[connection signal="button_up" from="." to="." method="finish_press"]
+[connection signal="focus_entered" from="." to="." method="start_focus"]
+[connection signal="focus_exited" from="." to="." method="finish_focus"]
+[connection signal="mouse_entered" from="." to="." method="start_hover"]
+[connection signal="mouse_exited" from="." to="." method="finish_hover"]
+[connection signal="pressed" from="." to="." method="_on_pressed"]
+[connection signal="resized" from="BaseComponent" to="." method="_on_base_component_resized"]

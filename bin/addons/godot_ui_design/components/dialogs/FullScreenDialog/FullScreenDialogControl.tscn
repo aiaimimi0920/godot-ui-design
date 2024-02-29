@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq7aoo7yv0840"]
+
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/dialogs/FullScreenDialog/FullScreenDialogControl.gd" id="1_3c6rg"]
+[ext_resource type="PackedScene" uid="uid://4uba74eqqhe3" path="res://addons/godot_ui_design/components/dialogs/FullScreenDialog/FullScreenDialog.tscn" id="3_7ctj3"]
+
+[node name="FullScreenDialogControl" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_3c6rg")
+
+[node name="FullScreenDialog" parent="." instance=ExtResource("3_7ctj3")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[connection signal="trigger_action" from="FullScreenDialog" to="." method="_on_full_screen_dialog_trigger_action"]

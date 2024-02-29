@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfuk3u0p7iuq1"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_4sgba"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/text_fields/OutlinedTextField/TextContainer.gd" id="2_jg8yi"]
+
+[node name="TextContainer" instance=ExtResource("1_4sgba")]
+offset_right = 84.0
+script = ExtResource("2_jg8yi")
+child_init_attr_data = {
+9: 112,
+10: 56,
+12: 22,
+13: 11,
+25: 1,
+27: 0,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {
+15: 15
+},
+1: {
+11: 0,
+14: 0,
+15: 14,
+24: 20,
+26: 1,
+33: 0,
+35: 25,
+50: 0,
+61: 30,
+63: 0
+},
+2: {
+33: 0.08
+},
+4: {
+24: 25,
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+33: 0.1
+},
+32: {}
+}
+
+[node name="BaseComponent" parent="." index="0"]
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="UmbraShadowMargin" parent="BaseComponent/Container" index="0"]
+visible = false
+
+[node name="UmbraShadow" parent="BaseComponent/Container/UmbraShadowMargin" index="0"]
+visible = false
+
+[node name="PenumbraShadowMargin" parent="BaseComponent/Container" index="1"]
+visible = false
+
+[node name="PenumbraShadow" parent="BaseComponent/Container/PenumbraShadowMargin" index="0"]
+visible = false
+
+[node name="AmbientShadowMargin" parent="BaseComponent/Container" index="2"]
+visible = false
+
+[node name="AmbientShadow" parent="BaseComponent/Container/AmbientShadowMargin" index="0"]
+visible = false
+
+[node name="StateLayer" parent="BaseComponent" index="1"]
+visible = false
+
+[node name="Content" parent="BaseComponent" index="2"]
+visible = false

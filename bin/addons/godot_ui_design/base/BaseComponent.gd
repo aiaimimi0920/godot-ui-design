@@ -307,17 +307,17 @@ var state_map_data = {
 	UIDesignConstants.State.ENABLED:{
 		"ContainerShape":UIDesignConstants.ShapeToken.FULLY_ROUNDED,
 		"ContainerHeight":40,
-		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVERL_1,
+		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVEL_1,
 		"ContainerShadowColor":UIDesignConstants.Role.SHADOW,
 		"ContainerColor":UIDesignConstants.Role.SURFACE_CONTAINER_LOW,
 	},
 	UIDesignConstants.State.DISABLED:{
-		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVERL_0,
+		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVEL_0,
 		"ContainerColor":UIDesignConstants.Role.ON_SURFACE,
 		"ContainerOpacity":UIDesignConstants.disabled_state_layer_opacity,
 	},
-	UIDesignConstants.State.HOVER:{
-		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVERL_2,
+	UIDesignConstants.State.HOVERED:{
+		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVEL_2,
 
 		"StateLayerColor":UIDesignConstants.Role.PRIMARY,
 		"StateLayerOpacity":UIDesignConstants.hover_state_layer_opacity,
@@ -328,14 +328,14 @@ var state_map_data = {
 		"FocusIndicatorThickness":UIDesignConstants.focus_indicator_thickness,
 		"FocusIndicatorOffset":UIDesignConstants.focus_indicator_outer_offset,
 		
-		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVERL_1,
+		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVEL_1,
 
 		"StateLayerColor":UIDesignConstants.Role.PRIMARY,
 		"StateLayerOpacity":UIDesignConstants.focus_state_layer_opacity,
 	},
 	UIDesignConstants.State.ACTIVATED:{},
 	UIDesignConstants.State.PRESSED:{
-		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVERL_1,
+		"ContainerElevation":UIDesignConstants.ElevationLevel.LEVEL_1,
 
 		"StateLayerColor":UIDesignConstants.Role.PRIMARY,
 		"StateLayerOpacity":UIDesignConstants.pressed_state_layer_opacity,
@@ -531,9 +531,9 @@ func check_state():
 		elif has_focus():
 			state = UIDesignConstants.State.FOCUSED
 		else:
-			state = UIDesignConstants.State.HOVER
+			state = UIDesignConstants.State.HOVERED
 	else:
-		if state == UIDesignConstants.State.HOVER:
+		if state == UIDesignConstants.State.HOVERED:
 			state = UIDesignConstants.State.ENABLED
 	
 func check_mouse_position():

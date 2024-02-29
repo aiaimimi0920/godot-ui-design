@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dapr2nll4tk2i"]
+
+[ext_resource type="PackedScene" uid="uid://ss5x30a54fbp" path="res://addons/godot_ui_design/components/dialogs/BaseDialog/BaseDialogControl.tscn" id="1_3sax6"]
+
+[node name="BaseDialogDemo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BaseDialogControl" parent="." instance=ExtResource("1_3sax6")]
+layout_mode = 1

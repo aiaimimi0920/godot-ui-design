@@ -1,0 +1,101 @@
+[gd_scene load_steps=6 format=3 uid="uid://ds13qtsalxwe5"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_bi4og"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/tabs/Tab.gd" id="2_poguy"]
+[ext_resource type="PackedScene" uid="uid://dixo4nmfm3pqu" path="res://addons/godot_ui_design/components/tabs/SecondaryTabItem.tscn" id="3_ckixn"]
+[ext_resource type="PackedScene" uid="uid://5uk3f5aqfby6" path="res://addons/godot_ui_design/components/tabs/PrimaryTabItem.tscn" id="4_64lfy"]
+[ext_resource type="PackedScene" uid="uid://j6lyuwxh37ry" path="res://addons/godot_ui_design/components/separator/HSeparatorControl.tscn" id="9_quc65"]
+
+[node name="Tab" instance=ExtResource("1_bi4og")]
+offset_right = 343.0
+offset_bottom = 128.0
+script = ExtResource("2_poguy")
+show_mode = 0
+child_init_attr_data = {
+0: 13,
+10: 56,
+12: 22,
+13: 12,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {},
+1: {
+1: 15,
+2: 1,
+11: 1,
+14: 0,
+15: 7
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+item_list = [{
+"badge_num": "1",
+"icon_name": "",
+"item_text": "item_text1"
+}, {
+"badge_num": "3",
+"icon_name": "",
+"item_text": "item_text2"
+}]
+secondary_tscn = ExtResource("3_ckixn")
+primary_tscn = ExtResource("4_64lfy")
+
+[node name="BaseComponent" parent="." index="0"]
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="StateLayer" parent="BaseComponent" index="1"]
+visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseComponent/Content" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = -1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BaseComponent/Content/MarginContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="HSeparatorControl" parent="BaseComponent/Content/MarginContainer/VBoxContainer" index="0" instance=ExtResource("9_quc65")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="HSeparator" parent="BaseComponent/Content/MarginContainer/VBoxContainer/HSeparatorControl" index="0"]
+child_update_attr_data = {
+0: {},
+1: {
+11: 1,
+14: 0,
+15: 16
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+
+[node name="ContentHBoxContainer" type="HBoxContainer" parent="BaseComponent/Content" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="FocusIndicator" parent="BaseComponent" index="3"]
+visible = false
+
+[connection signal="resized" from="." to="." method="_on_resized"]
+
+[editable path="BaseComponent/Content/MarginContainer/VBoxContainer/HSeparatorControl"]

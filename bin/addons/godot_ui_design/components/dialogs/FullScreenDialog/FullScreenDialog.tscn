@@ -1,0 +1,100 @@
+[gd_scene load_steps=4 format=3 uid="uid://4uba74eqqhe3"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_bxm31"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/dialogs/FullScreenDialog/FullScreenDialog.gd" id="2_y7sd1"]
+[ext_resource type="PackedScene" uid="uid://cghc3w8qs02vc" path="res://addons/godot_ui_design/components/dialogs/FullScreenDialog/FullScreenDialogHead.tscn" id="4_hmd5u"]
+
+[node name="FullScreenDialog" instance=ExtResource("1_bxm31")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_y7sd1")
+child_init_attr_data = {
+12: 22,
+13: 12
+}
+normal_child_update_attr_data = {
+0: {},
+1: {
+11: 1,
+14: 0,
+15: 7
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+scroll_child_update_attr_data = {
+0: {},
+1: {
+11: 1,
+14: 2,
+15: 12
+},
+2: {},
+4: {},
+8: {},
+16: {},
+32: {}
+}
+head_text = "head"
+action_list = [{
+"action_data": {},
+"action_name": "action_name1",
+"action_sig_name": "action_sig_name1"
+}, {
+"action_data": {},
+"action_name": "action_name2",
+"action_sig_name": "action_sig_name2"
+}]
+
+[node name="BaseComponent" parent="." index="0"]
+layout_mode = 0
+offset_right = 8.0
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="StateLayer" parent="BaseComponent" index="1"]
+visible = false
+
+[node name="ContentVBoxContainer" type="VBoxContainer" parent="BaseComponent/Content" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="FullScreenDialogHead" parent="BaseComponent/Content/ContentVBoxContainer" index="0" instance=ExtResource("4_hmd5u")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="ColorRect" type="ColorRect" parent="BaseComponent/Content/ContentVBoxContainer" index="1"]
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+color = Color(1, 0, 0.207843, 1)
+
+[node name="ContentScrollContainer" type="ScrollContainer" parent="BaseComponent/Content/ContentVBoxContainer" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="ContentPanelContainer" type="PanelContainer" parent="BaseComponent/Content/ContentVBoxContainer/ContentScrollContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="FocusIndicator" parent="BaseComponent" index="3"]
+visible = false
+
+[connection signal="resized" from="." to="." method="_on_resized"]
+[connection signal="close_panel" from="BaseComponent/Content/ContentVBoxContainer/FullScreenDialogHead" to="." method="_on_full_screen_dialog_head_close_panel"]
+[connection signal="trigger_action" from="BaseComponent/Content/ContentVBoxContainer/FullScreenDialogHead" to="." method="_on_full_screen_dialog_head_trigger_action"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://j6lyuwxh37ry"]
+
+[ext_resource type="PackedScene" uid="uid://dgnmckxnimcwb" path="res://addons/godot_ui_design/components/separator/HSeparator.tscn" id="1_bworj"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/separator/HSeparatorControl.gd" id="1_lyhc4"]
+
+[node name="HSeparatorControl" type="Control"]
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+script = ExtResource("1_lyhc4")
+
+[node name="HSeparator" parent="." instance=ExtResource("1_bworj")]
+unique_name_in_owner = true
+layout_mode = 1

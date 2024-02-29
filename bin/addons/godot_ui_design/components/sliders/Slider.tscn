@@ -1,0 +1,438 @@
+[gd_scene load_steps=6 format=3 uid="uid://chbjbcauwru3p"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_i8h7x"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/sliders/Slider.gd" id="2_3lh66"]
+[ext_resource type="PackedScene" uid="uid://d17i7ykcqpe7l" path="res://addons/godot_ui_design/components/sliders/Track.tscn" id="3_kainq"]
+[ext_resource type="PackedScene" uid="uid://bm5xi0m8f5fcf" path="res://addons/godot_ui_design/components/sliders/Handle.tscn" id="4_88qdb"]
+[ext_resource type="PackedScene" uid="uid://bdrifjv6k51i3" path="res://addons/godot_ui_design/components/sliders/Value.tscn" id="5_fw24s"]
+
+[node name="Slider" instance=ExtResource("1_i8h7x")]
+offset_right = 84.0
+script = ExtResource("2_3lh66")
+child_init_attr_data = {
+9: 40,
+10: 40,
+12: 22,
+13: 1,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {},
+1: {
+11: 0,
+14: 0,
+15: 32,
+33: 0,
+35: 25,
+50: 0,
+61: 1,
+63: 0
+},
+2: {
+33: 0.08
+},
+4: {
+33: 0.1,
+63: 1
+},
+8: {},
+16: {
+33: 0.1
+},
+32: {}
+}
+total_width = 100
+total_tick_count = 3
+max_value = 50
+min_value = -50
+now_value = 0
+now_left_value = 50
+now_right_value = 50
+step = 1.0
+num_mode = 0
+show_mode = 0
+
+[node name="NoCenterSlider" type="HBoxContainer" parent="BaseComponent/Content" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="NoCenterControl1" type="Control" parent="BaseComponent/Content/NoCenterSlider" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="NoCenterLeftTrack" parent="BaseComponent/Content/NoCenterSlider/NoCenterControl1" index="0" instance=ExtResource("3_kainq")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_bottom = 4.0
+grow_vertical = 2
+mouse_filter = 2
+track_mode = 0
+left_value = 0
+right_value = 50
+max_value = 100
+total_width = 100
+
+[node name="BaseComponent" parent="BaseComponent/Content/NoCenterSlider/NoCenterControl1/NoCenterLeftTrack" index="0"]
+offset_right = 8.0
+theme_override_constants/margin_right = 6
+
+[node name="NoCenterHandle" parent="BaseComponent/Content/NoCenterSlider" index="1" instance=ExtResource("4_88qdb")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="BaseComponent/Content/NoCenterSlider/NoCenterHandle" index="1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="NoCenterValue" parent="BaseComponent/Content/NoCenterSlider/NoCenterHandle/Control" index="0" instance=ExtResource("5_fw24s")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -50.0
+offset_right = 42.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="NoCenterControl2" type="Control" parent="BaseComponent/Content/NoCenterSlider" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+
+[node name="NoCenterRightTrack" parent="BaseComponent/Content/NoCenterSlider/NoCenterControl2" index="0" instance=ExtResource("3_kainq")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+active_track = false
+left_value = 50
+right_value = 100
+max_value = 100
+total_width = 100
+
+[node name="BaseComponent" parent="BaseComponent/Content/NoCenterSlider/NoCenterControl2/NoCenterRightTrack" index="0"]
+theme_override_constants/margin_left = 6
+
+[node name="RangeSelectionSlider" type="HBoxContainer" parent="BaseComponent/Content" index="1"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="RangeSelectionControl1" type="Control" parent="BaseComponent/Content/RangeSelectionSlider" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="RangeSelectionLeftTrack" parent="BaseComponent/Content/RangeSelectionSlider/RangeSelectionControl1" index="0" instance=ExtResource("3_kainq")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_bottom = 4.0
+grow_vertical = 2
+mouse_filter = 2
+track_mode = 0
+active_track = false
+left_value = 0
+right_value = 50
+max_value = 100
+total_width = 100
+
+[node name="BaseComponent" parent="BaseComponent/Content/RangeSelectionSlider/RangeSelectionControl1/RangeSelectionLeftTrack" index="0"]
+offset_right = 8.0
+theme_override_constants/margin_right = 6
+
+[node name="RangeSelectionLeftHandle" parent="BaseComponent/Content/RangeSelectionSlider" index="1" instance=ExtResource("4_88qdb")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="BaseComponent/Content/RangeSelectionSlider/RangeSelectionLeftHandle" index="1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="RangeSelectionLeftValue" parent="BaseComponent/Content/RangeSelectionSlider/RangeSelectionLeftHandle/Control" index="0" instance=ExtResource("5_fw24s")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -50.0
+offset_right = 42.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="RangeSelectionControl2" type="Control" parent="BaseComponent/Content/RangeSelectionSlider" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="RangeSelectionCenterTrack" parent="BaseComponent/Content/RangeSelectionSlider/RangeSelectionControl2" index="0" instance=ExtResource("3_kainq")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+track_mode = 1
+left_value = 0
+right_value = 50
+max_value = 100
+total_width = 100
+
+[node name="BaseComponent" parent="BaseComponent/Content/RangeSelectionSlider/RangeSelectionControl2/RangeSelectionCenterTrack" index="0"]
+offset_right = 8.0
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_right = 6
+
+[node name="RangeSelectionRightHandle" parent="BaseComponent/Content/RangeSelectionSlider" index="3" instance=ExtResource("4_88qdb")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="BaseComponent/Content/RangeSelectionSlider/RangeSelectionRightHandle" index="1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="RangeSelectionRightValue" parent="BaseComponent/Content/RangeSelectionSlider/RangeSelectionRightHandle/Control" index="0" instance=ExtResource("5_fw24s")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -50.0
+offset_right = 42.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="RangeSelectionControl3" type="Control" parent="BaseComponent/Content/RangeSelectionSlider" index="4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+
+[node name="RangeSelectionRightTrack" parent="BaseComponent/Content/RangeSelectionSlider/RangeSelectionControl3" index="0" instance=ExtResource("3_kainq")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+active_track = false
+left_value = 50
+right_value = 100
+max_value = 100
+total_width = 100
+
+[node name="BaseComponent" parent="BaseComponent/Content/RangeSelectionSlider/RangeSelectionControl3/RangeSelectionRightTrack" index="0"]
+theme_override_constants/margin_left = 6
+
+[node name="CenterSlider" type="HBoxContainer" parent="BaseComponent/Content" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+
+[node name="CenterControl1" type="Control" parent="BaseComponent/Content/CenterSlider" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+
+[node name="CenterLeftTrack" parent="BaseComponent/Content/CenterSlider/CenterControl1" index="0" instance=ExtResource("3_kainq")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_bottom = 4.0
+grow_vertical = 2
+mouse_filter = 2
+track_mode = 0
+active_track = false
+left_value = 0
+right_value = 50
+max_value = 100
+total_width = 100
+
+[node name="BaseComponent" parent="BaseComponent/Content/CenterSlider/CenterControl1/CenterLeftTrack" index="0"]
+offset_right = 8.0
+theme_override_constants/margin_right = 6
+
+[node name="CenterHandle" parent="BaseComponent/Content/CenterSlider" index="1" instance=ExtResource("4_88qdb")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="BaseComponent/Content/CenterSlider/CenterHandle" index="1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+grow_horizontal = 2
+mouse_filter = 2
+
+[node name="CenterValue" parent="BaseComponent/Content/CenterSlider/CenterHandle/Control" index="0" instance=ExtResource("5_fw24s")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -42.0
+offset_top = -50.0
+offset_right = 42.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="CenterControl2" type="Control" parent="BaseComponent/Content/CenterSlider" index="2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+
+[node name="CenterRightTrack" parent="BaseComponent/Content/CenterSlider/CenterControl2" index="0" instance=ExtResource("3_kainq")]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+active_track = false
+left_value = 50
+right_value = 100
+max_value = 100
+total_width = 100
+
+[node name="BaseComponent" parent="BaseComponent/Content/CenterSlider/CenterControl2/CenterRightTrack" index="0"]
+theme_override_constants/margin_left = 6
+
+[connection signal="resized" from="BaseComponent/Content/NoCenterSlider/NoCenterControl1" to="." method="_on_control_1_resized"]
+[connection signal="change_handle_pos" from="BaseComponent/Content/NoCenterSlider/NoCenterHandle" to="." method="_on_handle_change_handle_1_pos"]
+[connection signal="finish_focused" from="BaseComponent/Content/NoCenterSlider/NoCenterHandle" to="." method="change_handle_1_is_pressed"]
+[connection signal="finish_pressed" from="BaseComponent/Content/NoCenterSlider/NoCenterHandle" to="." method="change_handle_1_is_pressed"]
+[connection signal="finish_pressed" from="BaseComponent/Content/NoCenterSlider/NoCenterHandle" to="." method="_on_handle_1_finish_pressed"]
+[connection signal="start_focused" from="BaseComponent/Content/NoCenterSlider/NoCenterHandle" to="." method="change_handle_1_is_pressed"]
+[connection signal="start_pressed" from="BaseComponent/Content/NoCenterSlider/NoCenterHandle" to="." method="_on_handle_1_start_pressed"]
+[connection signal="start_pressed" from="BaseComponent/Content/NoCenterSlider/NoCenterHandle" to="." method="change_handle_1_is_pressed"]
+[connection signal="resized" from="BaseComponent/Content/NoCenterSlider/NoCenterControl2" to="." method="_on_control_2_resized"]
+[connection signal="resized" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionControl1" to="." method="_on_range_control_1_resized"]
+[connection signal="change_handle_pos" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionLeftHandle" to="." method="_on_handle_change_range_handle_1_pos"]
+[connection signal="finish_focused" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionLeftHandle" to="." method="change_range_handle_1_is_pressed"]
+[connection signal="finish_pressed" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionLeftHandle" to="." method="change_range_handle_1_is_pressed"]
+[connection signal="finish_pressed" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionLeftHandle" to="." method="_on_range_handle_1_finish_pressed"]
+[connection signal="start_focused" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionLeftHandle" to="." method="change_range_handle_1_is_pressed"]
+[connection signal="start_pressed" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionLeftHandle" to="." method="change_range_handle_1_is_pressed"]
+[connection signal="start_pressed" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionLeftHandle" to="." method="_on_range_handle_1_start_pressed"]
+[connection signal="resized" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionControl2" to="." method="_on_range_control_2_resized"]
+[connection signal="change_handle_pos" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionRightHandle" to="." method="_on_handle_change_range_handle_2_pos"]
+[connection signal="finish_focused" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionRightHandle" to="." method="change_range_handle_2_is_pressed"]
+[connection signal="finish_pressed" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionRightHandle" to="." method="change_range_handle_2_is_pressed"]
+[connection signal="finish_pressed" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionRightHandle" to="." method="_on_range_handle_2_finish_pressed"]
+[connection signal="start_focused" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionRightHandle" to="." method="change_range_handle_2_is_pressed"]
+[connection signal="start_pressed" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionRightHandle" to="." method="_on_range_handle_2_start_pressed"]
+[connection signal="start_pressed" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionRightHandle" to="." method="change_range_handle_2_is_pressed"]
+[connection signal="resized" from="BaseComponent/Content/RangeSelectionSlider/RangeSelectionControl3" to="." method="_on_range_control_3_resized"]
+[connection signal="resized" from="BaseComponent/Content/CenterSlider/CenterControl1" to="." method="_on_control_1_resized"]
+[connection signal="change_handle_pos" from="BaseComponent/Content/CenterSlider/CenterHandle" to="." method="_on_handle_change_handle_1_pos"]
+[connection signal="finish_focused" from="BaseComponent/Content/CenterSlider/CenterHandle" to="." method="change_handle_1_is_pressed"]
+[connection signal="finish_pressed" from="BaseComponent/Content/CenterSlider/CenterHandle" to="." method="change_handle_1_is_pressed"]
+[connection signal="finish_pressed" from="BaseComponent/Content/CenterSlider/CenterHandle" to="." method="_on_handle_1_finish_pressed"]
+[connection signal="start_focused" from="BaseComponent/Content/CenterSlider/CenterHandle" to="." method="change_handle_1_is_pressed"]
+[connection signal="start_pressed" from="BaseComponent/Content/CenterSlider/CenterHandle" to="." method="_on_handle_1_start_pressed"]
+[connection signal="start_pressed" from="BaseComponent/Content/CenterSlider/CenterHandle" to="." method="change_handle_1_is_pressed"]
+[connection signal="resized" from="BaseComponent/Content/CenterSlider/CenterControl2" to="." method="_on_control_2_resized"]
+
+[editable path="BaseComponent/Content/NoCenterSlider/NoCenterControl1/NoCenterLeftTrack"]
+[editable path="BaseComponent/Content/NoCenterSlider/NoCenterControl2/NoCenterRightTrack"]
+[editable path="BaseComponent/Content/RangeSelectionSlider/RangeSelectionControl1/RangeSelectionLeftTrack"]
+[editable path="BaseComponent/Content/RangeSelectionSlider/RangeSelectionControl2/RangeSelectionCenterTrack"]
+[editable path="BaseComponent/Content/RangeSelectionSlider/RangeSelectionControl3/RangeSelectionRightTrack"]
+[editable path="BaseComponent/Content/CenterSlider/CenterControl1/CenterLeftTrack"]
+[editable path="BaseComponent/Content/CenterSlider/CenterControl2/CenterRightTrack"]

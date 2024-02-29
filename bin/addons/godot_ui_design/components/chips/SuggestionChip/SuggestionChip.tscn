@@ -1,0 +1,135 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7pwqk2wjp16k"]
+
+[ext_resource type="PackedScene" uid="uid://dshmix6xecv0w" path="res://addons/godot_ui_design/base/BaseComponent2.tscn" id="1_mrtar"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/chips/SuggestionChip/SuggestionChip.gd" id="2_nxirh"]
+[ext_resource type="FontFile" uid="uid://07hdy6t2ed4l" path="res://addons/material-design-icons/fonts/material_design_icons.ttf" id="3_63gtm"]
+[ext_resource type="Script" path="res://addons/material-design-icons/nodes/MaterialIcon.gd" id="4_jevug"]
+[ext_resource type="FontVariation" uid="uid://csjdygtguqfyj" path="res://addons/godot_ui_design/font/label_large.tres" id="5_mx62l"]
+
+[node name="SuggestionChip" instance=ExtResource("1_mrtar")]
+offset_right = 84.0
+script = ExtResource("2_nxirh")
+label_text = "hello"
+leading_icon_name = "alert"
+child_init_attr_data = {
+0: 10,
+10: 32,
+12: 22,
+13: 9,
+25: 1,
+27: 0,
+28: 18,
+62: 3,
+64: 2
+}
+child_update_attr_data = {
+0: {
+1: 15,
+2: 0.38,
+11: 0.12,
+14: 0,
+15: 15,
+24: 15,
+26: 0.12,
+29: 15,
+30: 0.38
+},
+1: {
+1: 15,
+2: 1,
+11: 1,
+14: 1,
+15: 11,
+24: 20,
+26: 1,
+29: 25,
+30: 1,
+33: 0,
+35: 12,
+50: 0,
+61: 1,
+63: 0
+},
+2: {
+1: 15,
+2: 1,
+14: 2,
+29: 25,
+30: 1,
+33: 0.08,
+35: 15
+},
+4: {
+1: 15,
+2: 1,
+14: 1,
+15: 12,
+24: 15,
+29: 25,
+30: 1,
+33: 0.1,
+35: 15,
+63: 1
+},
+8: {},
+16: {
+1: 15,
+2: 1,
+14: 1,
+29: 25,
+30: 1,
+33: 0.1,
+35: 15
+},
+32: {
+1: 15,
+2: 1,
+14: 4,
+29: 25,
+30: 1,
+33: 0.16,
+35: 15
+}
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseComponent/Content" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_right = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BaseComponent/Content/MarginContainer" index="0"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="LeadingIcon" type="Label" parent="BaseComponent/Content/MarginContainer/HBoxContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_63gtm")
+theme_override_font_sizes/font_size = 18
+text = "󰀦"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_jevug")
+icon_name = "alert"
+icon_size = 18
+
+[node name="MarginContainer" type="MarginContainer" parent="BaseComponent/Content/MarginContainer/HBoxContainer" index="1"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="Label" type="Label" parent="BaseComponent/Content/MarginContainer/HBoxContainer/MarginContainer" index="0"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = ExtResource("5_mx62l")
+theme_override_font_sizes/font_size = 14
+text = "hello"
+horizontal_alignment = 1
+vertical_alignment = 1
