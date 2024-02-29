@@ -17,8 +17,12 @@ Two important implementations:
 Please note that plugin dependencies https://github.com/rakugoteam/Godot-Material-Icons
 
 ## Available controls
-1. Badge：![image](https://github.com/aiaimimi0920/godot-ui-design/assets/153103332/ff6614d8-96a0-436c-b5e2-6ad1f6d6b271)
-2. 
+1. Badge: ![image](https://github.com/aiaimimi0920/godot-ui-design/assets/153103332/ff6614d8-96a0-436c-b5e2-6ad1f6d6b271)
+2. Button: ![video](https://github.com/aiaimimi0920/godot-ui-design/assets/153103332/06619c4c-8404-44f6-a24e-81818a12859b)
+3. Fab: ![fab](https://github.com/aiaimimi0920/godot-ui-design/assets/153103332/6eedf918-fbf7-40ec-8148-1185fe542eae)
+4. IconButton: ![icon_button](https://github.com/aiaimimi0920/godot-ui-design/assets/153103332/39c2a86f-d265-4382-b798-00f9470661da)
+5. SegmentedButton: ![segmented_button](https://github.com/aiaimimi0920/godot-ui-design/assets/153103332/9b229bb1-9f17-459c-9c87-adb0dea97acd)
+
 
 
 ## Contributors ✨
