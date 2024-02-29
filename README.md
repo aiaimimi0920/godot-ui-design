@@ -1,34 +1,24 @@
-# Godot TTS
-
-<p align="center">
-	<a href="https://github.com/aiaimimi0920/godot-tts/actions/workflows/runner.yml">
-        <img src="https://github.com/aiaimimi0920/godot-tts/actions/workflows/runner.yml/badge.svg?branch=main"
-            alt="chat on Discord"></a>
-    <a href="https://github.com/huakunyang/SummerTTS" alt="Summer TTS">
-        <img src="https://img.shields.io/badge/SummerTTS-v0.0.1-%23478cbf?logoColor=white" /></a>
-    <a href="https://github.com/godotengine/godot-cpp" alt="Godot Version">
-        <img src="https://img.shields.io/badge/Godot-v4.1-%23478cbf?logo=godot-engine&logoColor=white" /></a>
-    <a href="https://github.com/aiaimimi0920/godot-tts/graphs/contributors" alt="Contributors">
-        <img src="https://img.shields.io/github/contributors/aiaimimi0920/godot-tts" /></a>
-    <a href="https://github.com/aiaimimi0920/godot-tts/pulse" alt="Activity">
-        <img src="https://img.shields.io/github/commit-activity/m/aiaimimi0920/godot-tts" /></a>
-</p>
-
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+# Godot UI design
 
 ## How to install
 
 Go to a github release, copy paste the addons folder to the demo folder. Restart godot editor.
 
-## TextToSpeech
+## Introduction
 
-`TextToSpeech` Node has a `generate` which generate audio buffer from text.
+this is a control list for replace godot control node.
 
+The implementation style of the control is based on https://m3.material.io/components Style.
 
+Two important implementations:
+1. Dynamic colors
+2. Elevated implementation
 
-https://github.com/aiaimimi0920/godot-tts/assets/153103332/0813ddc9-2c71-453e-8ddb-50ce7f846ba9
+Please note that plugin dependencies https://github.com/rakugoteam/Godot-Material-Icons
+
+## Available controls
+1. Badge：![image](https://github.com/aiaimimi0920/godot-ui-design/assets/153103332/ff6614d8-96a0-436c-b5e2-6ad1f6d6b271)
+2. 
 
 
 ## Contributors ✨
