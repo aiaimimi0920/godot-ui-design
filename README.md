@@ -16,6 +16,15 @@ Two important implementations:
 
 Please note that plugin dependencies https://github.com/rakugoteam/Godot-Material-Icons
 
+## Plan
+1. All current node base classes are buttons, which implement the functions of different controls in a certain way. However, due to not using Godot base controls, not all signals possessed by the base controls are implemented
+2. The rendering of the control is only completed at runtime, so it cannot be displayed in real-time in the editor temporarily
+3. Will implementing controls through gdscript affect fps
+
+## Possible improvements
+1. Move the code to the C++level and implement the signals possessed by the basic controls
+2. The display of controls can be controlled through themes
+
 ## Available controls
 1. Badge: ![image](https://github.com/aiaimimi0920/godot-ui-design/assets/153103332/ff6614d8-96a0-436c-b5e2-6ad1f6d6b271)
 2. Button: ![video](https://github.com/aiaimimi0920/godot-ui-design/assets/153103332/06619c4c-8404-44f6-a24e-81818a12859b)
