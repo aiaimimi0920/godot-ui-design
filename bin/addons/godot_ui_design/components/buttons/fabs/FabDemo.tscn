@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://ger1nmbhf4ht"]
+
+[ext_resource type="PackedScene" uid="uid://djuqlycxbg8c4" path="res://addons/godot_ui_design/components/buttons/fabs/ExtendedFAB.tscn" id="1_a44jd"]
+[ext_resource type="PackedScene" uid="uid://dqp470w5uskqm" path="res://addons/godot_ui_design/components/buttons/fabs/FAB.tscn" id="2_hbksr"]
+
+[node name="FabDemo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "ExtendedFAB"
+
+[node name="ExtendedFAB" parent="CenterContainer/VBoxContainer/HBoxContainer" instance=ExtResource("1_a44jd")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "FAB"
+
+[node name="FAB" parent="CenterContainer/VBoxContainer/HBoxContainer2" instance=ExtResource("2_hbksr")]
+layout_mode = 2

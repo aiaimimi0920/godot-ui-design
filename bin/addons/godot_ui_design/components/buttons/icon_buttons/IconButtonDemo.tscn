@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbyvspkcdhfm"]
+
+[ext_resource type="PackedScene" uid="uid://biy7q7bvsxty6" path="res://addons/godot_ui_design/components/buttons/icon_buttons/FilledIconButton.tscn" id="1_jxudm"]
+[ext_resource type="PackedScene" uid="uid://dln4hqp3qvdnj" path="res://addons/godot_ui_design/components/buttons/icon_buttons/FilledTonalIconButton.tscn" id="2_e5yiv"]
+[ext_resource type="PackedScene" uid="uid://chifbmfgpfvjp" path="res://addons/godot_ui_design/components/buttons/icon_buttons/OutlinedIconButton.tscn" id="3_ghjb1"]
+[ext_resource type="PackedScene" uid="uid://bw0oei7qdm4mc" path="res://addons/godot_ui_design/components/buttons/icon_buttons/StandardIconButton.tscn" id="4_j7xa0"]
+
+[node name="IconButtonDemo" type="VBoxContainer"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "FilledIconButton"
+
+[node name="FilledIconButton" parent="HBoxContainer" instance=ExtResource("1_jxudm")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "FilledTonalIconButton"
+
+[node name="FilledTonalIconButton" parent="HBoxContainer2" instance=ExtResource("2_e5yiv")]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+text = "OutlinedIconButton"
+
+[node name="OutlinedIconButton" parent="HBoxContainer3" instance=ExtResource("3_ghjb1")]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer4"]
+layout_mode = 2
+text = "StandardIconButton"
+
+[node name="StandardIconButton" parent="HBoxContainer4" instance=ExtResource("4_j7xa0")]
+layout_mode = 2

@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://brcjqhlx5p1rb"]
+
+[ext_resource type="PackedScene" uid="uid://s06u5caf6as1" path="res://addons/godot_ui_design/components/buttons/common_buttons/ElevatedButton.tscn" id="1_g7vkg"]
+[ext_resource type="PackedScene" uid="uid://crn87dy6cg6cb" path="res://addons/godot_ui_design/components/buttons/common_buttons/FilledButton.tscn" id="2_77cwu"]
+[ext_resource type="PackedScene" uid="uid://bgws141nglfg8" path="res://addons/godot_ui_design/components/buttons/common_buttons/FilledTonalButton.tscn" id="3_0xysr"]
+[ext_resource type="PackedScene" uid="uid://ch3lybrbu7m0h" path="res://addons/godot_ui_design/components/buttons/common_buttons/OutlinedButton.tscn" id="4_lu7yr"]
+[ext_resource type="PackedScene" uid="uid://cn7pi4ndbyiv" path="res://addons/godot_ui_design/components/buttons/common_buttons/TextButton.tscn" id="5_y28hn"]
+
+[node name="BadgeDemo" type="VBoxContainer"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "ElevatedButton"
+
+[node name="ElevatedButton" parent="HBoxContainer" instance=ExtResource("1_g7vkg")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "FilledButton"
+
+[node name="FilledButton" parent="HBoxContainer2" instance=ExtResource("2_77cwu")]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+text = "FilledTonalButton"
+
+[node name="FilledTonalButton" parent="HBoxContainer3" instance=ExtResource("3_0xysr")]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer4"]
+layout_mode = 2
+text = "OutlinedButton"
+
+[node name="OutlinedButton" parent="HBoxContainer4" instance=ExtResource("4_lu7yr")]
+layout_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer5"]
+layout_mode = 2
+text = "TextButton"
+
+[node name="TextButton" parent="HBoxContainer5" instance=ExtResource("5_y28hn")]
+layout_mode = 2

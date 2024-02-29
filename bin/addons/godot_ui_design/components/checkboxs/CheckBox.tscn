@@ -104,3 +104,5 @@ icon_size = 18
 [node name="FocusIndicator" parent="BaseComponent" index="3"]
 size_flags_horizontal = 4
 size_flags_vertical = 4
+
+[connection signal="toggled" from="." to="." method="_on_toggled"]

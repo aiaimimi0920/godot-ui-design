@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1caolbd7fi10"]
+
+[ext_resource type="PackedScene" uid="uid://d237sev8cl7jx" path="res://addons/godot_ui_design/components/buttons/segmented_buttons/SegmentedButton.tscn" id="1_0l6xc"]
+
+[node name="SegmentedButtonDemo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="SegmentedButton" parent="CenterContainer/VBoxContainer" instance=ExtResource("1_0l6xc")]
+layout_mode = 2
+
+[node name="SegmentedButton2" parent="CenterContainer/VBoxContainer" instance=ExtResource("1_0l6xc")]
+layout_mode = 2
+text_list = ["hello", "hi", "good"]
+icon_list = ["alert", "alert", "alert"]
+
+[node name="SegmentedButton3" parent="CenterContainer/VBoxContainer" instance=ExtResource("1_0l6xc")]
+layout_mode = 2
+text_list = ["hello", "hi", "good", "best"]
+icon_list = ["alert", "alert", "alert", "alert"]

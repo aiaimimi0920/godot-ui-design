@@ -1,0 +1,91 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2pil22wjapgq"]
+
+[ext_resource type="PackedScene" uid="uid://chbjbcauwru3p" path="res://addons/godot_ui_design/components/sliders/Slider.tscn" id="1_nti5a"]
+
+[node name="IconButtonDemo" type="VBoxContainer"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Normal"
+
+[node name="Slider" parent="HBoxContainer" instance=ExtResource("1_nti5a")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Center"
+
+[node name="Slider" parent="HBoxContainer2" instance=ExtResource("1_nti5a")]
+layout_mode = 2
+show_mode = 1
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "RangeSelection"
+
+[node name="Slider" parent="HBoxContainer3" instance=ExtResource("1_nti5a")]
+layout_mode = 2
+show_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer4"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "NormalDiscrete"
+
+[node name="Slider" parent="HBoxContainer4" instance=ExtResource("1_nti5a")]
+layout_mode = 2
+total_tick_count = 11
+num_mode = 1
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer5"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "CenterDiscrete"
+
+[node name="Slider" parent="HBoxContainer5" instance=ExtResource("1_nti5a")]
+layout_mode = 2
+total_tick_count = 11
+num_mode = 1
+show_mode = 1
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer6"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "RangeSelectionDiscrete"
+
+[node name="Slider" parent="HBoxContainer6" instance=ExtResource("1_nti5a")]
+layout_mode = 2
+total_tick_count = 11
+num_mode = 1
+show_mode = 2

@@ -6,6 +6,6 @@ extends Control
 		item_list = val
 		if not is_inside_tree():
 			await ready
-		%BaseDialog.item_list = item_list
+		%Menu.item_list = item_list
 	get:
 		return item_list

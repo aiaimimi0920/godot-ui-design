@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://b40lrpniyvps4"]
+
+[ext_resource type="PackedScene" uid="uid://dcjulwp81n1ef" path="res://addons/godot_ui_design/components/chips/AssistChip/AssistChip.tscn" id="1_3btgj"]
+[ext_resource type="PackedScene" uid="uid://b1s5tnhmdmv2g" path="res://addons/godot_ui_design/components/chips/FilterChip/FilterChip.tscn" id="2_j2ucs"]
+[ext_resource type="PackedScene" uid="uid://1weflhvufqjd" path="res://addons/godot_ui_design/components/chips/InputChip/InputChip.tscn" id="3_lpd6f"]
+[ext_resource type="PackedScene" uid="uid://b7pwqk2wjp16k" path="res://addons/godot_ui_design/components/chips/SuggestionChip/SuggestionChip.tscn" id="4_i475i"]
+
+[node name="IconButtonDemo" type="VBoxContainer"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "AssistChip"
+
+[node name="AssistChip" parent="HBoxContainer" instance=ExtResource("1_3btgj")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "FilterChip"
+
+[node name="FilterChip" parent="HBoxContainer2" instance=ExtResource("2_j2ucs")]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+text = "InputChip"
+
+[node name="InputChip" parent="HBoxContainer3" instance=ExtResource("3_lpd6f")]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer4"]
+layout_mode = 2
+text = "SuggestionChip"
+
+[node name="SuggestionChip" parent="HBoxContainer4" instance=ExtResource("4_i475i")]
+layout_mode = 2

@@ -1,0 +1,69 @@
+[gd_scene load_steps=4 format=3 uid="uid://ocrbwlaptxch"]
+
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/progress_indicators/ProgressIndicatorsDemo.gd" id="1_j4c1u"]
+[ext_resource type="PackedScene" uid="uid://cqb54skiqqihx" path="res://addons/godot_ui_design/components/progress_indicators/circular_progress_indicator/CircularProgressIndicator.tscn" id="1_m8dc1"]
+[ext_resource type="PackedScene" uid="uid://bilr7wgkv07km" path="res://addons/godot_ui_design/components/progress_indicators/linear_progress_indicator/LinearProgressIndicator.tscn" id="2_vq43i"]
+
+[node name="IconButtonDemo" type="VBoxContainer"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+script = ExtResource("1_j4c1u")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "CircularProgressIndicator"
+
+[node name="CircularProgressIndicator" parent="HBoxContainer" instance=ExtResource("1_m8dc1")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "LinearProgressIndicator"
+
+[node name="LinearProgressIndicator" parent="HBoxContainer2" instance=ExtResource("2_vq43i")]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="HBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+text = "CircularProgressIndicator"
+
+[node name="CircularProgressIndicator" parent="HBoxContainer3" instance=ExtResource("1_m8dc1")]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer4"]
+layout_mode = 2
+text = "LinearProgressIndicator"
+
+[node name="LinearProgressIndicator" parent="HBoxContainer4" instance=ExtResource("2_vq43i")]
+layout_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="HBoxContainer2/Button2" to="." method="_on_button_2_pressed"]

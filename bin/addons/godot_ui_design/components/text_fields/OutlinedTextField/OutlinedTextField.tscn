@@ -115,7 +115,7 @@ layout_mode = 2
 
 [node name="TextContainerPolygon2D" type="Polygon2D" parent="BaseComponent/Content/VBoxContainer/TextContainerControl" index="0"]
 unique_name_in_owner = true
-clip_children = 2
+clip_children = 1
 color = Color(1, 0.152941, 1, 1)
 
 [node name="TextContainer" parent="BaseComponent/Content/VBoxContainer/TextContainerControl/TextContainerPolygon2D" index="0" instance=ExtResource("3_dvm6x")]

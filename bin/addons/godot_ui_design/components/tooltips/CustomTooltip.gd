@@ -21,11 +21,13 @@ func get_rich_tooltip(for_text):
 	var action_regex = RegEx.new()
 	action_regex.compile("\\[Action:(.*?)\\]")
 	var action_regex_res = action_regex.search(for_text)
-	var action = action_regex_res.get_string(1)
-	var action_array = action.split(",")
 	var res_action_array = []
-	for cur_action in action_array:
-		res_action_array.append(cur_action.split(":"))
+	if action_regex_res:
+		var action = action_regex_res.get_string(1)
+		var action_array = action.split(",")
+		
+		for cur_action in action_array:
+			res_action_array.append(cur_action.split(":"))
 	
 	tooltip.subhead_text = subhead
 	tooltip.support_text = support

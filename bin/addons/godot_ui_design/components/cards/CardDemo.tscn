@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://d2e4adau0mw7w"]
+
+[ext_resource type="PackedScene" uid="uid://8n8v30yyj5k5" path="res://addons/godot_ui_design/components/cards/ElevatedCard.tscn" id="1_j6mcs"]
+[ext_resource type="PackedScene" uid="uid://dm2m62ujxicde" path="res://addons/godot_ui_design/components/cards/FilledCard.tscn" id="2_57ufe"]
+[ext_resource type="PackedScene" uid="uid://po0mp6o0ei1y" path="res://addons/godot_ui_design/components/cards/OutlinedCard.tscn" id="3_5gs8j"]
+
+[node name="IconButtonDemo" type="VBoxContainer"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "ElevatedCard"
+
+[node name="ElevatedCard" parent="HBoxContainer" instance=ExtResource("1_j6mcs")]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+text = "FilledCard"
+
+[node name="FilledCard" parent="HBoxContainer2" instance=ExtResource("2_57ufe")]
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer3"]
+layout_mode = 2
+text = "OutlinedCard"
+
+[node name="OutlinedCard" parent="HBoxContainer3" instance=ExtResource("3_5gs8j")]
+layout_mode = 2

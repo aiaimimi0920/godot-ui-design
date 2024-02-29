@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://cm8kwh82s3373"]
+
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/tooltips/TooltipDemoPlainLabel.gd" id="1_jfk6h"]
+[ext_resource type="Script" path="res://addons/godot_ui_design/components/tooltips/TooltipDemoRichLabel.gd" id="2_hv6bh"]
+
+[node name="IconButtonDemo" type="VBoxContainer"]
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -4.0
+offset_right = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "PlainTooltip"
+mouse_filter = 0
+text = "PlainTooltip"
+script = ExtResource("1_jfk6h")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+tooltip_text = "[Subhead:Subhead]
+[Support:Support]"
+mouse_filter = 0
+text = "RichTooltip"
+script = ExtResource("2_hv6bh")

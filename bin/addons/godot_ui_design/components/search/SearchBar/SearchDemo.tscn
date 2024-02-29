@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://mybun0fjdlxk"]
+
+[ext_resource type="PackedScene" uid="uid://csht5bl54lqoi" path="res://addons/godot_ui_design/components/search/SearchBar/SearchBar.tscn" id="1_p75r5"]
+
+[node name="SearchBarDemo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SearchBar" parent="CenterContainer" instance=ExtResource("1_p75r5")]
+layout_mode = 2
